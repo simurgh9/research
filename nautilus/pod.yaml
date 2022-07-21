@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bean
+spec:
+  containers:
+  - name: bean
+    image: ubuntu:latest
+    resources:
+      limits:
+        memory: 128Mi
+        cpu: 1
+    command: ["sh", "-c", "apt update -y && apt install -y neofetch emacs-nox && sleep 1h"]

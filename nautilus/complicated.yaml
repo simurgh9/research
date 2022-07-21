@@ -1,0 +1,41 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: knapsack
+spec:
+  template:
+    spec:
+      containers:
+      - name: solver
+        image: gitlab-registry.nrp-nautilus.io/prp/jupyter-stack/prp
+        command:
+        - "python"
+        args:
+        - "/opt/repo/cs5213-final/solution/code/main.py"
+        - "28"
+        - "15"
+        volumeMounts:
+        - name: git-repo
+          mountPath: /opt/repo
+        resources:
+          limits:
+            memory: 300Gi
+            cpu: 4
+          requests:
+            memory: 256Gi
+            cpu: 2
+      initContainers:
+      - name: cloner
+        image: alpine/git
+        args:
+          - clone
+          - --single-branch
+          - https://gitlab.nrp-nautilus.io/simurgh9/cs5213-final.git
+          - /opt/repo/cs5213-final
+        volumeMounts:
+          - name: git-repo
+            mountPath: /opt/repo
+      volumes:
+      - name: git-repo
+        emptyDir: {}
+      restartPolicy: Never
