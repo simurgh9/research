@@ -1,37 +1,38 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: knapsack
+  name: bean
 spec:
   template:
     spec:
       containers:
       - name: solver
-        image: gitlab-registry.nrp-nautilus.io/prp/jupyter-stack/prp
-        command:
-        - "python"
+        image: ubuntu:latest
+        command: ["/bin/sh", "-c"]
         args:
-        - "/opt/repo/cs5213-final/solution/code/main.py"
-        - "28"
-        - "15"
+        - apt update -y &&
+          apt install -y python3 python3-pip python3-wheel wget;
+          cd /opt/repo/research/saved;
+          wget https://www.dropbox.com/s/msb71j7eqevo0d7/half_gaps.bin &&
+          ls -al;          
         volumeMounts:
         - name: git-repo
           mountPath: /opt/repo
         resources:
           limits:
-            memory: 300Gi
-            cpu: 4
-          requests:
-            memory: 256Gi
+            memory: 256Mi
             cpu: 2
+          requests:
+            memory: 128Mi
+            cpu: 1
       initContainers:
       - name: cloner
         image: alpine/git
         args:
           - clone
           - --single-branch
-          - https://gitlab.nrp-nautilus.io/simurgh9/cs5213-final.git
-          - /opt/repo/cs5213-final
+          - https://github.com/simurgh9/research.git
+          - /opt/repo/research
         volumeMounts:
           - name: git-repo
             mountPath: /opt/repo
