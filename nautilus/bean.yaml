@@ -14,16 +14,19 @@ spec:
           apt install -y python3 python3-pip python3-wheel wget;
           cd /opt/repo/research/saved;
           wget https://www.dropbox.com/s/msb71j7eqevo0d7/half_gaps.bin &&
-          ls -al;          
+          cd /opt/repo/research/code;
+          pip install . &&
+          cd /opt/repo/research/code/experiment;
+          pytest;
         volumeMounts:
         - name: git-repo
           mountPath: /opt/repo
         resources:
           limits:
-            memory: 256Mi
-            cpu: 2
+            memory: 16Gi
+            cpu: 8
           requests:
-            memory: 128Mi
+            memory: 1Gi
             cpu: 1
       initContainers:
       - name: cloner
