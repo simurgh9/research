@@ -25,16 +25,16 @@ Here is the shortest path to a machine on Nautilus.
 apiVersion: v1
 kind: Pod
 metadata:
-  name: bean
+  name: interactive
 spec:
   containers:
-  - name: bean
+  - name: interactive
     image: ubuntu:latest
     resources:
       limits:
         memory: 128Mi
         cpu: 1
-    command: ["sh", "-c", "apt update -y && apt install -y neofetch emacs-nox && sleep 1h"]
+    command: ["sh", "-c", "apt update -y && apt install -y neofetch && sleep 1h"]
 ```
 
 We are asking for 128 megabytes of [memory](https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource/#specify-a-memory-request-and-a-memory-limit) with 1
