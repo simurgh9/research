@@ -6,8 +6,17 @@ spec:
   containers:
   - name: interactive
     image: ubuntu:latest
+    command: ["sh", "-c", "apt update -y && sleep 1h"]
+    volumeMounts:
+    - name: secret-volume
+      readOnly: true
+      mountPath: /root
     resources:
       limits:
         memory: 128Mi
         cpu: 1
-    command: ["sh", "-c", "apt update -y && apt install -y neofetch && sleep 1h"]
+  volumes:
+  - name: secret-volume
+    secret:
+      secretName: s3
+  restartPolicy: Never

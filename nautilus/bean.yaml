@@ -10,36 +10,29 @@ spec:
         image: ubuntu:latest
         command: ["/bin/sh", "-c"]
         args:
-        - apt update -y &&
-          apt install -y python3 python3-pip python3-wheel wget;
-          cd /opt/repo/research/saved;
-          wget https://www.dropbox.com/s/msb71j7eqevo0d7/half_gaps.bin &&
-          cd /opt/repo/research/code;
-          pip install . &&
-          cd /opt/repo/research/code/experiment;
-          pytest;
-        volumeMounts:
-        - name: git-repo
-          mountPath: /opt/repo
+        - export DEBIAN_FRONTEND=noninteractive;
+          apt-get update -y >> apt_logs.txt 2>&1 &&
+          apt-get install -y python3 python3-pip python3-wheel s3cmd git >> apt_logs.txt 2>&1 &&
+          git clone https://github.com/simurgh9/research.git &&
+          cd /research/saved;
+          s3cmd get s3://tokari/half_gaps.bin >> s3cmd_logs.txt 2>&1 &&
+          cd /research/code;
+          pip install . >> /opt/pip_logs.txt 2>&1 &&
+          cd /research/code/experiment;
+          pytest -vvv --durations=0;
         resources:
           limits:
             memory: 16Gi
             cpu: 8
           requests:
-            memory: 1Gi
+            memory: 128Mi
             cpu: 1
-      initContainers:
-      - name: cloner
-        image: alpine/git
-        args:
-          - clone
-          - --single-branch
-          - https://github.com/simurgh9/research.git
-          - /opt/repo/research
         volumeMounts:
-          - name: git-repo
-            mountPath: /opt/repo
+        - name: secret-volume
+          readOnly: true
+          mountPath: /root
       volumes:
-      - name: git-repo
-        emptyDir: {}
+      - name: secret-volume
+        secret:
+          secretName: s3
       restartPolicy: Never
