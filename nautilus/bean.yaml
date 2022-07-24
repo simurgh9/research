@@ -27,10 +27,10 @@ spec:
         resources:
           limits:
             memory: 128Gi
-            cpu: 64
+            cpu: 128
           requests:
             memory: 64Gi
-            cpu: 32
+            cpu: 64
         volumeMounts:
         - name: secret-volume
           readOnly: true
