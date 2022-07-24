@@ -6,7 +6,7 @@ from pickle import dump
 
 
 GRID_SEARCH_SUBSET = 2**12
-primes_numbers = primes32bit()[:2**25]
+primes_numbers = primes32bit()
 N, p = semiprime(primes_numbers)
 X, y, _X, _y = prep_as_data(N, p, train_ratio=0.625)
 
