@@ -3,6 +3,7 @@ from matplotlib import pyplot as plt
 from math import floor, log2
 
 RND = np.random.default_rng(seed=0)
+AVAILABLE_MEMORY = 64
 minimum = 'Least accuratly factored number was with: {:.2%} correct bits.'
 mean = 'On average a number factored with: {:.2%} correct bits.'
 maximum = 'Most accuratly factored number was with: {:.2%} correct bits.'
@@ -43,7 +44,7 @@ def prep_as_data(N,
     if classification:
         bits = floor(log2(N.max())) + 1
         gb = (8 * bits * N.shape[0]) / (2**30)  # 2**30 is one gibibyte
-        if gb >= 15:
+        if gb >= AVAILABLE_MEMORY:
             raise MemoryError(f'Data takes {gb:.1f} Gibibytes.')
         N, p = to_bin(N), to_bin(p)
     if not classification and sklearn:
