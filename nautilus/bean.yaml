@@ -11,6 +11,7 @@ spec:
         command: ["/bin/sh", "-c"]
         args:
         - export DEBIAN_FRONTEND=noninteractive;
+          export MPLCONFIGDIR=/research;
           apt-get update -y >> apt_logs.txt 2>&1 &&
           apt-get install -y python3 python3-pip python3-wheel s3cmd git >> apt_logs.txt 2>&1 &&
           git clone https://github.com/simurgh9/research.git &&
@@ -19,14 +20,17 @@ spec:
           cd /research/code;
           pip install . >> /opt/pip_logs.txt 2>&1 &&
           cd /research/code/experiment;
-          pytest -vvv --durations=0;
+          python3 train.py &&
+          python3 test.py &&
+          s3cmd put /research/saved/figures/last_plot.png s3://tokari;
+          s3cmd put /research/saved/model_con_new.p s3://tokari;
         resources:
           limits:
-            memory: 16Gi
-            cpu: 8
+            memory: 128Gi
+            cpu: 64
           requests:
-            memory: 128Mi
-            cpu: 1
+            memory: 64Gi
+            cpu: 32
         volumeMounts:
         - name: secret-volume
           readOnly: true

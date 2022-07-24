@@ -14,10 +14,9 @@ X, y, _X, _y = prep_as_data(N, p, train_ratio=0.625)
 grid_N, grid_p = semiprime(primes_numbers[:GRID_SEARCH_SUBSET])
 grid_X, grid_y, _, _ = prep_as_data(grid_N, grid_p, train_ratio=1)
 param_sp = {
-    'hidden_layer_sizes': [100, 64, 32],
-    'alpha': [0.0001, 0.05],
-    'momentum': [0.9, 0.5, 0.1],
-    'learning_rate_init': [0.001, 0.05],
+    'hidden_layer_sizes': [100, 64],
+    'alpha': [0.0001, 0.001, 0.01, 0.1, 0.5],
+    'learning_rate_init': [0.001, 0.01, 0.1, 0.5],
     'activation': ['relu', 'logistic', 'tanh']
 }
 
@@ -33,10 +32,8 @@ search = GridSearchCV(network,
                       n_jobs=-1,
                       cv=3,
                       scoring=custom_scorer,
-                      verbose=3)
+                      verbose=1)
 search.fit(grid_X, grid_y)
-# {'activation': 'tanh', 'alpha': 0.05, 'hidden_layer_sizes': 32,
-#  'learning_rate_init': 0.001, 'momentum': 0.9}
 print(f'Best parameters found with score: {search.best_score_}')
 print(search.best_params_)
 
