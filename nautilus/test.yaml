@@ -1,12 +1,12 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: bean
+  name: test
 spec:
   template:
     spec:
       containers:
-      - name: solver
+      - name: tester
         image: ubuntu:latest
         command: ["/bin/sh", "-c"]
         args:
@@ -20,16 +20,14 @@ spec:
           cd /research/code;
           pip install . >> /opt/pip_logs.txt 2>&1 &&
           cd /research/code/experiment;
-          python3 train.py &&
           python3 test.py &&
           s3cmd put /research/saved/figures/last_plot.png s3://tokari;
-          s3cmd put /research/saved/model_con_new.p s3://tokari;
         resources:
           limits:
             memory: 128Gi
             cpu: 128
           requests:
-            memory: 64Gi
+            memory: 50Gi
             cpu: 64
         volumeMounts:
         - name: secret-volume
