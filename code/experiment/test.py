@@ -4,7 +4,7 @@ from lib import minimum, mean, maximum, primes32bit, compare_complementes
 from lib import semiprime, prep_as_data, print_semiprime_stats, to_dec
 
 primes_numbers = primes32bit()
-network = np.load('../../saved/model_con_new.p', allow_pickle=True)
+network = np.load('../../saved/model_con_full.p', allow_pickle=True)
 # primes_numbers = np.load('../../saved/erratic.npy', allow_pickle=True)
 # network = np.load('../../saved/model_err.p', allow_pickle=True)
 
