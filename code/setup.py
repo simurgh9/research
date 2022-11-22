@@ -12,7 +12,7 @@ setup(
     install_requires=[
         'numpy',
         'matplotlib',
-        'scikit-learn',
+        'scikit-learn==1.1.1',
         'pytest'
     ]
 )

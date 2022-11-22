@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 from math import floor, log2
 
 RND = np.random.default_rng(seed=0)
-AVAILABLE_MEMORY = 64
+AVAILABLE_MEMORY = 24
 minimum = 'Least accuratly factored number was with: {:.2%} correct bits.'
 mean = 'On average a number factored with: {:.2%} correct bits.'
 maximum = 'Most accuratly factored number was with: {:.2%} correct bits.'
