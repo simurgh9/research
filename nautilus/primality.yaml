@@ -1,12 +1,12 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: test
+  name: primality
 spec:
   template:
     spec:
       containers:
-      - name: tester
+      - name: primality
         image: ubuntu:latest
         command: ["/bin/sh", "-c"]
         args:
@@ -26,10 +26,10 @@ spec:
         resources:
           limits:
             memory: 32Gi
-            cpu: 512
+            cpu: 128
           requests:
             memory: 24Gi
-            cpu: 256
+            cpu: 64
         volumeMounts:
         - name: secret-volume
           readOnly: true

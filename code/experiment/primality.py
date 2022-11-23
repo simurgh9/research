@@ -1,4 +1,5 @@
 import numpy as np
+from sys import argv
 from time import perf_counter
 from matplotlib import pyplot as plt
 from lib import primes32bit, prep_as_data
@@ -43,7 +44,7 @@ def ffnn(hidden):  # https://stackoverflow.com/a/46913369/12035739
                          hidden_layer_sizes=hidden)
 
 
-low, high, epsilon = 7, 32, 0.56
+low, high, epsilon = 7, int(argv[1]), 0.56
 bits, hidden = list(range(low, high + 1)), []
 best_acc = []
 for b in bits:
@@ -72,6 +73,7 @@ plt.ylabel('Number of Neurons in the Hidden Layer')
 plt.plot(bits[hidden > 0], hidden[hidden > 0])
 plt.savefig('../../saved/figures/last_plot_primality.png')
 # plt.show()
+plt.clf()
 plt.xlabel('Number of Neurons in the Hidden Layer')
 plt.ylabel('Accuracy (Baseline 50%)')
 plt.xticks(bits, [f'{b},{best_acc[i][0]}' for i, b in enumerate(bits)], rotation=70)
