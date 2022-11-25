@@ -55,7 +55,7 @@ for b in bits:
     neurons, scr, max_scr = 0, 0, (0, 0)
     while scr < epsilon:
         neurons += 1
-        if neurons > 55:
+        if neurons > 100:
             neurons = -1
             break
         clf = ffnn(neurons).fit(X, y)

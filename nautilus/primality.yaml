@@ -20,16 +20,16 @@ spec:
           cd /research/code;
           pip install . >> /opt/pip_logs.txt 2>&1 &&
           cd /research/code/experiment;
-          python3 primality.py &&
+          python3 primality.py 26 &&
           s3cmd put /research/saved/figures/last_plot_primality.png s3://tokari;
           s3cmd put /research/saved/figures/last_plot_primality_acc.png s3://tokari;
         resources:
           limits:
-            memory: 32Gi
+            memory: 64Gi
             cpu: 128
           requests:
-            memory: 24Gi
-            cpu: 64
+            memory: 16Gi
+            cpu: 32
         volumeMounts:
         - name: secret-volume
           readOnly: true
