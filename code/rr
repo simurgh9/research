@@ -1,0 +1,38 @@
+#!/bin/sh
+
+rm -rfI .venv && \
+    rm -rfI lib/lib.egg-info/ && \
+    rm -rfI lib/build/ && \
+    rm -rfI ann/net.egg-info/ && \
+    rm -rfI ann/build/ && \
+    python3 -m venv .venv && \
+    echo "Before sourching venv:" && \
+    which pip3 && \
+    source .venv/bin/activate && \
+    echo "After sourcing venv:" && \
+    which pip3
+
+read -p "Continue? <y/n> " -r
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    pip3 install --upgrade pip && \
+    pip3 install wheel && \
+    pip3 install -e "./lib[interactive]" && \
+    pip3 install -e "./ann[interactive]" && \
+    pip3 install pipdeptree && \
+    python3 -m pipdeptree    
+    read -p "Run lib tests? <y/n> " -r
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        pytest -v --durations=0 ./lib/test/
+        rm -rfI ./lib/.pytest_cache/
+    fi
+    read -p "Run ann tests? <y/n> " -r
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        pytest -v --durations=0 ./ann/test/test_mnsit.py
+        pytest -v --durations=0 ./ann/test/test_net.py
+        # pytest -v --durations=0 ./ann/test/test_net_parallel.py
+        rm -rfI ./ann/.pytest_cache/
+    fi
+fi

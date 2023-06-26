@@ -1,18 +1,21 @@
 from net.ffnn import FFNN
-from time import time as seconds  # noqa: F40
+# from time import time as seconds  # noqa: F40
 from multiprocessing import Process, Queue, active_children
 
 
 class ParallelBatch(FFNN):
 
-    def SGD(self, print_steps):
+    def tg(self, B, q):
+        return q.put(self.gradient_bt(B))
+
+    def SGD(self):
         error_sum_over_bt, q = 0, Queue()
+
         for bt in self.batches():
-            Process(target=lambda B, q: q.put(self.gradient_bt(B)),
-                    args=(
-                        bt,
-                        q,
-                    )).start()
+            Process(target=self.tg, args=(
+                bt,
+                q,
+            )).start()
         while len(active_children()) > 0 or not q.empty():
             while not q.empty():
                 grad_bt, error_bt = q.get()
@@ -23,16 +26,19 @@ class ParallelBatch(FFNN):
 
 class ParallelExample(FFNN):
 
+    def tg(self, x, y, q):
+        return q.put(self.backpropagation(x, y))
+
     def gradient_bt(self, mini_batch):
         g_sum, error_sum_over_x, q = 0, 0, Queue()
+
         for x, y in mini_batch:
             # s = seconds()
-            Process(target=lambda x, y, q: q.put(self.backpropagation(x, y)),
-                    args=(
-                        x,
-                        y,
-                        q,
-                    )).start()
+            Process(target=self.tg, args=(
+                x,
+                y,
+                q,
+            )).start()
             # print(seconds() - s)
         while len(active_children()) > 0 or not q.empty():
             while not q.empty():

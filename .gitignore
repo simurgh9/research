@@ -1,4 +1,7 @@
+*.egg-info
 .venv/
+.ipynb_checkpoints/
+mnsit_data/
 build/
 __pycache__/
 .pytest_cache/

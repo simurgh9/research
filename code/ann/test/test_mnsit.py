@@ -1,6 +1,7 @@
 from net.mnsit import MNSIT
 
-mn = MNSIT(path='test/mnsit_data/')
+PATH = '/Users/tfn/Library/CloudStorage/Dropbox/grad/ou/research/code/ann/test/'
+mn = MNSIT(path=PATH + 'mnsit_data/')
 
 
 def test_plot_six():
