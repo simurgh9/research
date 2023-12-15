@@ -1,5 +1,6 @@
 # pytest -v --durations=0
 import lib as lb
+import lib.lattice as ll
 import numpy as np
 
 
@@ -116,7 +117,7 @@ def test_inv_mod():
 
 def test_proj():
     u, v = np.array([1, 2, -3, 4, 5]), np.array([6, 7, 0, 9, 10])
-    projection, mu = lb.proj(u, v)
+    projection, mu = ll.proj(u, v)
     expected_mu = (v @ u) / (u @ u)
     # https://en.wikipedia.org/wiki/Vector_projection
     expected_proj = expected_mu * u
@@ -131,7 +132,7 @@ def test_gram_schmidt():
     U = np.array(U, dtype=np.longdouble)
     G = np.array(G, dtype=np.longdouble)
     expec_mu = np.array(expec_mu, dtype=np.longdouble)
-    U, Mu = lb.gram_schmidt(U)
+    U, Mu = ll.gram_schmidt(U)
     assert np.allclose(U, G)
     assert (Mu == expec_mu).all()
 
@@ -175,7 +176,7 @@ def test_lll():
                       [-1, -1,  1, -1, -2,  0],
                       [ 0, -1,  2,  2,  0, -3]],
                      dtype=np.longdouble)
-    assert (lb.lll(case1) == expt1).all()
-    assert (lb.lll(case2) == expt2).all()
-    assert (lb.lll(case3) == expt3).all()
-    assert (lb.lll(case4, delta=0.99) == expt4).all()
+    assert (ll.lll(case1) == expt1).all()
+    assert (ll.lll(case2) == expt2).all()
+    assert (ll.lll(case3) == expt3).all()
+    assert (ll.lll(case4, delta=0.99) == expt4).all()

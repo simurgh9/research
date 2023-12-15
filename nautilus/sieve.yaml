@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sieve
+spec:
+  template:
+    spec:
+      containers:
+      - name: tester
+        image: ubuntu:latest
+        command: ["/bin/sh", "-c"]
+        args:
+        - export DEBIAN_FRONTEND=noninteractive;
+          export MPLCONFIGDIR=/research;
+          apt-get update -y >> apt_logs.txt 2>&1 &&
+          apt-get install -y python3 python3-pip python3-wheel s3cmd git >> apt_logs.txt 2>&1 &&
+          git clone https://github.com/simurgh9/research.git &&
+          cd /research/code;
+          pip install lib >> /opt/pip_logs.txt 2>&1 &&
+          cd /research/code/experiment;
+          python3 sieve.py;
+        resources:
+          limits:
+            memory: 1Gi
+            cpu: 2
+          requests:
+            memory: 1Gi
+            cpu: 1
+      restartPolicy: Never

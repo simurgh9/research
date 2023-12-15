@@ -20,6 +20,7 @@ then
     pip3 install -e "./lib[interactive]" && \
     pip3 install -e "./ann[interactive]" && \
     pip3 install pipdeptree && \
+    pip3 install pip-autoremove && \
     python3 -m pipdeptree    
     read -p "Run lib tests? <y/n> " -r
     if [[ $REPLY =~ ^[Yy]$ ]]

@@ -14,7 +14,7 @@ setup(
     extras_require={
         'interactive': [
             'pytest',
-            'pyright',  # the lsp server
+            'numpydoc',
             'scikit-learn'  # 'scikit-learn==1.1.1'
         ]
     })
