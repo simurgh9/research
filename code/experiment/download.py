@@ -1,7 +1,7 @@
 import numpy as np
 from urllib.request import urlopen as get
 
-dim = 70  # https://latticechallenge.org/svp-challenge/
+dim = 100  # https://latticechallenge.org/svp-challenge/
 url = f'https://latticechallenge.org/svp-challenge/download/challenges/svpchallengedim{dim}seed0.txt'
 with get(url) as response:
     text = response.read().decode('utf-8')

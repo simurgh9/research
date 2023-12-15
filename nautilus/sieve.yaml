@@ -6,7 +6,7 @@ spec:
   template:
     spec:
       containers:
-      - name: tester
+      - name: sieve
         image: ubuntu:latest
         command: ["/bin/sh", "-c"]
         args:
@@ -16,14 +16,16 @@ spec:
           apt-get install -y python3 python3-pip python3-wheel s3cmd git >> apt_logs.txt 2>&1 &&
           git clone https://github.com/simurgh9/research.git &&
           cd /research/code;
-          pip install lib >> /opt/pip_logs.txt 2>&1 &&
+          pip install ./lib >> /opt/pip_logs.txt 2>&1 &&
+          pip install scipy >> /opt/pip_logs.txt 2>&1 &&
+          pip install numba >> /opt/pip_logs.txt 2>&1 &&
           cd /research/code/experiment;
           python3 sieve.py;
         resources:
           limits:
-            memory: 1Gi
-            cpu: 2
+            memory: 16Gi
+            cpu: 8
           requests:
-            memory: 1Gi
-            cpu: 1
+            memory: 8Gi
+            cpu: 4
       restartPolicy: Never

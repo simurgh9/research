@@ -1,6 +1,7 @@
 ## Le résumé des commandes Nautilus
 
 1. `kubectl get nodes`
+1. `kubectl get pods`
 2. `kubectl create -f pod.yaml`
 3. `kubectl top pod` or [Grafana namespace dashboards](https://grafana.nrp-nautilus.io/d/85a562078cdf77779eaa1add43ccec1e/kubernetes-compute-resources-namespace-pods.)
 4. `kubectl logs bean`, additionally add the `-f` flag for stream.
