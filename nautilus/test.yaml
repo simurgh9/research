@@ -1,0 +1,40 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: test
+spec:
+  template:
+    spec:
+      containers:
+      - name: tester
+        image: ubuntu:latest
+        command: ["/bin/sh", "-c"]
+        args:
+        - export DEBIAN_FRONTEND=noninteractive;
+          export MPLCONFIGDIR=/research;
+          apt-get update -y >> apt_logs.txt 2>&1 &&
+          apt-get install -y python3 python3-pip python3-wheel s3cmd git >> apt_logs.txt 2>&1 &&
+          git clone https://github.com/simurgh9/research.git &&
+          cd /research/saved;
+          s3cmd get s3://tokari/half_gaps.bin >> s3cmd_logs.txt 2>&1 &&
+          cd /research/code;
+          pip install . >> /opt/pip_logs.txt 2>&1 &&
+          cd /research/code/experiment;
+          python3 test.py &&
+          s3cmd put /research/saved/figures/last_plot.png s3://tokari;
+        resources:
+          limits:
+            memory: 128Gi
+            cpu: 128
+          requests:
+            memory: 50Gi
+            cpu: 64
+        volumeMounts:
+        - name: secret-volume
+          readOnly: true
+          mountPath: /root
+      volumes:
+      - name: secret-volume
+        secret:
+          secretName: s3
+      restartPolicy: Never

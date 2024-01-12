@@ -1,0 +1,7 @@
+1. [Just how hard are rotations of Zⁿ? Algorithms and cryptography with the simplest lattice](https://eprint.iacr.org/2021/1548.pdf)
+2. [Fast Practical Lattice Reduction through Iterated Compression](https://eprint.iacr.org/2023/237.pdf)
+3. [Finding the smallest gap between sums of square roots.](https://www.cs.ou.edu/~qcheng/paper/essr.pdf)
+4. [A Review of Sieve Algorithms in Solving the Shortest Lattice Vector Problem](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9224855)
+5. [A Sieve Algorithm for the Shortest Lattice Vector Problem](https://dl.acm.org/doi/pdf/10.1145/380752.380857)
+6. [Sieve algorithms for the shortest vector problem are practical](https://www.degruyter.com/document/doi/10.1515/JMC.2008.009/html?lang=en)
+7. [Evolutionary techniques in lattice sieving algorithms](https://arxiv.org/abs/1907.04629)
