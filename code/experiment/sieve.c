@@ -1,4 +1,5 @@
 // gcc -Ofast -lblas sieve.c -o sieve.o && ./sieve.o
+// gcc -L/opt/homebrew/opt/openblas/lib -I/opt/homebrew/opt/openblas/include -Ofast -lopenblas sieve.c
 #include "sieve.h"
 #include <math.h>
 #include <stdio.h>
