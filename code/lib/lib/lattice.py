@@ -67,7 +67,7 @@ def sieve(P, size):
         N, idx = squares[:size][::-1], idx[:size][::-1]
         P = List([P[i] for i in idx])
         n = len(P)
-        print(f'{k:4d} {np.sqrt(N[-1]):7.3f} with {n:5}', end=' ')
+        print(f'{k:4d} {np.sqrt(N[-1]):7.3f} {np.sqrt(np.mean(N)):7.3f} with {n:5}', end=' ')
         cross(P, N)
         k += 1
         # size = int(0.6 * size)

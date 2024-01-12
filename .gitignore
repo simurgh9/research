@@ -1,4 +1,5 @@
 *.egg-info
+*.o
 .venv/
 .ipynb_checkpoints/
 mnsit_data/

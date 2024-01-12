@@ -23,9 +23,9 @@ spec:
           python3 sieve.py;
         resources:
           limits:
-            memory: 320Gi
+            memory: 600Gi
             cpu: 8
           requests:
-            memory: 100Gi
+            memory: 300Gi
             cpu: 2
       restartPolicy: Never
