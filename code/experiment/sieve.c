@@ -32,6 +32,7 @@ void sieve(node **head, node **tail) {
   char fmt[] = "%4d %8.3f, %8.3f with %5d in %.3fs\n";
   do {
     printf(fmt, i, sqrt(best), mean(*head), real, period());
+    fflush(stdout);
     step(head, tail);
     if (best == (*tail)->norm)
       unchanged_for++;
