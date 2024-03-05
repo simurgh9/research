@@ -6,8 +6,8 @@
 #include <stdlib.h>
 #include <string.h> // for memcpy
 #include <time.h>
-#include <Accelerate/Accelerate.h>
-// #include <cblas.h>
+// #include <Accelerate/Accelerate.h>
+#include <cblas.h>
 
 int main(int argc, char *argv[]) {
   period();
