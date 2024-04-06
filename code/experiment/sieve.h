@@ -10,7 +10,7 @@
 #include <cblas.h>
 
 #define ll double
-#define THREADS 17
+#define THREADS 100
 
 // #define SEED 0
 // #define DIM 100

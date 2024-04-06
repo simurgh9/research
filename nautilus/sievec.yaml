@@ -16,13 +16,14 @@ spec:
           apt-get install -y git clang libopenblas-dev >> apt_logs.txt 2>&1 &&
           git clone https://github.com/simurgh9/research.git &&
           cd /research/code/experiment;
+          git checkout parallel &&
           clang -L /usr/lib/x86_64-linux-gnu/openblas-pthread/ -I /usr/include/x86_64-linux-gnu/openblas-pthread/ -Ofast -lopenblas -lm sieve.c &&
           ./a.out;
         resources:
           limits:
             memory: 14Gi
-            cpu: 4
+            cpu: 200
           requests:
             memory: 7Gi
-            cpu: 2
+            cpu: 100
       restartPolicy: Never
