@@ -12,15 +12,15 @@
 #define ll double
 #define THREADS 100
 
-// #define SEED 0
-// #define DIM 100
-// #define SIZE 1000000
-// #define PATH "../../saved/bases/col100_2667.csv"
-
 #define SEED 0
-#define DIM 70
-#define SIZE 70000
-#define PATH "../../saved/bases/col70_2254.csv"
+#define DIM 100
+#define SIZE 1000000
+#define PATH "../../saved/bases/col100_2667.csv"
+
+// #define SEED 0
+// #define DIM 70
+// #define SIZE 70000
+// #define PATH "../../saved/bases/col70_2254.csv"
 
 // #define SEED 0
 // #define DIM 60
