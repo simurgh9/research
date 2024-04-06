@@ -1,13 +1,13 @@
 #define ACCELERATE_NEW_LAPACK 1
 
-#include <Accelerate/Accelerate.h>
+// #include <Accelerate/Accelerate.h>
 #include <math.h>
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h> // for memcpy
 #include <time.h>
-// #include <cblas.h>
+#include <cblas.h>
 
 #define ll double
 #define THREADS 17
@@ -17,15 +17,15 @@
 // #define SIZE 1000000
 // #define PATH "../../saved/bases/col100_2667.csv"
 
-// #define SEED 0
-// #define DIM 70
-// #define SIZE 70000
-// #define PATH "../../saved/bases/col70_2254.csv"
-
 #define SEED 0
-#define DIM 60
-#define SIZE 20000
-#define PATH "../../saved/bases/col60_2101.csv"
+#define DIM 70
+#define SIZE 70000
+#define PATH "../../saved/bases/col70_2254.csv"
+
+// #define SEED 0
+// #define DIM 60
+// #define SIZE 20000
+// #define PATH "../../saved/bases/col60_2101.csv"
 
 // #define SEED 0
 // #define DIM 40
