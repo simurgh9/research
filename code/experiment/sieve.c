@@ -1,75 +1,116 @@
 // gcc -Ofast -lblas sieve.c -o sieve.o && ./sieve.o
 // gcc -L/opt/homebrew/opt/openblas/lib -I/opt/homebrew/opt/openblas/include -Ofast -lopenblas sieve.c
 #include "sieve.h"
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h> // for memcpy
-#include <time.h>
-// #include <Accelerate/Accelerate.h>
-#include <cblas.h>
 
 int main(int argc, char *argv[]) {
-  period();
-  double beg = seconds();
-  srand(SEED);
+  double beg = period();
+  init();
   ll B[DIM][DIM];
   basis(PATH, B);
-  node *head = new_node(-1, NULL, NULL);
-  node *tail = head;
   initial(B, &tail, 0.01);
-  sieve(&head, &tail);
+  sieve();
   printf("Total time: %fs\n", seconds() - beg);
   print_vector(tail->v, DIM);
   return 0;
 }
 
 // helper implements
-void sieve(node **head, node **tail) {
-  int i = 0;
-  ll unchanged_for = 0;
-  ll best = (*tail)->norm;
-  char fmt[] = "%4d %8.3f, %8.3f with %5d in %.3fs\n";
-  do {
-    printf(fmt, i, sqrt(best), mean(*head), real, period());
-    fflush(stdout);
-    step(head, tail);
-    if (best == (*tail)->norm)
-      unchanged_for++;
-    else
-      unchanged_for = 0;
-    best = (*tail)->norm;
-    i++;
-  } while (unchanged_for < 10);
-}
-
-void step(node **head, node **tail) {
-  node *b, *a = *head;
-  while ((a = a->next) != NULL && real < 5 * SIZE) {
-    if (a->not_ready)
-      continue;
-    b = a;
-    while ((b = b->next) != NULL && real < 5 * SIZE) {
-      if (b->not_ready)
-        continue;
-      my_cblas_cross(a, b, tail);
-    }
+void init() {
+  srand(SEED);
+  head = new_node(-1, NULL, NULL);
+  tail = head;
+  for (int i = 0; i < THREADS; i++) {
+    H[i] = new_node(-1, NULL, NULL);
+    T[i] = H[i];
   }
-  trim(head, tail);
 }
 
-void my_cblas_cross(node *a, node *b, node **tail) {
+void sieve() {
+  ll best = tail->norm;
+  int i = 0, unchanged = 0;
+  char fmt[] = "%4d %8.3f, %8.3f in %.3fs\n";
+  do {
+    printf(fmt, i++, sqrt(best), mean(head), period());
+    fflush(stdout);
+    step();
+    unchanged++;
+    if (best != tail->norm)
+      unchanged = 0;
+    best = tail->norm;
+  } while (unchanged < 10);
+}
+
+void step() {
+  int indices[THREADS], i = 0;
+  pthread_t threads[THREADS];
+  for (i = 0; i < THREADS; i++)
+    indices[i] = i;
+  for (i = 0; i < THREADS; i++)
+    pthread_create(&threads[i], NULL, &job, &indices[i]);
+  for (i = 0; i < THREADS; i++)
+    pthread_join(threads[i], NULL);
+  merge();
+}
+
+void *job(void *arg) {
+  int j, i = *(int *)(arg), step = SIZE / THREADS;
+  int start = i * step;
+  int end = start + step;
+
+  if (step <= 0 && i > 0)
+    return NULL;
+  else if (i == THREADS - 1 || step <= 0 && i == 0)
+    end = SIZE;
+  
+  while (T[i]->prev != NULL) // clean from last time
+    pop(&T[i]);
+  
+  node *a = head, *b;
+  for (j = 0; j < start; j++)
+    a = a->next;
+  while ((a = a->next) != NULL && j++ < end && real < 5 * SIZE) {
+    b = a;
+    while ((b = b->next) != NULL && real < 5 * SIZE)
+      cross(a, b, &T[i]);
+  }
+  // printf("Thread %d (%d:%d) is done.\n", i, start, end);
+  return NULL;
+}
+
+void merge() {
+  node *h = new_node(-1, NULL, NULL);
+  node *t = h;
+  ll norm, *v;
+  int i = 0, k = 0, argmin = -1;
+  while (k++ < SIZE) {
+    argmin = -1, norm = tail->norm, v = tail->v;
+    for (i = 0; i < THREADS; i++)
+      if (T[i]->norm > 0 && norm > T[i]->norm)
+        argmin = i, norm = T[i]->norm, v = T[i]->v;
+    after(norm, v, h, &t);
+    if (argmin > -1)
+      pop(&T[argmin]);
+    else
+      pop(&tail);
+  }
+
+  free_list(&tail);
+  head = h, tail = t;
+  real = SIZE;
+}
+
+void cross(node *a, node *b, node **tail) {
   ll t[DIM], tn = 0;
   ll an = a->norm, bn = b->norm;
   double numerator = dot(b->v, a->v, DIM);
   ll m = (ll)round(numerator / bn);
   cblas_dcopy(DIM, a->v, 1, t, 1);
-  cblas_daxpy(DIM, -1*m, b->v, 1, t, 1);
+  cblas_daxpy(DIM, -1 * m, b->v, 1, t, 1);
   tn = dot(t, t, DIM);
   if (tn < bn)
-    place_from(tn, t, b, tail);
+    place(tn, t, tail);
   else if (tn < an)
-    place_from(tn, t, a, tail);
+    place(tn, t, tail);
 }
 
 void initial(ll (*B)[DIM], node **tail, double p1) {
@@ -103,9 +144,7 @@ void random_bits(ll *fill, int size, double p1) {
     fill[i] = (rand() / ((double)RAND_MAX)) < p1;
 }
 
-double dot(ll *x, ll *y, int size) {
-  return cblas_ddot(size, x, 1, y, 1);
-}
+double dot(ll *x, ll *y, int size) { return cblas_ddot(size, x, 1, y, 1); }
 
 void basis(char path[], ll (*B)[DIM]) {
   int i = 0, j = 0, c, sign = 1;
@@ -188,7 +227,7 @@ double period() {
   double t = seconds();
   if (timestamp < 0) {
     timestamp = t;
-    return -1;
+    return timestamp;
   }
   double ret = t - timestamp;
   timestamp = t;
@@ -201,19 +240,23 @@ int digits(ll n) {
   return floor(log10(n)) + 1;
 }
 
+int delta_real(int c) {
+  pthread_mutex_lock(&mutie);
+  real += c;
+  pthread_mutex_unlock(&mutie);
+  return real;
+}
+
+
 // list implements
-void trim(node **head, node **tail) {
-  int n = 1;
+int place(ll norm, ll v[DIM], node **tail) {
   node *x = *tail;
-  do
-    x->not_ready = 0;
-  while ((x = x->prev) != NULL && n++ < SIZE);
-  if (n <= SIZE || x == *head) // don't free dummy head
-    return;
-  (*head)->next->prev = NULL;
-  (*head)->next = x->next;
-  x->next->prev = *head;
-  free_list(&x);
+  while (x->prev != NULL && x->norm < norm)
+    x = x->prev;
+  if (norm == x->norm || norm == 0)
+    return 0;
+  after(norm, v, x, tail);
+  return 1;
 }
 
 int place_from(ll norm, ll v[DIM], node *from, node **tail) {
@@ -223,31 +266,26 @@ int place_from(ll norm, ll v[DIM], node *from, node **tail) {
   if (norm == x->norm || norm == 0)
     return 0;
   if (x->next == NULL && norm < x->norm)
-    append(norm, v, tail);
+    after(norm, v, x, tail);
   else
-    before(norm, v, x);
+    before(norm, v, x, tail);
   return 1;
 }
 
-void before(ll norm, ll v[DIM], node *place) {
-  node *at = (place->prev) ? place->prev : place;
-  node *escrow = at->next;
-  append(norm, v, &at);
-  at->next = escrow;
-  escrow->prev = at;
+void before(ll norm, ll v[DIM], node *mid, node **tail) {
+  node *at = (mid->prev) != NULL ? mid->prev : mid;
+  after(norm, v, at, tail);
 }
 
-void after(ll norm, ll v[DIM], node *place) {
-  node *escrow = place->next;
-  append(norm, v, &place);
-  if ((place->next = escrow))
-    escrow->prev = place;
-}
-
-void append(ll norm, ll v[DIM], node **tail) {
-  (*tail)->next = new_node(norm, v, *tail);
-  *tail = (*tail)->next;
-  real++;
+void after(ll norm, ll v[DIM], node *mid, node **tail) {
+  node **at = (mid == *tail) ? tail : &mid;
+  node *escrow = (*at)->next;
+  (*at)->next = new_node(norm, v, *at);
+  *at = (*at)->next;
+  (*at)->next = escrow;
+  if (escrow != NULL)
+    escrow->prev = *at;
+  delta_real(1);
 }
 
 void pop(node **tail) {
@@ -257,7 +295,6 @@ void pop(node **tail) {
   *tail = (*tail)->prev;
   (*tail)->next = NULL;
   free(tofree);
-  real--;
 }
 
 void squeeze(node **head) {
@@ -268,15 +305,23 @@ void squeeze(node **head) {
   if ((*head)->next)
     (*head)->next->prev = *head;
   free(tofree);
-  real--;
 }
 
 void free_list(node **tail) {
-  while ((*tail)->prev)
+  while ((*tail)->prev != NULL)
     pop(tail);
   free(*tail);
-  real--;
   *tail = NULL;
+}
+
+void print_norms(node *head) {
+  if (head->next == NULL)
+    printf("\n");
+  while ((head = head->next) != NULL)
+    if (head->next != NULL)
+      printf("%.0f, ", head->norm);
+    else
+      printf("%.0f\n", head->norm);
 }
 
 void print_list(node *head) {
@@ -295,10 +340,10 @@ void print_list(node *head) {
   dg += 2;
   while ((head = head->next) != NULL) {
     x = head->v;
-    printf("[");
+    printf("%*lld [", dg, (long long)head->norm);
     for (j = 0; j < DIM; j++)
       printf("%*lld", dg, (long long)x[j]);
-    printf("] %*lld\n", dg, (long long)ceil(sqrt(head->norm)));
+    printf("]\n");
   }
 }
 
@@ -315,32 +360,18 @@ node *new_node(ll norm, ll v[DIM], node *prev) {
 }
 
 // maybe useless
-void cross(node *a, node *b, node **tail) {
-  ll t[DIM], tn = 0;
-  ll an = a->norm, bn = b->norm;
-  double numerator = dot(b->v, a->v, DIM);
-  ll m = (ll)round(numerator / bn);
-  for (int i = 0; i < DIM; i++) {
-    t[i] = a->v[i] - (m * b->v[i]);
-    tn += (t[i] * t[i]);
-  }
-  if (tn < bn)
-    place_from(tn, t, b, tail);
-  else if (tn < an)
-    place_from(tn, t, a, tail);
-}
-
-int place(ll norm, ll v[DIM], node **tail) {
+void trim(node **head, node **tail) {
+  int n = 1;
   node *x = *tail;
-  while (x->prev != NULL && x->norm < norm)
-    x = x->prev;
-  if (norm == x->norm || norm == 0)
-    return 0;
-  if (x->next == NULL)
-    append(norm, v, tail);
-  else
-    after(norm, v, x);
-  return 1;
+  do
+    x->not_ready = 0;
+  while ((x = x->prev) != NULL && n++ < SIZE);
+  if (n <= SIZE || x == *head) // don't free dummy head
+    return;
+  (*head)->next->prev = NULL;
+  (*head)->next = x->next;
+  x->next->prev = *head;
+  free_list(&x);
 }
 
 void replace(ll norm, ll v[DIM], node *from) {
