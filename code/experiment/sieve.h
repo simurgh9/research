@@ -38,7 +38,6 @@
 // #define PATH "../../saved/bases/col2_30.csv"
 
 typedef struct node {
-  int not_ready;
   ll norm;
   ll v[DIM];
   struct node *prev;
@@ -83,7 +82,6 @@ void print_list(node *);
 node *new_node(ll, ll *, node *);
 
 // maybe useless
-void trim(node **, node **);
 void replace(ll, ll *, node *);
 void set(ll, ll *, node *);
 

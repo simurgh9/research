@@ -350,7 +350,6 @@ void print_list(node *head) {
 node *new_node(ll norm, ll v[DIM], node *prev) {
   node *x = (node *)malloc(sizeof(node));
   if (x != NULL) {
-    x->not_ready = 1;
     x->norm = norm;
     memcpy(x->v, v, v ? sizeof(ll) * DIM : 0);
     x->prev = prev;
@@ -360,20 +359,6 @@ node *new_node(ll norm, ll v[DIM], node *prev) {
 }
 
 // maybe useless
-void trim(node **head, node **tail) {
-  int n = 1;
-  node *x = *tail;
-  do
-    x->not_ready = 0;
-  while ((x = x->prev) != NULL && n++ < SIZE);
-  if (n <= SIZE || x == *head) // don't free dummy head
-    return;
-  (*head)->next->prev = NULL;
-  (*head)->next = x->next;
-  x->next->prev = *head;
-  free_list(&x);
-}
-
 void replace(ll norm, ll v[DIM], node *from) {
   node *x = from;
   while (x->next != NULL && norm < x->norm)
