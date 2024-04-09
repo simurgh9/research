@@ -133,10 +133,6 @@ void initial(ll (*B)[DIM], node **tail, double p1) {
     i += place(norm, cur, tail);
     norm = 0;
   }
-  node *x = *tail;
-  do
-    x->not_ready = 0;
-  while ((x = x->prev) != NULL);
 }
 
 void random_bits(ll *fill, int size, double p1) {
