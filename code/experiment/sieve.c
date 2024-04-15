@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
 }
 
 // helper implements
-void init() {
+void init(void) {
   srand(SEED);
   head = new_node(-1, NULL, NULL);
   tail = head;
@@ -24,7 +24,7 @@ void init() {
   }
 }
 
-void sieve() {
+void sieve(void) {
   ll best = tail->norm;
   int i = 0, unchanged = 0;
   char fmt[] = "%4d %8.3f, %8.3f in %.3fs\n";
@@ -39,7 +39,7 @@ void sieve() {
   } while (unchanged < 10);
 }
 
-void step() {
+void step(void) {
   int indices[THREADS], i = 0;
   pthread_t threads[THREADS];
   for (i = 0; i < THREADS; i++)
@@ -76,7 +76,7 @@ void *job(void *arg) {
   return NULL;
 }
 
-void merge() {
+void merge(void) {
   node *h = new_node(-1, NULL, NULL);
   node *t = h;
   ll norm, *v;
@@ -177,7 +177,7 @@ void print_matrix(ll (*B)[DIM], int row, int column) {
   dg += 2;
   for (i = 0; i < row; i++) {
     for (j = 0; j < column; j++)
-      printf("%*lld", dg, (long long)B[i][j]);
+      printf("%*.0f", dg, B[i][j]);
     printf("\n");
   }
 }
@@ -192,9 +192,9 @@ void print_vector(ll *x, int size) {
   for (int i = 0; i < size; i += len) {
     for (int j = i; j < i + len && j < size; j++) {
       if (j == 0)
-        printf("[%*lld", dg - 1, (long long)x[j]);
+        printf("[%*.0f", dg - 1, x[j]);
       else
-        printf("%*lld", dg, (long long)x[j]);
+        printf("%*.0f", dg, x[j]);
     }
     if (i + len < size)
       printf("\n");
@@ -212,13 +212,13 @@ double mean(node *head) {
   return s / n;
 }
 
-double seconds() {
+double seconds(void) {
   struct timespec tp;
   clock_gettime(CLOCK_REALTIME, &tp);
   return tp.tv_sec + tp.tv_nsec / 1000000000.0;
 }
 
-double period() {
+double period(void) {
   double t = seconds();
   if (timestamp < 0) {
     timestamp = t;
@@ -335,9 +335,9 @@ void print_list(node *head) {
   dg += 2;
   while ((head = head->next) != NULL) {
     x = head->v;
-    printf("%*lld [", dg, (long long)head->norm);
+    printf("%*.0f [", dg, head->norm);
     for (j = 0; j < DIM; j++)
-      printf("%*lld", dg, (long long)x[j]);
+      printf("%*.0f", dg, x[j]);
     printf("]\n");
   }
 }

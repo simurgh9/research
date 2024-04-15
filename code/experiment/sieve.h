@@ -28,15 +28,15 @@
 // #define SIZE 20000
 // #define PATH "../../saved/bases/col60_2101.csv"
 
-#define SEED 0
-#define DIM 40
-#define SIZE 2600
-#define PATH "../../saved/bases/col40_1740.csv"
+// #define SEED 0
+// #define DIM 40
+// #define SIZE 2600
+// #define PATH "../../saved/bases/col40_1740.csv"
 
-// #define SEED 5
-// #define DIM 2
-// #define SIZE 3
-// #define PATH "../../saved/bases/col2_30.csv"
+#define SEED 5
+#define DIM 2
+#define SIZE 3
+#define PATH "../../saved/bases/col2_30.csv"
 
 typedef struct node {
   ll norm;
@@ -52,11 +52,11 @@ node *H[THREADS], *T[THREADS];
 pthread_mutex_t mutie = PTHREAD_MUTEX_INITIALIZER;
 
 // helper headers
-void init();
-void sieve();
-void step();
+void init(void);
+void sieve(void);
+void step(void);
 void *job(void *);
-void merge();
+void merge(void);
 void cross(node *, node *, node **);  // https://www.netlib.org/blas/blasqr.pdf
 void initial(ll (*B)[], node **, double);
 void random_bits(ll *, int, double);
@@ -65,8 +65,8 @@ void basis(char path[], ll (*B)[]);
 void print_matrix(ll (*B)[], int, int);
 void print_vector(ll *, int);
 double mean(node *);
-double seconds();
-double period();
+double seconds(void);
+double period(void);
 int digits(ll);
 int delta_real(int);
 
