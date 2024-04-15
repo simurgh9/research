@@ -8,6 +8,7 @@
     - `kubectl logs -f "$(kubectl get pods | awk 'FNR == 2 {print $1}')"`
 5. `kubectl exec -it bean -- /bin/bash`
 6. `kubectl delete -f pod.yaml`
+7. `gcc -L/opt/homebrew/opt/openblas/lib -I/opt/homebrew/opt/openblas/include -Ofast -lopenblas sieve.c`
 
 ## Primality Ouput
 
