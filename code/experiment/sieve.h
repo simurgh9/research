@@ -1,21 +1,22 @@
+// -*- compile-command: "gcc -Wpedantic -Ofast -lblas sieve.c -o sieve.o && ./sieve.o" -*-
 #define ACCELERATE_NEW_LAPACK 1
 
-// #include <Accelerate/Accelerate.h>
+#include <Accelerate/Accelerate.h>
 #include <math.h>
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h> // for memcpy
 #include <time.h>
-#include <cblas.h>
+// #include <cblas.h>
 
 #define ll double
-#define THREADS 100
+#define THREADS 17
 
-#define SEED 0
-#define DIM 100
-#define SIZE 1000000
-#define PATH "../../saved/bases/col100_2667.csv"
+// #define SEED 0
+// #define DIM 100
+// #define SIZE 1000000
+// #define PATH "../../saved/bases/col100_2667.csv"
 
 // #define SEED 0
 // #define DIM 70
@@ -27,10 +28,10 @@
 // #define SIZE 20000
 // #define PATH "../../saved/bases/col60_2101.csv"
 
-// #define SEED 0
-// #define DIM 40
-// #define SIZE 2600
-// #define PATH "../../saved/bases/col40_1740.csv"
+#define SEED 0
+#define DIM 40
+#define SIZE 2600
+#define PATH "../../saved/bases/col40_1740.csv"
 
 // #define SEED 5
 // #define DIM 2

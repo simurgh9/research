@@ -1,5 +1,4 @@
-// gcc -Ofast -lblas sieve.c -o sieve.o && ./sieve.o
-// gcc -L/opt/homebrew/opt/openblas/lib -I/opt/homebrew/opt/openblas/include -Ofast -lopenblas sieve.c
+// -*- compile-command: "gcc -Wpedantic -Ofast -lblas sieve.c -o sieve.o && ./sieve.o" -*-
 #include "sieve.h"
 
 int main(int argc, char *argv[]) {
