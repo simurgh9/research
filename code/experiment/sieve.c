@@ -4,9 +4,10 @@
 int main(int argc, char *argv[]) {
   double beg = period();
   init();
-  ll B[DIM][DIM];
-  basis(PATH, B);
-  initial(B, &tail, 0.01);
+  ll B[DIM][DIM], norms[DIM] = {0};
+  basis(PATH, B, norms);
+  initial(B, norms, &tail, 0.01);
+  printf("%d things.\n", real);
   sieve();
   printf("Total time: %fs\n", seconds() - beg);
   print_vector(tail->v, DIM);
@@ -60,10 +61,10 @@ void *job(void *arg) {
     return NULL;
   else if (i == THREADS - 1 || step <= 0 && i == 0)
     end = SIZE;
-  
+
   while (T[i]->prev != NULL) // clean from last time
     pop(&T[i]);
-  
+
   node *a = head, *b;
   for (j = 0; j < start; j++)
     a = a->next;
@@ -112,36 +113,60 @@ void cross(node *a, node *b, node **tail) {
     place(tn, t, tail);
 }
 
-void initial(ll (*B)[DIM], node **tail, double p1) {
-  ll cur[DIM], coefs[DIM], norm = 0;
-  int i = 0, j = 0;
-  for (i = 0; i < DIM; i++) {
+void initial(ll (*B)[DIM], ll norms[DIM], node **tail, double p1) {
+  int i = 0, j = 0, m = 100 * SIZE, k = DIM, n = DIM;
+  ll(*P)[DIM] = (ll(*)[DIM])malloc(sizeof(ll[m + DIM][DIM]));
+  ll(*C)[DIM] = (ll(*)[DIM])malloc(sizeof(ll[m][DIM]));
+
+  for (i = 0; i < m; i++) {
     for (j = 0; j < DIM; j++) {
-      cur[j] = B[j][i];
-      norm += cur[j] * cur[j];
+      P[i][j] = 0;
+      C[i][j] = (rand() / ((ll)RAND_MAX)) < p1;
     }
-    place(norm, cur, tail);
-    norm = 0;
   }
-  while (i < SIZE) {
-    random_bits(coefs, DIM, p1);
-    for (j = 0; j < DIM; j++) {
-      cur[j] = dot(coefs, B[j], DIM);
-      norm += cur[j] * cur[j];
-    }
-    i += place(norm, cur, tail);
-    norm = 0;
+
+  cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, m, n, k, 1, *C, k, *B,
+              n, 1, *P, n);
+
+  free(C);
+
+  for (i = m; i < m + DIM; i++)
+    memcpy(P[i], B[i - m], sizeof(B[i - m]));
+
+  int *idx = (int *)malloc((m + DIM) * sizeof(int));
+  key = (ll *)malloc((m + DIM) * sizeof(ll));
+  for (i = 0; i < m + DIM; i++) {
+    idx[i] = i;
+    key[i] = i < m ? dot(P[i], P[i], DIM) : norms[i - m];
   }
+
+  qsort(idx, m + DIM, sizeof(int), compare);
+
+  ll last = 0;
+  for (i = 0; i < m + DIM; i++) {
+    if (key[idx[i]] <= 0)
+      continue;
+    if (last >= 0 && last == key[idx[i]])
+      continue;
+    last = key[idx[i]];
+    if (real >= SIZE)
+      break;
+    after(key[idx[i]], P[idx[i]], head, tail);
+  }
+  free(P);
+  free(idx);
+  free(key);
 }
 
-void random_bits(ll *fill, int size, double p1) {
-  for (int i = 0; i < size; i++)
-    fill[i] = (rand() / ((double)RAND_MAX)) < p1;
+int compare(const void *a, const void *b) {
+  return key[*(int *)a] - key[*(int *)b];
 }
 
-double dot(ll *x, ll *y, int size) { return cblas_ddot(size, x, 1, y, 1); }
+double dot(ll *x, ll *y, int size) {
+  return cblas_ddot(size, x, 1, y, 1);
+}
 
-void basis(char path[], ll (*B)[DIM]) {
+void basis(char path[], ll (*B)[DIM], ll norms[DIM]) {
   int i = 0, j = 0, c, sign = 1;
   ll number = 0;
   FILE *fp = fopen(path, "r");
@@ -151,16 +176,19 @@ void basis(char path[], ll (*B)[DIM]) {
     if (c == '-') {
       sign = -1;
     } else if (c == ',') {
-      B[i][j++] = sign * number;
+      norms[j] += (number * number);
+      B[j++][i] = sign * number;
       sign = 1;
       number = 0;
     } else if (c == '\n') {
-      B[i++][j] = sign * number;
+      norms[j] += (number * number);
+      B[j][i++] = sign * number;
       j = 0;
       sign = 1;
       number = 0;
     } else if (c == EOF) {
-      B[i][j] = sign * number;
+      norms[j] += (number * number);
+      B[j][i] = sign * number;
       break;
     } else if ('0' >= c || c <= '9') {
       number = (number * 10) + (c - '0');
@@ -203,6 +231,39 @@ void print_vector(ll *x, int size) {
   }
 }
 
+void print_norms(node *head) {
+  if (head->next == NULL)
+    printf("\n");
+  while ((head = head->next) != NULL)
+    if (head->next != NULL)
+      printf("%.0f, ", head->norm);
+    else
+      printf("%.0f\n", head->norm);
+}
+
+void print_list(node *head) {
+  ll *x;
+  ll norm;
+  node *itr = head;
+  int dg = -1, cur = 0, j = 0;
+  while ((itr = itr->next) != NULL) {
+    x = itr->v;
+    norm = itr->norm;
+    dg = dg < digits(norm) ? digits(norm) : dg;
+    for (j = 0; j < DIM; j++)
+      if ((cur = digits(x[j])) > dg)
+        dg = cur;
+  }
+  dg += 2;
+  while ((head = head->next) != NULL) {
+    x = head->v;
+    printf("%*.0f [", dg, head->norm);
+    for (j = 0; j < DIM; j++)
+      printf("%*.0f", dg, x[j]);
+    printf("]\n");
+  }
+}
+
 double mean(node *head) {
   double s = 0, n = 0;
   while ((head = head->next) != NULL) {
@@ -241,7 +302,6 @@ int delta_real(int c) {
   pthread_mutex_unlock(&mutie);
   return real;
 }
-
 
 // list implements
 int place(ll norm, ll v[DIM], node **tail) {
@@ -307,39 +367,6 @@ void free_list(node **tail) {
     pop(tail);
   free(*tail);
   *tail = NULL;
-}
-
-void print_norms(node *head) {
-  if (head->next == NULL)
-    printf("\n");
-  while ((head = head->next) != NULL)
-    if (head->next != NULL)
-      printf("%.0f, ", head->norm);
-    else
-      printf("%.0f\n", head->norm);
-}
-
-void print_list(node *head) {
-  ll *x;
-  ll norm;
-  node *itr = head;
-  int dg = -1, cur = 0, j = 0;
-  while ((itr = itr->next) != NULL) {
-    x = itr->v;
-    norm = itr->norm;
-    dg = dg < digits(norm) ? digits(norm) : dg;
-    for (j = 0; j < DIM; j++)
-      if ((cur = digits(x[j])) > dg)
-        dg = cur;
-  }
-  dg += 2;
-  while ((head = head->next) != NULL) {
-    x = head->v;
-    printf("%*.0f [", dg, head->norm);
-    for (j = 0; j < DIM; j++)
-      printf("%*.0f", dg, x[j]);
-    printf("]\n");
-  }
 }
 
 node *new_node(ll norm, ll v[DIM], node *prev) {
