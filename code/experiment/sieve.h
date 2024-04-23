@@ -11,16 +11,16 @@
 #include <cblas.h>
 
 #define ll double
-#define THREADS 250
+#define THREADS 300
 #define SEED 0
 
-// #define DIM 100
-// #define SIZE 1000000
-// #define PATH "../../saved/bases/col100_2667.csv"
+#define DIM 100
+#define SIZE 1000000
+#define PATH "../../saved/bases/col100_2667.csv"
 
-#define DIM 70
-#define SIZE 50000
-#define PATH "../../saved/bases/col70_2254.csv"
+// #define DIM 70
+// #define SIZE 50000
+// #define PATH "../../saved/bases/col70_2254.csv"
 
 // #define DIM 60
 // #define SIZE 10000
