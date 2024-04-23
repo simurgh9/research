@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
   printf("%d things.\n", real);
   sieve();
   printf("Total time: %fs\n", seconds() - beg);
-  print_vector(tail->v, DIM);
+  print_vector(head->next->v, DIM);
   return 0;
 }
 
@@ -23,10 +23,11 @@ void init(void) {
     H[i] = new_node(-1, NULL, NULL);
     T[i] = H[i];
   }
+  H[THREADS] = head, T[THREADS] = tail;
 }
 
 void sieve(void) {
-  ll best = tail->norm;
+  ll best = head->next->norm;
   int i = 0, unchanged = 0;
   char fmt[] = "%4d %8.3f, %8.3f in %.3fs\n";
   do {
@@ -34,9 +35,9 @@ void sieve(void) {
     fflush(stdout);
     step();
     unchanged++;
-    if (best != tail->norm)
+    if (best != head->next->norm)
       unchanged = 0;
-    best = tail->norm;
+    best = head->next->norm;
   } while (unchanged < 10);
 }
 
@@ -81,35 +82,46 @@ void merge(void) {
   node *h = new_node(-1, NULL, NULL);
   node *t = h;
   ll norm, *v;
-  int i = 0, k = 0, argmin = -1;
-  while (k++ < SIZE) {
-    argmin = -1, norm = tail->norm, v = tail->v;
-    for (i = 0; i < THREADS; i++)
-      if (T[i]->norm > 0 && norm > T[i]->norm)
-        argmin = i, norm = T[i]->norm, v = T[i]->v;
-    after(norm, v, h, &t);
-    if (argmin > -1)
-      pop(&T[argmin]);
-    else
-      pop(&tail);
+  int i = 0, min = -1, k = 0;
+
+  while (k < SIZE) {
+    min = -1;
+    for (i = 0; i < THREADS + 1; i++) {
+      if (H[i]->next == NULL || H[i]->next->norm <= 0)
+        continue;
+      else if (min < 0)
+        min = i;
+      else if (H[min]->next->norm > H[i]->next->norm)
+        min = i;
+    }
+    if (min < 0)  // all threads are empty
+      break;
+    if (H[min]->next->norm != t->norm) {
+      after(H[min]->next->norm, H[min]->next->v, t, &t);
+      k++;
+    }
+    squeeze(&H[min], &T[min]);
   }
 
-  free_list(&tail);
+  if (k < SIZE)
+    printf("WARNING: Underpopulation.");
+  
+  free_list(&T[THREADS]);
   head = h, tail = t;
-  real = SIZE;
+  H[THREADS] = head, T[THREADS] = tail;
+  real = k;
 }
 
-void cross(node *a, node *b, node **tail) {
-  ll t[DIM], tn = 0;
-  ll an = a->norm, bn = b->norm;
-  double numerator = dot(b->v, a->v, DIM);
-  ll m = (ll)round(numerator / bn);
-  cblas_dcopy(DIM, a->v, 1, t, 1);
-  cblas_daxpy(DIM, -1 * m, b->v, 1, t, 1);
+void cross(node *v1, node *v2, node **tail) {
+  ll t[DIM] = {0}, tn = 0;
+  ll v1n = v1->norm, v2n = v2->norm;
+  double numerator = dot(v1->v, v2->v, DIM);
+  ll m = (ll)round(numerator / v1n);
+  cblas_dcopy(DIM, v2->v, 1, t, 1);
+  cblas_daxpy(DIM, -1 * m, v1->v, 1, t, 1);
   tn = dot(t, t, DIM);
-  if (tn < bn)
-    place(tn, t, tail);
-  else if (tn < an)
+  // what if just less than tail?
+  if (tn != 0 && (tn < v1n || tn < v2n))
     place(tn, t, tail);
 }
 
@@ -151,7 +163,7 @@ void initial(ll (*B)[DIM], ll norms[DIM], node **tail, double p1) {
     last = key[idx[i]];
     if (real >= SIZE)
       break;
-    after(key[idx[i]], P[idx[i]], head, tail);
+    after(key[idx[i]], P[idx[i]], *tail, tail);
   }
   free(P);
   free(idx);
@@ -306,7 +318,7 @@ int delta_real(int c) {
 // list implements
 int place(ll norm, ll v[DIM], node **tail) {
   node *x = *tail;
-  while (x->prev != NULL && x->norm < norm)
+  while (x->prev != NULL && norm < x->norm)
     x = x->prev;
   if (norm == x->norm || norm == 0)
     return 0;
@@ -352,13 +364,15 @@ void pop(node **tail) {
   free(tofree);
 }
 
-void squeeze(node **head) {
+void squeeze(node **head, node **tail) {
   if ((*head)->next == NULL)
     return;
   node *tofree = (*head)->next;
   (*head)->next = (*head)->next->next;
-  if ((*head)->next)
+  if ((*head)->next != NULL)
     (*head)->next->prev = *head;
+  if (tofree == *tail) // list only has two elements
+    *tail = *head;
   free(tofree);
 }
 
@@ -378,22 +392,4 @@ node *new_node(ll norm, ll v[DIM], node *prev) {
     x->next = NULL;
   }
   return x;
-}
-
-// maybe useless
-void replace(ll norm, ll v[DIM], node *from) {
-  node *x = from;
-  while (x->next != NULL && norm < x->norm)
-    x = x->next;
-  if (norm == x->norm || norm == 0 || x->prev->prev == NULL)
-    return;
-  if (x->next == NULL && norm < x->norm)
-    set(norm, v, x);
-  else
-    set(norm, v, x->prev);
-}
-
-void set(ll norm, ll v[DIM], node *toset) {
-  toset->norm = norm;
-  memcpy(toset->v, v, sizeof(ll) * DIM);
 }
