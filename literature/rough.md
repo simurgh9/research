@@ -35,6 +35,28 @@
  26  -1 0.5000 (45, 0.5000142448334272)
 ```
 
+## Linear Sort
+
+```c
+void csort(num normsl1[DIM], num normsl2[DIM]) {  // leaves garbage if duplicates
+  num min = normsl1[0], max = normsl1[0];
+  for (int i = 1; i < DIM; ++i) {
+      const int value = normsl1[i];
+      if (normsl1[i] > max) max = normsl1[i];
+      if (normsl1[i] < min) min = normsl1[i];
+  }
+  int n = max - min + 1;
+  num *idx = (num *)malloc(n * sizeof(num));
+  memset(idx, 0, n * sizeof(int));
+  int i = 0, j = 0;
+  for (i = 0; i < DIM; i++)
+    idx[(int)(normsl1[i] - min)] = normsl2[i];
+  for (i = 0; i < n; i++)
+    if (idx[i] > 0)
+      normsl2[j++] = idx[i];
+}
+```
+
 ## Different Models
 
 The `model_con_full.p` was trained on all of 32-bit prime numbers and

@@ -1,6 +1,6 @@
 import numpy as np
-from numba import njit
-from numba.typed import List
+# from numba import njit
+# from numba.typed import List
 from time import perf_counter
 
 
@@ -41,7 +41,7 @@ def lll(bad_basis, delta=0.75):
     return B
 
 
-@njit
+# @njit
 def cross(P, N):
     n = len(P)
     squares = set(N)
