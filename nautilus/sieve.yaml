@@ -13,19 +13,17 @@ spec:
         - export DEBIAN_FRONTEND=noninteractive;
           export MPLCONFIGDIR=/research;
           apt-get update -y >> apt_logs.txt 2>&1 &&
-          apt-get install -y python3 python3-pip python3-wheel s3cmd git >> apt_logs.txt 2>&1 &&
+          apt-get install -y git clang libopenblas-dev >> apt_logs.txt 2>&1 &&
           git clone https://github.com/simurgh9/research.git &&
-          cd /research/code;
-          pip install ./lib >> /opt/pip_logs.txt 2>&1 &&
-          pip install scipy >> /opt/pip_logs.txt 2>&1 &&
-          pip install numba >> /opt/pip_logs.txt 2>&1 &&
           cd /research/code/experiment;
-          python3 sieve.py;
+          git checkout parallel &&
+          clang -L /usr/lib/x86_64-linux-gnu/openblas-pthread/ -I /usr/include/x86_64-linux-gnu/openblas-pthread/ -Ofast -lopenblas -lm sieve.c &&
+          ./a.out;
         resources:
           limits:
-            memory: 600Gi
-            cpu: 8
+            memory: 14Gi
+            cpu: 9
           requests:
-            memory: 300Gi
-            cpu: 2
+            memory: 12Gi
+            cpu: 8
       restartPolicy: Never

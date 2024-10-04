@@ -12,6 +12,7 @@
 #include <time.h>
 #include <pthread.h>
 
+#define MAX(x, y) ((x) > (y) ? (x) : (y))
 #define SEED 0
 #define THREADS 500
 #define DENSITY 0.01
