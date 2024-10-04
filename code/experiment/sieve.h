@@ -5,6 +5,10 @@
   #include <cblas.h>
 #endif
 
+#ifndef MAX
+#define MAX(a, b) (((a)>(b))?(a):(b))
+#endif
+
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,7 +16,6 @@
 #include <time.h>
 #include <pthread.h>
 
-#define MAX(x, y) ((x) > (y) ? (x) : (y))
 #define SEED 0
 #define THREADS 500
 #define DENSITY 0.01
