@@ -6,7 +6,7 @@
 #endif
 
 #ifndef MAX
-#define MAX(a, b) (((a)>(b))?(a):(b))
+  #define MAX(a, b) (((a)>(b))?(a):(b))
 #endif
 
 #include <math.h>
@@ -35,17 +35,17 @@
 // #define DIM 26
 // #define PATH "../../saved/personal/general.csv"
 
-#define BETA 25
-#define DIM 40
-#define PATH "../../saved/bases/col40_1740.csv"
+// #define BETA 25
+// #define DIM 40
+// #define PATH "../../saved/bases/col40_1740.csv"
 
 // #define DIM 60
 // #define BETA 165
 // #define PATH "../../saved/bases/col60_2101.csv"
 
-// #define BETA 714
-// #define DIM 70
-// #define PATH "../../saved/bases/col70_2254.csv"
+#define BETA 714
+#define DIM 70
+#define PATH "../../saved/bases/col70_2254.csv"
 
 // #define BETA 5000
 // #define DIM 100

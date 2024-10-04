@@ -22,8 +22,8 @@ spec:
         resources:
           limits:
             memory: 14Gi
-            cpu: 9
+            cpu: 307
           requests:
             memory: 12Gi
-            cpu: 8
+            cpu: 256
       restartPolicy: Never
