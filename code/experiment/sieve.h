@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <string.h> // for memcpy
 #include <time.h>
+#include <limits.h>
 #include <pthread.h>
 
 #define SEED 0
