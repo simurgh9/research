@@ -1,9 +1,14 @@
 #ifdef __APPLE__ 
   #define ACCELERATE_NEW_LAPACK 1
   #include <Accelerate/Accelerate.h>
+#else
+  #include <cblas.h>
 #endif
 
 #include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h> // for memcpy
 #include <time.h>
 #include <pthread.h>
 
@@ -25,17 +30,17 @@
 // #define DIM 26
 // #define PATH "../../saved/personal/general.csv"
 
-// #define BETA 25
-// #define DIM 40
-// #define PATH "../../saved/bases/col40_1740.csv"
+#define BETA 25
+#define DIM 40
+#define PATH "../../saved/bases/col40_1740.csv"
 
 // #define DIM 60
 // #define BETA 165
 // #define PATH "../../saved/bases/col60_2101.csv"
 
-#define BETA 714
-#define DIM 70
-#define PATH "../../saved/bases/col70_2254.csv"
+// #define BETA 714
+// #define DIM 70
+// #define PATH "../../saved/bases/col70_2254.csv"
 
 // #define BETA 5000
 // #define DIM 100
