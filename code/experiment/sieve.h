@@ -18,7 +18,7 @@
 #include <pthread.h>
 
 #define SEED 0
-#define THREADS 201
+#define THREADS 300
 #define DENSITY 0.01
 #define num double
 #define ETA 0.01
