@@ -43,13 +43,13 @@
 // #define BETA 165
 // #define PATH "../../saved/bases/col60_2101.csv"
 
-#define BETA 714
-#define DIM 70
-#define PATH "../../saved/bases/col70_2254.csv"
+// #define BETA 714
+// #define DIM 70
+// #define PATH "../../saved/bases/col70_2254.csv"
 
-// #define BETA 5000
-// #define DIM 100
-// #define PATH "../../saved/bases/col100_2667.csv"
+#define BETA 5000
+#define DIM 100
+#define PATH "../../saved/bases/col100_2667.csv"
 
 int SIZE = BETA * DIM;
 int INFLATED = MAX(BETA * DIM, (int)(((ETA * (BETA * DIM - 1) * (BETA * DIM)) / 2)));
