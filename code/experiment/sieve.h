@@ -18,7 +18,7 @@
 #include <pthread.h>
 
 #define SEED 0
-#define THREADS 300
+#define THREADS 500
 #define DENSITY 0.01
 #define num double
 #define ETA 0.01
@@ -47,7 +47,7 @@
 // #define DIM 70
 // #define PATH "../../saved/bases/col70_2254.csv"
 
-#define BETA 5000
+#define BETA 10000
 #define DIM 100
 #define PATH "../../saved/bases/col100_2667.csv"
 
