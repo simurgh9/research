@@ -35,6 +35,11 @@
  26  -1 0.5000 (45, 0.5000142448334272)
 ```
 
+## C Backup Lines
+
+pthread_create(&threads[t], NULL, &sieve, &indices[t]);
+int id = *(int *)(arg), step = ceil((double)SIZE / THREADS);
+
 ## Linear Sort
 
 ```c

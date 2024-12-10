@@ -1,3 +1,4 @@
 - [A Brief History of Cryptography from Caesar to Bletchley Park](https://academic.oup.com/book/40641/chapter-abstract/348304993?redirectedFrom=fulltext)
 - [Micciancio's Lattice Course](https://cseweb.ucsd.edu/classes/sp14/cse206A-a/index.html)
 - [Somebody's Notes on LLL](https://kel.bz/post/lll/)
+- [Sage for Lattice-based Cryptography](https://www.maths.ox.ac.uk/system/files/attachments/sage-introduction.pdf)
