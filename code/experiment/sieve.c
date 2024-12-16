@@ -3,15 +3,14 @@
 int main(int argc, char *argv[]) {
   double beg = period();
   srand(SEED);
-  printf("Size: %d\n", SIZE);
-  printf("Inflated Size: %d\n", INFLATED);
+  printf("Size: %d\nInflated Size: %d\n", SIZE, INFLATED);
 
   num B[DIM][DIM];
   norm bnorms[DIM] = {0};
   basis_t(PATH, B, bnorms);
   norm best = initial(B, bnorms, DENSITY);
   double last_mean = mean();
-
+  
   pthread_t threads[THREADS];
   int i = 0, t = 0, unchanged = 0;
   char fmt[] = "%4d %8.3f, %8.3f in %.5fs %s\n";
@@ -20,7 +19,7 @@ int main(int argc, char *argv[]) {
     printf(fmt, i++, sqrt(best), sqrt(last_mean), period(), underpop_warn);
     fflush(stdout);
 
-    for (t = 0; t < THREADS; t++)
+    for (t = 0; t < THREADS; t++) // start sieving
       pthread_create(&threads[t], NULL, &sieve, (void*)(uintptr_t)t);
     for (t = 0; t < THREADS; t++)
       pthread_join(threads[t], NULL);
@@ -28,8 +27,10 @@ int main(int argc, char *argv[]) {
     count = 0;
     underpop_warn[0] = '\0';
     selection();
+    
     // unchanged = best != norms1[order1[0]] ? 0 : unchanged + 1;
     unchanged = fabs(sqrt(last_mean) - sqrt(mean())) > 1 ? 0 : unchanged + 1;
+
     best = norms1[order1[0]];
     last_mean = mean();
   } while (unchanged < 10);
@@ -124,10 +125,10 @@ void *sieve(void *arg) {
   int id = (int)(uintptr_t)(arg), step = ceil((double)SIZE / THREADS);
   int start = id * step;
   int end = start + step;
-  end = end < SIZE ? end : SIZE - 2;
+  end = end < SIZE ? end : SIZE - 2; // SIZE - 2 due to the look ahead
 
   double ratio = 1;
-  for (int i = start; i < end; i++) // SIZE - 2 due to the look ahead
+  for (int i = start; i < end; i++)
     for (int j = i + 1; j < fmin(i + 1 + ratio * SIZE, SIZE); j++)
       if (norms1[order1[i]] == 0 || norms1[order1[i]] == norms1[order1[i + 1]])
         break;
@@ -142,14 +143,14 @@ void *sieve(void *arg) {
   return NULL;
 }
 
-void cross(int i, int j) { // start here
+void cross(int i, int j) {
   num t[DIM] = {0};
-  num v1n = norms1[i], v2n = norms1[j];
-  double numerator = cblas_ddot(DIM, P1[i], 1, P1[j], 1);
-  double m = (num)round(numerator / v1n);
+  norm v1n = norms1[i], v2n = norms1[j];
+  num numerator = cblas_ddot(DIM, P1[i], 1, P1[j], 1);
+  num m = (num)round(numerator / v1n);
   cblas_dcopy(DIM, P1[j], 1, t, 1);
   cblas_daxpy(DIM, -1 * m, P1[i], 1, t, 1);
-  double tn = cblas_ddot(DIM, t, 1, t, 1);
+  norm tn = cblas_ddot(DIM, t, 1, t, 1);
   if (tn != 0 && (tn < v1n || tn < v2n)) {
     pthread_mutex_lock(&mutie);
     int old = count++;
@@ -294,14 +295,25 @@ double seconds(void) {
 }
 
 int compare1(const void *a, const void *b) {
-  return norms1[*(int *)a] - norms1[*(int *)b];
+  norm x = norms1[*(int *)a];
+  norm y = norms1[*(int *)b];
+  if (x > y) return 1;
+  if (x < y) return -1;
+  return 0;
 }
 
 int compare2(const void *a, const void *b) {
-  return norms2[*(int *)a] - norms2[*(int *)b];
+  norm x = norms2[*(int *)a];
+  norm y = norms2[*(int *)b];
+  if (x > y) return 1;
+  if (x < y) return -1;
+  return 0;
 }
 
 // Local Variables:
 // compile-command: "gcc -Wpedantic -Ofast -lblas sieve.c -o sieve.o && \
 // ./sieve.o"
+// dape-command: (codelldb-cc command-cwd "/Users/tfn/Library/Mobile \
+// Documents/com~apple~CloudDocs/grad/research/code/experiment\
+// " :program "sieve.o")
 // End:
