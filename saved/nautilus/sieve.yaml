@@ -21,8 +21,8 @@ spec:
         resources:
           limits:
             memory: 2Ti
-            cpu: 240
+            cpu: 120
           requests:
-            memory: 900Gi
-            cpu: 200
+            memory: 2Ti
+            cpu: 100
       restartPolicy: Never
