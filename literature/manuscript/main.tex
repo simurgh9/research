@@ -1,0 +1,452 @@
+\documentclass{homework}
+\input{lib/preamble}
+\input{lib/macro}
+% \darkmode
+
+\begin{document}
+\begin{abstract}
+  \blindtext
+\end{abstract}
+\maketitle
+
+
+\section{Introduction}\label{intro}
+
+A lattice is a discrete additive subgroup of a $d$-dimensional
+Euclidean space. Intuitively, lattice points are to euclidean spaces
+what residues modulo $d$ are to the real number line. Consider a basis
+matrix $\B \in \R^{d \times d}$ with $d$ linearly independent column
+vectors $\{1 \leq i \leq d : b_i \in \R^d\}$ such that $b_i$ is the
+$i^\text{th}$ column of $\B$. We recall $\R^d$ as,
+\[
+  \R^d = \{x \in \R^d : \B x\}
+\]
+If we restrict $x\in \Z^d$ \ie $\B x$ to only the integral linear
+combinations, we obtain a lattice,
+\[
+  \L = \{x \in \Z^d : \B x\}
+\]
+You may also see it more commonly (see
+\cite{micciancio2002complexity}) written as,
+\begin{align*}
+  \L(b_1,\dots,b_d)
+         & = \curl{x_i \in \Z : x_1b_1 + x_2b_2 + x_3b_3 + \cdots + x_db_d} \\
+  \L(\B) & = \curl{x_i \in \Z : \sum_{i=1}^{d}x_ib_i}
+\end{align*}
+The dimension of the lattice is $\dim(\L) = d$ \ie the number of
+column-vectors in the basis matrix $\B$. And--since $\B$ also has $d$
+number of rows, we call $\L$ a full rank lattice. $\R^d$ is now the
+ambient space for the reduced set of vectors that are in the lattice
+$\L$. The group operation of a lattice is the vector difference,
+\[
+  v_i \in \L \ni v_j,\quad (v_i - v_j) \in \L
+\]
+
+If we further restrict $\B \in \Z^{d \times d}$, the resulting lattice
+is known as an integral lattice. We show the plot of a two dimensional
+lattice ($d=2$) spanned by the following basis in figure
+\ref{2dlattice}.
+\[
+  \B_\text{bad} =
+  \begin{bmatrix}
+    95  & 47  \\
+    460 & 215
+  \end{bmatrix},
+  \quad
+  \B_\text{good} =
+  \begin{bmatrix}
+    1  & 40 \\
+    30 & 5
+  \end{bmatrix}
+\]
+You might imagine another trivial lattice $\Z^2$ spanned by the
+identity matrix.
+
+\img<2dlattice>[0.6]{An example two dimensional lattice.}{2dlattice}
+
+In this paper, we will also discuss the lattices formed over the
+Gaussian integers. Despite the name, these are complex numbers where
+the real and the imaginary parts are limited to the integers.
+\[
+  \G = \{(a,b)\in \Z^2: a + bi\}, \quad i^2 = -1
+\]
+We can similarly form a lattice, this time in the ambient space of
+complex numbers $\C$, by letting $\B \in \G^{d \times d}$ such that,
+\[
+  \L = \{x \in \G^d : \B x\}
+\]
+
+
+\subsection{Lattice Problems}
+
+Under the restrictions of randomised reduction hypothesis
+\cite{ajtai1998shortest} both of the problems given bellow (\SVP,
+\CVP) are \NP-hard. Let $||v||$ be the Euclidean norm of a vector $v$
+then,
+
+\subsubsection{Shortest Vector Problem (\SVP)} Find the shortest
+non-zero vector $v_i \in \L$ such that for all $v_j \in \L$ where
+$i \neq j$,
+\[
+  \norm{v_i} < \norm{v_j}
+\]
+An easier optimisation version of the \SVP{} is stated as follows,
+\subsubsection{Approximate Shortest Vector Problem (\appr\SVP)} Let
+$\alpha \geq 1$ be an approximation factor and find a $v \in \L$ such
+that $\norm{v}$ is no bigger than $\alpha$ times the length of the
+shortest vector.
+\[
+  \norm{v} \leq \alpha\norm{v_\text{shortest}}
+\]
+\subsubsection{Closest Vector Problem (\CVP)} For $w \in \R^d$ where
+$w \not\in \L$ find a vector $v \in \L$ that is closest to $w$.
+\[
+  \min_{v \in \L} \norm{w - v}\quad\text{where}\quad \norm{w - v} > 0
+\]
+
+\subsubsection{Shortest Basis Problem (\SBP)} Given a bad basis
+$\B_\text{bad}$, reduce it to a good basis $\B_\text{good}$. The
+goodness maybe achieved by minimising the lengths of the basis vectors
+\eg
+\[
+  \sum_{i=1}^{d}\norm{b_i}^2 = \norm{b_1}^2 + \norm{b_2}^2 + \norm{b_3}^2
+  + \cdots + \norm{b_d}^2
+\]
+while optionally also requiring $\mathcal{H}(\B_\text{good})$ to be
+closer to 1. Figure \ref{2dlattice} shows two basis that span the same
+lattice. One is labelled as ``good'' and the other as ``bad.'' A basis
+gets better as it's vectors get shorter and more orthogonal. This
+measure of orthogonality is expressed as the \textit{Hadamard ratio}
+of a basis $\B$,
+\[
+  \mathcal{H}(\B) = \paren{
+    \frac{\det \L}{\norm{b_1}\norm{b_2}\norm{b_3}\cdots \norm{b_d}}
+  }^\frac{1}{d}
+\]
+Note that $0 < \mathcal{H}(\B) < 1$ and $\det \L = |\det \B|$. The
+closer $\mathcal{H}(\B)$ to 1, the better the basis $\B$.
+
+The process of turning a bad basis into a good basis is also sometimes
+referred to as performing lattice reduction. I. e., \SBP{} maybe
+solved via the various lattice reduction algorithms. As discussed in
+the section \ref{rw}, any solution to the \SBP{} often also uncovers a
+comparable solution to the \appr\SVP. Essentially all
+lattice-cryptography (popular choice for quantum-safe cryptosystems)
+relay on the inability of lattice reduction algorithms to solve the
+\appr\SVP{} with an approximation of $\alpha \in \O(\sqrt{d})$.
+
+\subsection{Gaussian Heuristic} It is difficult to verify a solution
+for the \appr\SVP{} and \SVP{} since the length of the shortest vector
+is unknown in the general case. As the dimension of a lattice
+increases, we may relay on the Gaussian expected shortest length, also
+known as the Gaussian heuristic (see \cite{hoffstein2008introduction},
+\cite{siegel1945mean} for more justification). If $\ep > 0$, then for
+a sufficiently large dimension $d$,
+\[
+  (1-\ep)\sigma(\L) \leq
+  \norm{v_\text{shortest}}
+  \leq (1+\ep)\sigma(\L)
+\]
+whereas,
+\[
+  \sigma(\L) = \sqrt{\frac{d}{2\pi e}}(\det \L)^\frac{1}{d}
+  \quad
+  \text{or}
+  \quad
+  \norm{v_\text{shortest}} \approx \sigma(\L)
+\]
+\section{Related Work}\label{rw}
+
+If any of the \NP-complete problems are shown to be in \P{} then all
+of \NP-problems are in \P. In the same seminal paper
+\cite{karp1972reducibility} where Karp determines a subset of the
+\NP{} problems as \NP-complete with the aforementioned property, he
+also gives twenty-one examples of such \NP-complete problems. Number
+18 on the list is the knapsack problem: Given a set
+$M \in \N^n, S \in \N$ find $x \in \curl{0, 1}^n$ such that $Mx =
+  S$. In other words, find a subset of $M$ whose sum is equal to $S$.
+
+The first cryptosystem to be based on an \NP-complete problem uses a
+disguised knapsack problem \cite{hoffstein2008introduction} and was
+attempted by Merkle and Hellman \cite{merkle2019hiding}. Note that we
+say a \textit{disguised} knapsack problem since whether a
+cryptographic system can be as hard to break as an \NP-complete
+problem is an open problem in itself \cite{pass2006parallel}.
+
+Lagarias and Odlyzko \cite{lagarias1985solving} showed that any
+knapsack problem can be encoded as an \SVP. We state the gist of their
+idea. Take any knapsack problem $M = \{r_1, r_2, \hdots, r_n\}$ with
+$S$ and the relevant solution $x$ such that $Mx = S$. Now consider the
+following lattice basis in $\N^{d \times d}$ with dimension
+$d = n + 1$,
+\[
+  \B_\text{bad} =
+  \begin{bmatrix}
+    2      & 0      & 0      & \cdots & 0      & 1      \\
+    0      & 2      & 0      & \cdots & 0      & 1      \\
+    0      & 0      & 2      & \cdots & 0      & 1      \\
+    \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+    0      & 0      & 0      & \cdots & 2      & 1      \\
+    r_1    & r_2    & r_3    & \cdots & r_n    & S      \\
+  \end{bmatrix}
+\]
+The lattice spanned by $\B_\text{bad}$ must have a vector $t$ that is
+the result of an integral linear combination due to $x$,
+\[
+  t =
+  \begin{bmatrix}
+    2      & 0      & 0      & \cdots & 0      & 1      \\
+    0      & 2      & 0      & \cdots & 0      & 1      \\
+    0      & 0      & 2      & \cdots & 0      & 1      \\
+    \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+    0      & 0      & 0      & \cdots & 2      & 1      \\
+    r_1    & r_2    & r_3    & \cdots & r_n    & S      \\
+  \end{bmatrix}
+  \col{x_1, x_2, x_3, \vdots, x_n, -1} =
+  \col{2x_1-1, 2x_2-1, 2x_3-1, \vdots, 2x_n-1, M\cdot x-S} =
+  \col{2x_1-1, 2x_2-1, 2x_3-1, \vdots, 2x_n-1, 0}
+\]
+Since $x \in \{0, 1\}^n$ then any $(2x_i-1) \in t$ must be either $1$
+or $-1$. Therefore,
+\[
+  \norm{t} = \sqrt{n}
+\]
+$t$ is very likely to be the shortest vector in
+$\L(\B_\text{bad})$. The shortest vector in the lattice spanned by
+$\B_\text{bad}$ will reveal the solution $x$ to the knapsack problem.
+
+\subsection{Lattice Reduction Algorithms} If a lattice is expressed in
+terms of it's good basis then solving the \SVP{} and the \CVP{}
+becomes fairly easy. This means that if we first solve the \SBP{} then
+both the \SVP{} and \CVP{} are easy. For example, assume for a certain
+$\B_\text{good}$ that all column vectors $b_i$ are pairwise orthogonal
+\ie for $i \neq j$ we know that $b_i\cdot b_j = 0$. Then for any
+$x \in \Z^d$,
+\[
+  \norm{x_1b_1 + x_2b_2 + x_3b_3 + \cdots x_db_d}^2 =
+  x_1^2\norm{b_1}^2 + x_2^2\norm{b_2}^2 + x_3^2\norm{b_3}^2 + \cdots
+  x_d^2\norm{b_d}^2
+\]
+and the shortest non-zero vector(s) can be found in,
+\[
+  \curl{\pm b_1, \pm b_2, \pm b_3, \cdots \pm b_d}
+\]
+
+Similarly for the solution of an instance of the \CVP{} using a good
+basis, see the Babai's nearest hyperplane algorithm
+\cite{babai1986lovasz} or Theorem 7.34 (pg. 405) of Hoffstein
+\cite{hoffstein2008introduction}.
+
+\subsubsection{Lenstra, Lenstra, and Lov\'asz (\LLL) Algorithm} The
+first lattice reduction algorithm is by Gauss. It works like the
+Euclid's greatest common divisor (highest common factor) algorithm but
+with two, two-dimensional vectors \ie $\B = \{b_1, b_2\}$. Assume
+without the loss of generality that $\norm{b_1} < \norm{b_2}$ then,
+\[
+  b_2 = b_2 - \near{\frac{b_1 \cdot b_2}{b_1 \cdot b_1}}b_1
+\]
+If $\norm{b_2}$ is still greater than $\norm{b_1}$ we can
+stop. Otherwise, swap $b_2$ with $b_1$ and try again.
+
+The \LLL{} algorithm generalises the Gaussian lattice reduction from
+two to $d$ dimensions. Just like the Gaussian lattice reduction, it
+subtracts an integral multiple of a shorter basis vector from a larger
+basis vector till some size condition is fulfilled. For each
+$1 \leq k \leq d$, we reduce $b_k$ as the following,
+\[
+  b_k = b_k - \near{\frac{b_j^* \cdot b_k}{b_j^* \cdot b_j^*}}b_j
+\]
+$b_i^*$ is the $i^\text{th}$ basis vector in the Gram-Schmidt
+orthogonalization of $\B$. The reduction of $b_k$ is carried out using
+the Gram-Schmidt orthogonalizations of all the already reduced $b_j$
+for every $k - 1 > j \geq 1$ where the following \textit{size
+  condition} is met,
+\[
+  \abs{\frac{b_j^* \cdot b_k}{b_j^* \cdot b_j^*}} > \frac{1}{2}
+\]
+If \LLL{} terminates after only this recursive size reduction then the
+goodness of the reduced basis depends on the order of the original
+basis vectors in the basis matrix. Therefore, after the size reduction
+of $b_k$, another condition, namely the popular Lov\'asz condition is
+checked. This is given as,
+\[
+  \norm{b_k^*}^2 \geq \paren{
+    \frac{3}{4} - \paren{
+      \frac{b_{k-1}^* \cdot b_k}{b_{k-1}^* \cdot b_{k-1}^*}
+    }^2
+  }
+  \norm{b_{k-1}^*}^2
+\]
+Written another way for $\mu_{k, k-1} =
+\paren{b_{k-1}^* \cdot b_k}/
+\paren{b_{k-1}^* \cdot b_{k-1}^*}$ and $\delta = 3/4$,
+
+\[
+  \norm{b_k^*}^2 \geq \paren{\delta - \mu_{k, k-1}^2}\norm{b_{k-1}^*}^2
+\]
+If the Lov\'asz condition is met then $b_k$ is considered reduced and
+$k$ will be incremented. Otherwise, for optimal ordering, we swap
+$b_k$ and $b_{k-1}$ and decrement $k$\footnote{More precisely
+  $k = \max(k - 1, 2)$}. For a more in depth analysis of \LLL{}, read
+Deng \cite{deng2016introduction}. The full description is given in
+algorithm \ref{lllalg}.
+
+\begin{algorithm}
+  \begin{flushleft}
+    \noindent\textbf{Input}: Lov\'asz condition constant: $0 < \delta < 1$. \\
+    \noindent\textbf{Input}: Bad basis: $\B = \{b_1, b_2, b_3, \dots, b_d\}$. \\
+    \noindent\textbf{Output}: Good/Reduced basis:
+    $\B = \{b_1, b_2, b_3, \dots, b_d\}$.
+  \end{flushleft}
+  \begin{enumerate}[label=\arabic*:]
+    \item $k \leftarrow 2$
+    \item $(\B^*, \mu) \leftarrow \GM(\B)$
+    \item $\quad \WHILE k \leq d$
+    \item $\quad\quad \FOR j \in \{k - 1, k - 2, k - 3, \dots, 1\}$
+    \item $\quad\quad\quad \IF \mu_{k, j} > 0.5$
+    \item $\quad\quad\quad\quad b_k \leftarrow b_k - \near{\mu_{k, j}}b_j$
+    \item $\quad\quad\quad\quad (\B^*, \mu) \leftarrow \GM(\B)$
+    \item $\quad\quad \IF \norm{b_k^*}^2 \geq
+            \paren{\delta - \mu_{k, k-1}^2}\norm{b_{k-1}^*}^2$
+    \item $\quad\quad\quad k \leftarrow k + 1$
+    \item $\quad\quad \ELSE$
+    \item $\quad\quad\quad \SWAP(b_{k-1}, b_k)$
+    \item $\quad\quad\quad (\B^*, \mu) \leftarrow \GM(\B)$
+    \item $\quad\quad\quad k \leftarrow \max(k - 1, 2)$
+  \end{enumerate}
+  \caption{The Lenstra, Lenstra, and Lov\'asz (\LLL) algorithm.}
+  \label{lllalg}
+\end{algorithm}
+
+The authors \cite{lenstra1982factoring} of the \LLL{} algorithm show
+that it is a polynomial time lattice reduction algorithm for all $0 <
+\delta < 1$. The outer loop runs at most in,
+\[
+  \O(d^2\log(d) + d^2\log(\max\norm{b_i}))
+\]
+and that it solves the \appr\SVP{} with an approximation factor of
+$\alpha = 2^{(d-1)/2}$. It is also an open problem whether \LLL{}
+terminates in polynomial time for $\delta = 1.$
+
+\subsubsection{\LLL{} Variations} While \LLL{} is the only polynomial
+time algorithm for lattice reduction, many of it's generalisations
+tend to perform just as fast during empirical analysis and yield a
+further reduced basis. Gamma et alia argue by their extensive
+empirical analysis \cite{gama2008predicting} that there is a gap
+between what theory is able to prove and what the true power of the
+reduction algorithms maybe.
+
+The two possible exponential time variations of \LLL{} are due to
+Schnorr \cite{schnorr1987hierarchy} and Euchner
+\cite{schnorr1994lattice}: DEEP (deep insertion method) and BKZ (block
+Korkin--Zolotarev). DEEP differs from the standard \LLL{} when the
+Lov\'asz condition fails. In standard \LLL{} we simply swap the $b_k$
+with $b_{k-1}$ whereas in DEEP we insert $b_k$ at an optimal place
+before the $k^\text{th}$ basis vector. While in BKZ, instead of
+reducing $b_k$ with only one $b_{j}$, the same is done with a block of
+basis vectors, $b_j, b_{j+1}, b_{j+2}, \dots b_{j+\beta - 1}$ where
+$\beta$ is the block size. Note that if we let $\beta=d$ then the
+shortest vector in the output of BKZ solves the \SVP{} problem and for
+any $\beta < d$ we solve some version of the \appr\SVP{}.
+
+\section{Methodology}
+
+Apart from the reduction algorithms mentioned in section \ref{rw}, we
+now discuss the approach taken in this paper. The method of sieving
+for the shortest vector first surfaced due to the works of Ajtai,
+Kumar and Sivakumar \cite{ajtai2001sieve}. The idea behind sieving is
+quite simple: if we have two lattice vectors $u \in \L \ni v$ and we
+want a shorter one, we might try $u - v$. More specifically,
+repeatedly checks if there exists $(u, v)$ in a fixed subset $P$ of
+$\L$ such that $\norm{u - v} < \norm{u}$ then $u$ is replaced with
+$\norm{u - v}$. When $\norm{u - v} < \norm{u}$ is not true for any
+pair $(u, v)$ in $P^2$, we hope to solve some version of the
+\appr\SVP{} with the shortest vector in $P$. We give our variation of
+the aforementioned idea as a na\"ive sieving algorithm \ref{naive}.
+
+\begin{algorithm}
+\begin{flushleft}
+    \noindent\textbf{Input}: $P \subset \L$. \\
+    \noindent\textbf{Output}: Reduced version of subset: $P.$
+  \end{flushleft}
+  \begin{enumerate}[label=\arabic*:]
+    \item $R \leftarrow \nil$
+    \item $\DO$
+    \item $\quad P \leftarrow \SL(P \cup R)$
+    \item $\quad R \leftarrow \nil$
+    \item $\quad \FOR \text{each } (u, v) \in P^2$
+    \item $\quad\quad t \leftarrow u - v$
+    \item $\quad\quad \IF (\norm{t} > 0) \wedge
+    (t \not\in P) \wedge
+    (\norm{t} < \norm{u} \vee \norm{t} < \norm{v})$
+    \item $\quad\quad\quad R \leftarrow R \cup \{t\}$
+    \item $\WHILE R \neq \nil$
+  \end{enumerate}
+  \caption{Na\"ive sieving algorithm.}
+  \label{naive}
+\end{algorithm}
+
+Algorithm \ref{naive} checks the difference of all the possible
+pairings in $P$ for a shorter non-zero vector not already present in
+$P$. These newer and shorter vectors are collected in $R$. At the
+start of each iteration, we combine $P$ and $R$ \textit{selecting} out
+of the combination at most $|P|$ successive shortest vectors to be
+reassigned as $P$. The sieving terminates when $P^2$ no longer
+contains a pair $(u, v)$ whose difference's length is shorter than any
+of the ones already in $P$.
+
+We show an example by reducing the bad basis given in section \ref{intro},
+\[
+  \B_\text{bad} =
+  \begin{bmatrix}
+    95  & 47  \\
+    460 & 215
+  \end{bmatrix}
+\]
+The initial $P$ is randomly picked as follows,
+\[
+  P =
+  \begin{bmatrix}
+    -46  & -94  & -97  & -475 \\
+    -185 & -430 & -520 & -2300
+  \end{bmatrix}
+\]
+and figure \ref{naivedemo} shows the new $P$ at each iteration of
+seven iterations ran.
+
+\img<naivedemo>[0.32]{Alg. \ref{naive} reducing
+$\B_\text{bad}$ with
+$P =
+  \begin{bmatrix}
+    -46  & -94  & -97  & -475 \\
+    -185 & -430 & -520 & -2300
+  \end{bmatrix}
+$}{naive1, naive2, naive3, naive4, naive5, naive6, naive7}
+
+Note that in this case, we find the shortest vector by solving the
+\SBP{} exactly. The seventh iteration in figure \ref{naivedemo}
+contains,
+\[
+  \B_\text{good} =
+  \begin{bmatrix}
+    1  & -40 \\
+    30 & -5
+  \end{bmatrix}
+\]
+
+% the other evolutionary sieving paper by Thijs Laarhoven
+% \cite{DBLP:journals/corr/abs-1907-04629}.
+
+% Read Norvig (Norvig 129)
+
+% \section{Results}
+% \section{Discussion}
+% \section{Acknowledgement}
+
+% ---
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{citation}
+\end{document}
+
+% LocalWords:  Merkle Lagarias Odlyzko Hoffstein

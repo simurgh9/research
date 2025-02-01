@@ -1,0 +1,38 @@
+\author{\texorpdfstring{%
+    Ahmad Tashfeen, Qi Cheng\\
+    \href{mailto://tashfeen@ou.edu}{\texttt{tashfeen@ou.edu}}, %
+    \href{mailto://cheng@ou.edu}{\texttt{cheng@ou.edu}}%
+  }{%
+    Ahmad Tashfeen, Qi Cheng%
+  }
+}
+
+\title{%
+  Evolutionary Sieving in Complex and Integral Lattices
+}
+\address{Computer Science, %
+  Gallogly College of Engineering, %
+  University of Oklahoma%
+}
+\usepackage[plain]{algorithm}
+\usepackage{blindtext}
+\usepackage{etoolbox}
+\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
+\geometry{margin=1in}
+\graphicspath{{./media/}}
+
+\makeatletter
+\renewcommand{\maketitle} {%
+  \begin{center}\unskip%
+    \textbf{\large\@title}\par%
+    \noindent\@author\par%
+    \noindent Computer Science, University of Oklahoma%
+  \end{center}%
+  \box\abstractbox% https://tex.stackexchange.com/a/597708/215221
+}%
+\makeatother
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: "../main"
+%%% End:
