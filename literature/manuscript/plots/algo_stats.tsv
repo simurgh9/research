@@ -1,0 +1,848 @@
+Position	Dimension	Euclidean Norm	Seed	Contestant	Solution	Algorithm	Subm. Date	Approx. Factor
+1	190	3613	0	Yao Sun and Shuai Chang	vec	Sieving	2024-07-21	1.04237
+2	186	3484	0	"Leizhang Wang, Baocang Wang"	vec	Sieving	2023-07-25	1.01405
+3	185	3580	0	"Wenwen Xia, Geng Wang, Dawu Gu"	vec	"Sieving,BKZ"	2024-05-27	1.04587
+4	184	3494	0	"Leizhang Wang, Baocang Wang"	vec	Sieving	2023-07-3	1.02415
+5	183	3536	0	"Ziyu Zhao, Jintai Ding, Bo-Yin Yang"	vec	Sieving	2024-05-4	1.04034
+6	183	3555	0	"Wenwen Xia, Geng Wang, Dawu Gu"	vec	Sieving	2024-01-23	1.04608
+7	182	3444	0	"Leizhang Wang, Baocang Wang"	vec	Sieving	2023-05-28	1.01430
+8	181	3544	0	"Yao Sun, Shuai Chang"	vec	Sieving	2023-07-17	1.04817
+9	180	3463	0	"Jinghui Wang, Honggang Hu, Yiming Gao"	vec	Sieving	2024-04-18	1.02625
+10	180	3499	0	"Leizhang Wang, Baocang Wang"	vec	Sieving	2023-05-26	1.03718
+11	180	3509	0	"L. Ducas, M. Stevens, W. van Woerden"	vec	Sieving	2021-02-8	1.04002
+12	179	3523	0	"Ziyu Zhao, Jintai Ding, Bo-Yin Yang"	vec	Sieving	2024-05-4	1.04651
+13	178	3447	0	"L. Ducas, M. Stevens, W. van Woerden"	vec	Sieving	2021-02-8	1.02725
+14	176	3440	0	"Xiaohan Zhang, Renjie jin, Zijian Zhou, Shaojing Fu, Longjiang Qu, Chao Li"	vec	Sieving	2025-01-22	1.02995
+15	176	3487	0	"L. Ducas, M. Stevens, W. van Woerden"	vec	Sieving	2020-10-13	1.04411
+16	174	3451	0	"Xiaohan Zhang, Renjie jin, Zijian Zhou, Shaojing Fu, Longjiang Qu, Chao Li"	vec	Sieving	2025-01-13	1.03970
+17	171	3390	0	"Xiaohan Zhang, Renjie jin, Zijian Zhou, Shaojing Fu, Longjiang Qu, Chao Li"	vec	Sieving	2025-01-9	1.02897
+18	170	3378	0	"Leizhang Wang, Yuntao Wang"	vec	Sieving	2022-10-3	1.02858
+19	170	3438	0	"L. Ducas, M. Stevens, W. van Woerden"	vec	Sieving	2020-05-12	1.04690
+20	169	3415	0	"Ziyu Zhao, Jintai Ding, Bo-Yin Yang"	vec	Sieving	2024-05-4	1.04119
+21	166	3376	0	"Ziyu Zhao, Jintai Ding, Bo-Yin Yang"	vec	Sieving	2024-05-4	1.03988
+22	166	3385	0	Kenji Kashiwabara	vec	Sieving	2023-07-23	1.04269
+23	165	3370	0	"Ziyu Zhao, Jintai Ding, Bo-Yin Yang"	vec	Sieving	2024-05-4	1.04214
+24	162	3325	0	"Ziyu Zhao, Jintai Ding, Bo-Yin Yang"	vec	Sieving	2024-05-4	1.03751
+25	162	3348	0	Kenji Kashiwabara	vec	Sieving	2022-10-8	1.04465
+26	161	3344	0	"Ziyu Zhao, Jintai Ding, Bo-Yin Yang"	vec	Sieving	2024-05-4	1.04345
+27	160	3288	0	Kenji Kashiwabara	vec	Sieving	2022-09-18	1.03154
+28	159	3327	0	"Jianhua Hou, Haodong Jiang, Hong Wang"	vec	Sieving	2024-09-29	1.04875
+29	158	3130	0	Kenji Kashiwabara	vec	Sieving	2022-07-6	0.98861
+30	158	3240	0	"Sho Hasegawa, Yuntao Wang, Eiichiro Fujisaki"	vec	Sieving	2021-01-22	1.02311
+31	157	3271	0	"Ziyu Zhao, Jintai Ding, Bo-Yin Yang"	vec	Sieving	2024-05-4	1.03367
+32	157	3320	0	"L. Ducas, M. Stevens, W. van Woerden"	vec	Sieving	2019-05-20	1.04906
+33	156	3219	0	"Sho Hasegawa, Yuntao Wang, Eiichiro Fujisaki"	vec	Sieving	2021-01-22	1.01986
+34	155	3165	0	"M. Albrecht, L. Ducas, G. Herold, E. Kirshanova, E. Postlethwaite, M. Stevens, P. Karpman"	vec	Sieving	2018-09-18	1.00803
+35	154	3200	0	"Sho Hasegawa, Yuntao Wang, Eiichiro Fujisaki"	vec	Sieving	2021-02-1	1.02258
+36	153	3173	0	"Ziyu Zhao, Jintai Ding, Bo-Yin Yang"	vec	Sieving	2024-05-4	1.01477
+37	153	3192	0	"Martin Albrecht, Leo Ducas, Gottfried Herold, Elena Kirshanova, Eamonn Postlethwaite, Marc Stevens"	vec	Sieving	2018-08-30	1.02102
+38	152	3217	0	Kenji KASHIWABARA and Tadanori TERUYA	vec	Other	2018-10-3	1.03313
+39	151	3195	0	"Ziyu Zhao, Jintai Ding, Bo-Yin Yang"	vec	Sieving	2024-05-4	1.03167
+40	151	3233	0	"Martin Albrecht, Leo Ducas, Gottfried Herold, Elena Kirshanova, Eamonn Postlethwaite, Marc Stevens"	vec	Sieving	2018-08-30	1.04411
+41	150	3084	0	"Ziyu Zhao, Jintai Ding, Bo-Yin Yang"	vec	Sieving	2024-05-4	0.99791
+42	150	3183	0	Xiaohan Zhang，Longjiang Qu ，Chao Li	vec	Sieving	2023-08-14	1.02990
+43	150	3212	0	Yuga Miyagi and Eiichiro Fujisaki	vec	Sieving	2020-02-12	1.03914
+44	150	3220	0	Kenji KASHIWABARA and Tadanori TERUYA	vec	Other	2017-01-11	1.04192
+45	149	3030	0	"Martin Albrecht, Leo Ducas, Gottfried Herold, Elena Kirshanova, Eamonn Postlethwaite, Marc Stevens"	vec	Sieving	2018-08-30	0.98506
+46	148	3178	0	Kenji KASHIWABARA and Tadanori TERUYA	vec	Other	2016-05-28	1.03512
+47	147	3175	0	"Martin Albrecht, Leo Ducas, Gottfried Herold, Elena Kirshanova, Eamonn Postlethwaite, Marc Stevens"	vec	Sieving	2018-08-30	1.03863
+48	146	3176	0	Yuga Miyagi and Eiichiro Fujisaki	vec	Sieving	2019-04-28	1.03907
+49	146	3195	0	Kenji KASHIWABARA and Tadanori TERUYA	vec	Other	2015-08-24	1.04534
+50	145	3063	0	"Satoshi Hirayanagi, Takeshi Nakai, Koutarou Suzuki, Kenji Toyonaga"	vec	Sieving	2023-09-26	1.00569
+51	145	3106	0	"Sho Hasegawa, Kazuki Yamamura, Eiichiro Fujisaki"	vec	Sieving	2020-04-19	1.01981
+52	145	3173	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-4	1.04177
+53	145	3175	0	"Martin Albrecht, Leo Ducas, Gottfried Herold, Elena Kirshanova, Eamonn Postlethwaite, Marc Stevens"	vec	Sieving	2018-08-30	1.04267
+54	144	3039	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-4	1.00480
+55	144	3154	0	Kenji KASHIWABARA and Tadanori TERUYA	vec	Other	2015-06-21	1.04284
+56	143	3039	0	Sho Hasegawa and Kazuki Yamamura	vec	Sieving	2020-04-12	1.00526
+57	143	3092	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-4	1.02298
+58	143	3159	0	"Martin Albrecht, Leo Ducas, Gottfried Herold, Elena Kirshanova, Eamonn Postlethwaite, Marc Stevens"	vec	Sieving	2018-08-30	1.04498
+59	142	3013	0	Yuga Miyagi and Eiichiro Fujisaki	vec	Sieving	2019-04-30	1.00325
+60	142	3031	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-4	1.00933
+61	142	3100	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-3	1.03235
+62	142	3141	0	Kenji KASHIWABARA and Tadanori TERUYA	vec	Other	2015-03-15	1.04609
+63	141	2978	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-4	0.99519
+64	141	3138	0	"Martin Albrecht, Leo Ducas, Gottfried Herold, Elena Kirshanova, Eamonn Postlethwaite, Marc Stevens"	vec	Sieving	2018-08-30	1.04851
+65	140	2875	5	"Ziyu Zhao, Jintai Ding, Bo-Yin Yang"	vec	Sieving	2024-05-4	0.96283
+66	140	3007	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-4	1.00526
+67	140	3025	0	Kenji KASHIWABARA and Tadanori TERUYA	vec	Other	2015-01-23	1.01139
+68	139	3010	0	Yuga Miyagi and Eiichiro Fujisaki	vec	Sieving	2019-04-30	1.00935
+69	139	3060	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-22	1.02603
+70	139	3083	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-4	1.03379
+71	139	3111	0	"Martin Albrecht, Leo Ducas, Gottfried Herold, Elena Kirshanova, Eamonn Postlethwaite, Marc Stevens"	vec	Sieving	2018-08-30	1.04303
+72	138	2974	0	Yuga Miyagi and Eiichiro Fujisaki	vec	Sieving	2019-04-30	1.00064
+73	138	3067	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-22	1.03173
+74	138	3072	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-3	1.03362
+75	138	3077	0	Kenji KASHIWABARA and Tadanori TERUYA	vec	Other	2014-12-7	1.03516
+76	137	2897	5	Yuga Miyagi and Eiichiro Fujisaki	vec	Sieving	2019-05-1	0.97838
+77	137	2968	3	Yuga Miyagi and Eiichiro Fujisaki	vec	Sieving	2019-05-1	1.00191
+78	137	2988	0	Yuga Miyagi and Eiichiro Fujisaki	vec	Sieving	2019-04-26	1.00935
+79	137	2992	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-3	1.01046
+80	137	3093	0	"Martin Albrecht, Leo Ducas, Gottfried Herold, Elena Kirshanova, Eamonn Postlethwaite, Marc Stevens"	vec	Sieving	2018-08-30	1.04472
+81	136	2914	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-4	0.98959
+82	136	2934	0	"Martin Albrecht, Leo Ducas, Gottfried Herold, Elena Kirshanova, Eamonn Postlethwaite, Marc Stevens"	vec	Sieving	2018-08-30	0.99621
+83	136	3090	0	"Martin Albrecht, Leo Ducas, Gottfried Herold, Elena Kirshanova, Eamonn Postlethwaite, Marc Stevens"	vec	Sieving	2018-08-30	1.04937
+84	135	2958	0	"Martin Albrecht, Leo Ducas, Gottfried Herold, Elena Kirshanova, Eamonn Postlethwaite, Marc Stevens"	vec	Sieving	2018-08-30	1.00920
+85	135	3076	0	"Martin Albrecht, Leo Ducas, Gottfried Herold, Elena Kirshanova, Eamonn Postlethwaite, Marc Stevens"	vec	Sieving	2018-08-30	1.04968
+86	134	2957	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-4	1.01053
+87	134	2963	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-2	1.01253
+88	134	2976	0	Kenji KASHIWABARA and Tadanori TERUYA	vec	Other	2014-07-13	1.01695
+89	133	2909	0	"Martin Albrecht, Leo Ducas, Gottfried Herold, Elena Kirshanova, Eamonn Postlethwaite, Marc Stevens"	vec	Sieving	2018-08-30	0.99940
+90	133	3031	0	"Martin Albrecht, Leo Ducas, Gottfried Herold, Elena Kirshanova, Eamonn Postlethwaite, Marc Stevens"	vec	Sieving	2018-08-30	1.04133
+91	132	2865	4	Jim Johnson	vec	Sieving	2022-04-18	0.98687
+92	132	2886	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-2	0.99441
+93	132	2901	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-2	0.99976
+94	132	3012	0	Kenji Kashiwabara and Masaharu Fukase	vec	Other	2014-04-24	1.03787
+95	131	2846	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-3	0.98437
+96	131	2904	0	"Martin Albrecht, Leo Ducas, Gottfried Herold, Elena Kirshanova, Eamonn Postlethwaite, Marc Stevens"	vec	Sieving	2018-08-30	1.00465
+97	131	2959	0	"Martin Albrecht, Leo Ducas, Gottfried Herold, Elena Kirshanova, Eamonn Postlethwaite, Marc Stevens"	vec	Sieving	2018-08-30	1.02362
+98	130	2812	52	"Ziyu Zhao, Jintai Ding, Bo-Yin Yang"	vec	Sieving	2024-05-4	0.97515
+99	130	2832	8	Jim Johnson	vec	Sieving	2022-03-2	0.98106
+100	130	2870	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-2	0.99413
+101	130	2883	0	Yoshinori Aono and Phong Nguyen	vec	"ENUM,BKZ"	2014-10-9	0.99871
+102	130	3025	0	Kenji Kashiwabara and Masaharu Fukase	vec	Other	2013-11-15	1.04787
+103	129	2818	1	Yuga Miyagi and Eiichiro Fujisaki	vec	Sieving	2019-04-11	0.98161
+104	129	2855	0	"Yuga Miyagi, Tomohiro Sekiguchi, Eiichiro Fujisaki"	vec	Sieving	2019-03-26	0.99172
+105	129	2875	0	"Martin Albrecht, Leo Ducas, Gottfried Herold, Elena Kirshanova, Eamonn Postlethwaite, Marc Stevens"	vec	Sieving	2018-08-30	0.99878
+106	129	2988	0	"Martin R. Albrecht, Leo Ducas, Gottfried Herold, Elena Kirshanova, Eamonn Postlethwaite and Marc Ste"	vec	Sieving	2018-08-30	1.03813
+107	128	2765	19	Jim Johnson	vec	Sieving	2022-06-3	0.96485
+108	128	2812	1	"N. Tateiwa, Y. Shinano, K. Yamamura, A. Yoshida, S. Kaji, M. Yasuda, K. Fujisawa"	vec	BKZ	2021-10-16	0.98470
+109	128	2882	0	Kenji KASHIWABARA and Tadanori TERUYA	vec	Other	2018-07-9	1.00477
+110	128	2948	0	Kenji KASHIWABARA and Tadanori TERUYA	vec	Other	2018-06-20	1.02755
+111	128	2974	0	Kenji KASHIWABARA and Tadanori TERUYA	vec	Other	2018-05-9	1.03665
+112	128	2984	0	Kenji Kashiwabara and Masaharu fukase	vec	Other	2013-09-23	1.04017
+113	128	2992	0	Kenji Kashiwabara and Masaharu Fukase	vec	Other	2013-09-19	1.04313
+114	127	2790	3	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, Y. Aono, K. Fujisawa"	vec	"ENUM,BKZ,Other"	2020-06-7	0.97573
+115	127	2890	1	Yuga Miyagi and Eiichiro Fujisaki	vec	Sieving	2019-04-11	1.01429
+116	127	2898	0	"Yuga Miyagi, Tomohiro Sekiguchi, Eiichiro Fujisaki"	vec	Sieving	2019-03-25	1.01626
+117	127	2932	2	"Junpei Yamaguchi, Masaya Yasuda and Takuya Hayashi"	vec	Other	2018-01-12	1.02804
+118	126	2775	5	Jim Johnson	vec	Sieving	2022-02-12	0.97512
+119	126	2812	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-2	0.99052
+120	126	2855	0	Yoshinori Aono and Phong Nguyen	vec	"ENUM,BKZ"	2014-09-9	1.00556
+121	126	2897	0	Kenji KASHIWABARA and Tadanori TERUYA	vec	Other	2014-08-27	1.02051
+122	126	2906	0	Yoshinori Aono	vec	"ENUM,BKZ"	2014-07-14	1.02357
+123	126	2944	0	Kenji Kashiwabara and Masaharu Fukase	vec	Other	2013-09-4	1.03679
+124	126	2969	42	Yuanmi Chen and Phong Nguyen	vec	"ENUM,BKZ"	2013-04-12	1.04356
+125	125	2753	10	Jim Johnson	vec	Sieving	2022-02-12	0.97402
+126	125	2806	3	Jim Johnson	vec	Sieving	2021-10-22	0.99077
+127	125	2834	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-2	1.00341
+128	125	2907	3	"Junpei Yamaguchi, Masaya Yasuda and Takuya Hayashi"	vec	Other	2017-11-20	1.02649
+129	125	2922	8	"Junpei Yamaguchi, Masaya Yasuda and Takuya Hayashi"	vec	"ENUM,Other"	2017-10-15	1.03203
+130	124	2743	3	Jim Johnson	vec	Sieving	2021-10-21	0.97261
+131	124	2827	2	"N. Tateiwa, Y. Shinano, K. Yamamura, A. Yoshida, S. Kaji, M. Yasuda, K. Fujisawa"	vec	BKZ	2021-10-5	1.00215
+132	124	2834	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-2	1.00374
+133	124	2854	2	"Junpei Yamaguchi, Masaya Yasuda and Takuya Hayashi"	vec	Other	2017-11-14	1.01183
+134	124	2884	70	Yuanmi Chen and Phong Nguyen	vec	"ENUM,BKZ"	2013-03-22	1.02167
+135	124	2936	1	Yuanmi Chen and Phong Nguyen	vec	"ENUM,BKZ"	2013-03-21	1.04270
+136	123	2700	47	Jim Johnson	vec	Sieving	2022-06-14	0.95988
+137	123	2737	16	Jim Johnson	vec	Sieving	2021-11-20	0.97479
+138	123	2795	6	Jim Johnson	vec	Sieving	2021-11-17	0.99724
+139	123	2796	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-2	0.99471
+140	123	2883	0	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-04-13	1.02583
+141	123	2889	0	Yuntao Wang; Yoshinori Aono; Takuya Hayashi; Tsuyoshi Takagi	vec	"ENUM,BKZ"	2016-01-26	1.02781
+142	122	2704	49	Jim Johnson	vec	Sieving	2022-02-12	0.96937
+143	122	2751	5	Jim Johnson	vec	Sieving	2021-11-13	0.98532
+144	122	2780	4	Jim Johnson	vec	Sieving	2021-11-6	0.99369
+145	122	2782	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-2	0.99546
+146	122	2807	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-2	1.00433
+147	122	2862	0	Fumitaka YURA	vec	"Sieving,Other"	2018-12-27	1.02388
+148	122	2881	123	Nikolaos Chatzis and Konstantinos A. Draziotis	vec	"ENUM,BKZ"	2018-07-3	1.02836
+149	122	2913	29	Yuanmi Chen and Phong Nguyen	vec	BKZ	2013-03-13	1.04441
+150	121	2640	98	Jim Johnson	vec	Sieving	2022-04-6	0.94854
+151	121	2715	84	Jim Johnson	vec	Sieving	2022-02-17	0.97645
+152	121	2727	13	Jim Johnson	vec	Sieving	2021-10-25	0.98049
+153	121	2776	10	Jim Johnson	vec	Sieving	2021-10-23	0.99498
+154	121	2777	5	Jim Johnson	vec	Sieving	2021-10-23	0.99752
+155	121	2780	4	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, Y. Aono, K. Fujisawa"	vec	"ENUM,BKZ"	2020-01-20	0.99706
+156	121	2809	2	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, K. Fujisawa"	vec	"ENUM,BKZ"	2020-01-20	1.00820
+157	121	2829	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-2	1.01670
+158	121	2847	0	Hailay Gidey	vec	"ENUM,BKZ"	2018-04-26	1.02335
+159	121	2910	62	Zhongxiang Zheng and Xiaoyun Wang	vec	BKZ	2016-11-21	1.04370
+160	121	2921	72	Zhongxiang Zheng and Xiaoyun Wang	vec	BKZ	2016-11-10	1.04851
+161	120	2654	897	"Ziyu Zhao, Jintai Ding, Bo-Yin Yang"	vec	Sieving	2024-05-4	0.95659
+162	120	2668	163	Jim Johnson	vec	Sieving	2022-03-17	0.95990
+163	120	2706	11	Jim Johnson	vec	Sieving	2022-02-12	0.97586
+164	120	2729	4	Yuga Miyagi and Eiichiro Fujisaki	vec	Sieving	2019-05-1	0.98325
+165	120	2747	7	Yuga Miyagi and Eiichiro Fujisaki	vec	Sieving	2019-04-27	0.98939
+166	120	2751	6	Yuga Miyagi and Eiichiro Fujisaki	vec	Sieving	2019-04-27	0.98964
+167	120	2756	0	Kenji Kashiwabara and Masaharu Fukase	vec	Other	2013-12-9	0.99535
+168	120	2830	0	"Yoshinori Aono, Ken Naganuma"	vec	"ENUM,BKZ"	2013-09-19	1.02190
+169	120	2850	0	Kenji Kashiwabara and Masaharu Fukase	vec	Other	2013-08-28	1.02928
+170	120	2851	0	"Po-Chun Kuo, Michael Schneider"	vec	"ENUM,BKZ"	2011-04-6	1.02954
+171	119	2565	118	Jim Johnson	vec	Sieving	2022-06-10	0.92743
+172	119	2671	13	Jim Johnson	vec	Sieving	2021-09-20	0.96853
+173	119	2787	19	Jim Johnson	vec	Sieving	2021-09-20	1.00943
+174	119	2793	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-22	1.00955
+175	119	2825	0	Yuga Miyagi and Eiichiro Fujisaki	vec	Sieving	2019-04-22	1.02126
+176	119	2831	5	Satoshi Nakamura and Masaya Yasuda	vec	Other	2019-01-17	1.02237
+177	119	2854	0	Hailay Gidey	vec	"ENUM,BKZ"	2018-04-22	1.03179
+178	119	2863	10	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-03-22	1.03332
+179	119	2904	0	Yuntao Wang; Yoshinori Aono; Takuya Hayashi; Tsuyoshi Takagi	vec	"ENUM,BKZ"	2016-01-25	1.04985
+180	118	2625	1	Jim Johnson	vec	Sieving	2021-09-20	0.95491
+181	118	2782	0	Kenji Kashiwabara and Masaharu Fukase	vec	Other	2013-08-12	1.00811
+182	118	2868	8	Yuanmi Chen and Phong Nguyen	vec	ENUM	2013-02-13	1.04441
+183	117	2612	214	Jim Johnson	vec	Sieving	2022-04-2	0.95123
+184	117	2653	148	Jim Johnson	vec	Sieving	2022-03-30	0.97000
+185	117	2659	80	Jim Johnson	vec	Sieving	2022-02-12	0.96956
+186	117	2680	48	Jim Johnson	vec	Sieving	2021-09-19	0.97611
+187	117	2769	0	Tadanori TERUYA	vec	"Sieving,Other"	2019-04-10	1.00982
+188	117	2782	3	Satoshi Nakamura and Masaya Yasuda	vec	Other	2018-12-1	1.01620
+189	117	2803	0	Hailay Gidey	vec	"ENUM,BKZ"	2018-03-29	1.02227
+190	117	2840	10	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-04-10	1.03858
+191	117	2841	0	Yuntao Wang; Yoshinori Aono; Takuya Hayashi; Tsuyoshi Takagi	vec	"ENUM,BKZ"	2016-01-26	1.03619
+192	116	2608	342	Jim Johnson	vec	Sieving	2022-05-4	0.95540
+193	116	2638	211	Jim Johnson	vec	Sieving	2022-02-12	0.96540
+194	116	2663	102	Jim Johnson	vec	Sieving	2021-11-5	0.97291
+195	116	2691	45	Jim Johnson	vec	Sieving	2021-09-19	0.98546
+196	116	2737	46	Jim Johnson	vec	Sieving	2021-09-19	1.00299
+197	116	2743	0	Thorsten Kleinjung	vec	Sieving	2014-05-2	1.00492
+198	116	2764	0	Kenji Kashiwabara and Masaharu Fukase	vec	Other	2014-03-21	1.01287
+199	116	2786	0	Kenji Kashiwabara and Masaharu Fukase	vec	Other	2013-08-3	1.02075
+200	116	2825	0	"Po-Chun Kuo, Michael Schneider"	vec	"ENUM,BKZ"	2011-04-1	1.03512
+201	115	2587	73	Jim Johnson	vec	Sieving	2022-02-12	0.95104
+202	115	2649	1	Yuga Miyagi and Eiichiro Fujisaki	vec	Sieving	2019-04-13	0.97544
+203	115	2695	3	Yuga Miyagi and Eiichiro Fujisaki	vec	Sieving	2019-04-10	0.99223
+204	115	2697	1	Yuga Miyagi and Eiichiro Fujisaki	vec	Sieving	2019-04-10	0.99301
+205	115	2699	3	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-06-23	0.99339
+206	115	2779	19	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-06-23	1.01939
+207	115	2780	11	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-06-23	1.02419
+208	115	2790	9	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-03-25	1.02581
+209	115	2813	0	Yuntao Wang; Yoshinori Aono; Takuya Hayashi; Tsuyoshi Takagi	vec	"ENUM,BKZ"	2016-01-25	1.03413
+210	114	2555	210	Jim Johnson	vec	Sieving	2022-02-12	0.94181
+211	114	2624	113	Jim Johnson	vec	Sieving	2021-10-31	0.96914
+212	114	2654	91	Jim Johnson	vec	Sieving	2021-09-18	0.98346
+213	114	2697	0	Kenji Kashiwabara and Masaharu Fukase	vec	Other	2013-07-12	0.99604
+214	114	2735	0	"Yoshinori Aono, Ken Naganuma"	vec	BKZ	2013-02-14	1.01027
+215	114	2778	0	"Po-Chun Kuo, Michael Schneider"	vec	"ENUM,BKZ"	2011-03-21	1.02605
+216	113	2559	3106	Jim Johnson	vec	Sieving	2022-09-6	0.94808
+217	113	2563	2664	Jim Johnson	vec	Sieving	2022-08-29	0.95319
+218	113	2564	254	Jim Johnson	vec	Sieving	2022-02-12	0.95387
+219	113	2612	103	Jim Johnson	vec	Sieving	2021-11-28	0.96688
+220	113	2622	5	"N. Tateiwa, Y. Shinano, K. Yamamura, A. Yoshida, S. Kaji, M. Yasuda, K. Fujisawa"	vec	BKZ	2021-10-14	0.97459
+221	113	2648	25	Jim Johnson	vec	Sieving	2021-09-18	0.98312
+222	113	2664	5	Jim Johnson	vec	Sieving	2021-09-18	0.99039
+223	113	2681	1	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-03-23	0.99409
+224	113	2739	999	Zhongxiang Zheng and Xiaoyun Wang	vec	BKZ	2016-10-24	1.01459
+225	113	2804	0	Yuntao Wang; Yoshinori Aono; Takuya Hayashi; Tsuyoshi Takagi	vec	"ENUM,BKZ"	2016-02-9	1.03897
+226	113	2826	0	Alex Li	vec	BKZ	2015-04-28	1.04693
+227	112	2521	626	Jim Johnson	vec	Sieving	2022-03-23	0.93801
+228	112	2580	283	Jim Johnson	vec	Sieving	2022-02-12	0.96002
+229	112	2595	22	Jim Johnson	vec	Sieving	2021-10-18	0.96839
+230	112	2653	3	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-03-25	0.98696
+231	112	2683	9	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-03-25	0.99936
+232	112	2708	0	Thorsten Kleinjung	vec	Sieving	2014-01-14	1.00979
+233	112	2715	0	Yuanmi Chen and Phong Nguyen	vec	Other	2011-03-30	1.01251
+234	112	2748	0	Po-Chun Kuo	vec	"ENUM,BKZ"	2011-02-17	1.02466
+235	112	2781	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-06-5	1.03720
+236	111	2536	371	Jim Johnson	vec	Sieving	2022-03-27	0.94714
+237	111	2556	115	Jim Johnson	vec	Sieving	2021-11-29	0.95781
+238	111	2593	114	Jim Johnson	vec	Sieving	2021-11-29	0.96938
+239	111	2597	29	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, K. Fujisawa"	vec	"ENUM,BKZ"	2019-11-15	0.96979
+240	111	2635	30	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, K. Fujisawa"	vec	"ENUM,BKZ"	2019-11-15	0.98382
+241	111	2660	8	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, K. Fujisawa"	vec	"ENUM,BKZ"	2019-11-14	0.99467
+242	111	2661	12	Kyle Malone	vec	Sieving	2019-05-13	0.99370
+243	111	2684	0	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-03-16	1.00332
+244	111	2721	0	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-03-14	1.01699
+245	111	2731	0	Yuntao Wang; Yoshinori Aono; Takuya Hayashi; Tsuyoshi Takagi	vec	"ENUM,BKZ"	2016-01-25	1.02096
+246	110	2420	83	Jim Johnson	vec	Sieving	2022-02-17	0.90756
+247	110	2543	42	Jim Johnson	vec	Sieving	2021-10-19	0.95889
+248	110	2620	41	Jim Johnson	vec	Sieving	2021-10-19	0.98479
+249	110	2621	4	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-03-15	0.98355
+250	110	2636	2	Felix Fontein	vec	"BKZ,Other"	2012-09-11	0.99285
+251	110	2699	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-05-28	1.01591
+252	109	2495	53	Jim Johnson	vec	Sieving	2021-12-3	0.94276
+253	109	2559	2	"N. Tateiwa, Y. Shinano, K. Yamamura, A. Yoshida, S. Kaji, M. Yasuda, K. Fujisawa"	vec	BKZ	2021-10-12	0.96465
+254	109	2613	8	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-03-21	0.98360
+255	109	2658	9	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-03-14	1.00034
+256	109	2674	3	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-03-14	1.00767
+257	109	2703	0	Masaharu Fukase and Kazunori Yamaguchi	vec	Other	2016-03-30	1.01754
+258	109	2737	0	Alex Li	vec	BKZ	2015-04-28	1.03057
+259	109	2783	0	"F�bio Correia, Artur Mariano and Alberto Proen�a"	vec	ENUM	2014-12-18	1.04769
+260	108	2478	371	Jim Johnson	vec	Sieving	2022-03-6	0.93974
+261	108	2508	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-06-16	0.95162
+262	108	2755	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-05-30	1.04519
+263	107	2429	1340	Jim Johnson	vec	Sieving	2022-02-22	0.92459
+264	107	2493	518	Jim Johnson	vec	Sieving	2022-02-12	0.95184
+265	107	2513	360	Jim Johnson	vec	Sieving	2021-11-9	0.95594
+266	107	2540	130	Jim Johnson	vec	Sieving	2021-11-2	0.96555
+267	107	2541	77	Jim Johnson	vec	Sieving	2021-10-24	0.96871
+268	107	2549	28	Jim Johnson	vec	Sieving	2021-10-24	0.97216
+269	107	2552	1	"N. Tateiwa, Y. Shinano, K. Yamamura, A. Yoshida, S. Kaji, M. Yasuda, K. Fujisawa"	vec	BKZ	2021-02-8	0.97170
+270	107	2566	9	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-03-11	0.97800
+271	107	2626	0	Artur Mariano	vec	Sieving	2015-05-22	1.00056
+272	107	2713	0	Artur Mariano	vec	Sieving	2015-05-22	1.03379
+273	107	2716	0	Artur Mariano	vec	Sieving	2015-05-22	1.03490
+274	107	2719	0	Artur Mariano	vec	Sieving	2015-05-22	1.03609
+275	107	2720	0	Artur Mariano	vec	Sieving	2015-05-22	1.03657
+276	107	2721	0	Artur Mariano	vec	Sieving	2015-05-22	1.03688
+277	107	2722	0	Artur Mariano	vec	Sieving	2015-05-22	1.03721
+278	107	2724	8	"Po-Chun Kuo, Michael Schneider"	vec	"ENUM,BKZ"	2011-03-12	1.03655
+279	107	2756	4	"Michael Schneider, �zg�r Dagdelen, Jan Reichelt"	vec	"ENUM,BKZ"	2011-02-14	1.04778
+280	106	2393	563	Jim Johnson	vec	Sieving	2022-05-22	0.91310
+281	106	2464	513	Jim Johnson	vec	Sieving	2022-02-12	0.94289
+282	106	2492	73	Michael Burger	vec	"ENUM,BKZ"	2019-12-7	0.95357
+283	106	2551	8	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-03-11	0.97640
+284	106	2656	3	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-03-10	1.01677
+285	106	2667	0	Thorsten Kleinjung	vec	Sieving	2013-12-17	1.01754
+286	106	2668	0	Urs Wagner	vec	Other	2012-05-7	1.01795
+287	106	2692	0	Po-Chun Kuo	vec	"ENUM,BKZ"	2011-02-2	1.02695
+288	106	2704	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-05-26	1.03139
+289	105	2390	7251	Jim Johnson	vec	Sieving	2022-07-11	0.92152
+290	105	2432	1220	Jim Johnson	vec	Sieving	2021-12-2	0.93617
+291	105	2488	468	Jim Johnson	vec	Sieving	2021-11-24	0.95628
+292	105	2493	185	Jim Johnson	vec	Sieving	2021-10-11	0.95775
+293	105	2515	169	Jim Johnson	vec	Sieving	2021-10-11	0.96500
+294	105	2541	122	Nikolaos Chatzis and Konstantinos A. Draziotis	vec	"ENUM,BKZ"	2018-04-18	0.97905
+295	105	2604	1	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-03-9	1.00237
+296	105	2643	997	Zhongxiang Zheng and Xiaoyun Wang	vec	BKZ	2016-09-18	1.01919
+297	105	2655	997	Zhongxiang Zheng and Xiaoyun Wang	vec	BKZ	2016-09-18	1.02377
+298	105	2659	0	"F�bio Correia, Artur Mariano and Alberto Proen�a"	vec	ENUM	2014-12-18	1.02023
+299	105	2665	0	"F�bio Correia, Artur Mariano and Alberto Proen�a"	vec	ENUM	2014-12-18	1.02249
+300	105	2687	0	"F�bio Correia, Artur Mariano and Alberto Proen�a"	vec	ENUM	2014-12-18	1.03078
+301	105	2731	0	"F�bio Correia, Artur Mariano and Alberto Proen�a"	vec	ENUM	2014-12-18	1.04782
+302	105	2734	0	"F�bio Correia, Artur Mariano and Alberto Proen�a"	vec	ENUM	2014-12-18	1.04883
+303	104	2403	4081	Jim Johnson	vec	Sieving	2022-02-12	0.92586
+304	104	2463	319	Jim Johnson	vec	Sieving	2021-10-20	0.94948
+305	104	2511	228	Jim Johnson	vec	Sieving	2021-10-20	0.96913
+306	104	2516	35	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, K. Fujisawa"	vec	"ENUM,BKZ"	2019-11-14	0.97173
+307	104	2520	85	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, K. Fujisawa"	vec	"ENUM,BKZ"	2019-11-14	0.97010
+308	104	2529	82	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, K. Fujisawa"	vec	"ENUM,BKZ"	2019-11-14	0.97719
+309	104	2540	77	Michael Burger	vec	"ENUM,Sieving"	2019-04-12	0.98234
+310	104	2546	10	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-02-21	0.98482
+311	104	2594	0	Kenji Kashiwabara and Masaharu Fukase	vec	Other	2013-12-13	1.00387
+312	104	2601	0	Kenji Kashiwabara and Masaharu Fukase	vec	Other	2013-07-3	1.00662
+313	104	2644	0	Urs Wagner	vec	Other	2010-11-10	1.02322
+314	104	2668	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-06-11	1.03258
+315	104	2694	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-06-11	1.04265
+316	104	2712	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-05-25	1.04967
+317	103	2396	6787	Jim Johnson	vec	Sieving	2022-05-14	0.92662
+318	103	2409	5099	Jim Johnson	vec	Sieving	2022-05-11	0.93476
+319	103	2410	2567	Jim Johnson	vec	Sieving	2022-02-12	0.93357
+320	103	2436	246	Jim Johnson	vec	Sieving	2021-11-11	0.94634
+321	103	2465	75	Jim Johnson	vec	Sieving	2021-10-9	0.95648
+322	103	2508	3	"N. Tateiwa, Y. Shinano, K. Yamamura, A. Yoshida, S. Kaji, M. Yasuda, K. Fujisawa"	vec	BKZ	2021-10-8	0.97168
+323	103	2520	10	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-02-17	0.97800
+324	103	2604	0	"F�bio Correia, Artur Mariano and Alberto Proen�a"	vec	ENUM	2014-12-18	1.00776
+325	103	2668	0	"F�bio Correia, Artur Mariano and Alberto Proen�a"	vec	ENUM	2014-12-18	1.03280
+326	103	2672	0	"F�bio Correia, Artur Mariano and Alberto Proen�a"	vec	ENUM	2014-12-18	1.03409
+327	103	2675	0	"F�bio Correia, Artur Mariano and Alberto Proen�a"	vec	ENUM	2014-12-18	1.03522
+328	103	2685	0	"F�bio Correia, Artur Mariano and Alberto Proen�a"	vec	ENUM	2014-12-18	1.03909
+329	103	2700	0	Alex Li	vec	"BKZ,Other"	2014-12-13	1.04494
+330	102	2369	2319	Jim Johnson	vec	Sieving	2022-04-5	0.92020
+331	102	2404	1802	Jim Johnson	vec	Sieving	2022-02-12	0.93470
+332	102	2424	1186	Jim Johnson	vec	Sieving	2021-11-12	0.94400
+333	102	2446	832	Jim Johnson	vec	Sieving	2021-11-2	0.95301
+334	102	2452	599	Jim Johnson	vec	Sieving	2021-10-21	0.95711
+335	102	2475	354	Jim Johnson	vec	Sieving	2021-10-19	0.96460
+336	102	2478	89	Michael Burger	vec	"ENUM,BKZ"	2019-11-14	0.96879
+337	102	2479	24	Masaya Yasuda	vec	Other	2018-04-11	0.96406
+338	102	2512	10	Junpei Yamaguchi and Masaya Yasuda	vec	Other	2017-02-16	0.98118
+339	102	2555	0	Kenji Kashiwabara and Masaharu Fukase	vec	Other	2013-06-30	0.99562
+340	102	2597	0	Po-Chun Kuo	vec	"ENUM,Other"	2011-01-11	1.01207
+341	102	2642	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-06-14	1.02973
+342	102	2672	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-05-24	1.04150
+343	101	2343	5162	Jim Johnson	vec	Sieving	2022-05-27	0.91562
+344	101	2362	3128	Jim Johnson	vec	Sieving	2022-05-23	0.92714
+345	101	2379	2438	Jim Johnson	vec	Sieving	2022-04-4	0.92900
+346	101	2383	1423	Jim Johnson	vec	Sieving	2021-10-28	0.93367
+347	101	2446	891	Michael Burger	vec	"ENUM,BKZ"	2019-01-11	0.95905
+348	101	2448	460	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-06-27	0.95913
+349	101	2617	0	"F�bio Correia, Artur Mariano and Alberto Proen�a"	vec	ENUM	2014-12-18	1.02159
+350	101	2647	0	"F�bio Correia, Artur Mariano and Alberto Proen�a"	vec	ENUM	2014-12-18	1.03327
+351	101	2650	0	"F�bio Correia, Artur Mariano and Alberto Proen�a"	vec	ENUM	2014-12-18	1.03441
+352	101	2665	0	"F�bio Correia, Artur Mariano and Alberto Proen�a"	vec	ENUM	2014-12-18	1.04037
+353	101	2670	0	Alex Li	vec	"BKZ,Other"	2014-12-4	1.04225
+354	100	2214	46937	"Ziyu Zhao, Jintai Ding, Bo-Yin Yang"	vec	Sieving	2024-05-4	0.87027
+355	100	2334	4582	Jim Johnson	vec	Sieving	2022-09-8	0.92105
+356	100	2337	3473	Jim Johnson	vec	Sieving	2022-04-14	0.91812
+357	100	2353	3234	Jim Johnson	vec	Sieving	2022-04-14	0.92784
+358	100	2365	1342	Jim Johnson	vec	Sieving	2022-03-3	0.92959
+359	100	2367	218	Michael Burger	vec	"ENUM,BKZ"	2018-10-21	0.93331
+360	100	2422	26	Felix Fontein	vec	"BKZ,Other"	2013-04-5	0.95440
+361	100	2526	1	Felix Fontein	vec	"BKZ,Other"	2012-08-16	0.99609
+362	100	2571	0	"Po-Chun Kuo, Michael Schneider"	vec	"ENUM,BKZ"	2011-03-8	1.01252
+363	100	2610	0	"Michael Schneider, �zg�r Dagdelen, Jan Reichelt"	vec	"ENUM,Other"	2010-11-14	1.02760
+364	100	2638	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-06-10	1.03872
+365	100	2645	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-05-12	1.04144
+366	99	2338	5569	Jim Johnson	vec	Sieving	2022-02-12	0.92175
+367	99	2374	1679	Jim Johnson	vec	Sieving	2021-11-1	0.93968
+368	99	2397	1445	Jim Johnson	vec	Sieving	2021-10-30	0.95026
+369	99	2409	1251	Jim Johnson	vec	Sieving	2021-10-24	0.95080
+370	99	2417	1145	Jim Johnson	vec	Sieving	2021-10-24	0.95701
+371	99	2423	1042	Jim Johnson	vec	Sieving	2021-10-23	0.95988
+372	99	2425	691	Jim Johnson	vec	Sieving	2021-10-18	0.95611
+373	99	2433	603	Jim Johnson	vec	Sieving	2021-10-17	0.95951
+374	99	2437	487	Jim Johnson	vec	Sieving	2021-10-15	0.96318
+375	99	2438	432	Jim Johnson	vec	Sieving	2021-09-28	0.96107
+376	99	2491	423	Michael Burger	vec	"ENUM,BKZ"	2018-10-18	0.98819
+377	99	2503	400	Nikolaos Chatzis and Konstadinos A. Draziotis	vec	"ENUM,BKZ"	2018-04-14	0.99015
+378	99	2547	999	"Satoshi Nakamura,Michiko Ooka,Junpei Yamaguchi,Masaya Yasuda"	vec	Other	2017-11-28	1.00729
+379	99	2604	999	Zhongxiang Zheng and Xiaoyun Wang	vec	BKZ	2016-09-7	1.02982
+380	99	2606	998	Zhongxiang Zheng and Xiaoyun Wang	vec	BKZ	2016-09-7	1.02872
+381	99	2635	997	Zhongxiang Zheng and Xiaoyun Wang	vec	BKZ	2016-09-7	1.04510
+382	99	2642	0	F�bio Correia and Artur Mariano	vec	ENUM	2014-11-18	1.04216
+383	99	2659	0	F�bio Correia and Artur Mariano	vec	ENUM	2014-11-18	1.04913
+384	99	2660	0	F�bio Correia and Artur Mariano	vec	ENUM	2014-11-18	1.04939
+385	98	2260	6139	Jim Johnson	vec	Sieving	2022-02-12	0.89819
+386	98	2354	239	Jim Johnson	vec	Sieving	2021-10-15	0.93629
+387	98	2418	129	Jim Johnson	vec	Sieving	2021-10-12	0.96313
+388	98	2431	111	Jim Johnson	vec	Sieving	2021-10-2	0.96458
+389	98	2454	33	Jim Johnson	vec	Sieving	2021-09-27	0.97497
+390	98	2496	27	Michael Burger	vec	"ENUM,BKZ"	2019-01-10	0.99398
+391	98	2514	116	Nikolaos Chatzis and Konstadinos A. Draziotis	vec	"ENUM,BKZ"	2018-04-14	0.99644
+392	98	2541	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-06-9	1.00927
+393	98	2579	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-06-9	1.02430
+394	98	2607	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-05-14	1.03554
+395	97	2304	7582	Jim Johnson	vec	Sieving	2022-02-12	0.91949
+396	97	2334	4198	Jim Johnson	vec	Sieving	2021-11-24	0.93144
+397	97	2346	1033	Jim Johnson	vec	Sieving	2021-10-29	0.93985
+398	97	2375	510	Jim Johnson	vec	Sieving	2021-10-9	0.94767
+399	97	2408	404	Jim Johnson	vec	Sieving	2021-10-9	0.96398
+400	97	2410	243	Jim Johnson	vec	Sieving	2021-10-4	0.96501
+401	97	2418	164	Michael Burger	vec	"ENUM,BKZ"	2019-01-10	0.96802
+402	97	2481	906	"Satoshi Nakamura,Michiko Ooka,Junpei Yamaguchi,Masaya Yasuda"	vec	Other	2017-12-11	0.99172
+403	97	2506	906	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-06-28	1.00197
+404	97	2546	0	Alex Li	vec	BKZ	2014-07-2	1.01809
+405	96	2314	8012	Jim Johnson	vec	Sieving	2021-11-16	0.93111
+406	96	2326	3376	Jim Johnson	vec	Sieving	2021-11-8	0.93540
+407	96	2342	1677	Jim Johnson	vec	Sieving	2021-10-29	0.93899
+408	96	2349	970	Jim Johnson	vec	Sieving	2021-10-25	0.94353
+409	96	2369	860	Jim Johnson	vec	Sieving	2021-10-23	0.94864
+410	96	2370	414	Jim Johnson	vec	Sieving	2021-10-2	0.95059
+411	96	2416	301	Jim Johnson	vec	Sieving	2021-10-1	0.96792
+412	96	2425	145	Jim Johnson	vec	Sieving	2021-09-30	0.97447
+413	96	2441	18	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, K. Fujisawa"	vec	"ENUM,BKZ"	2019-11-11	0.97599
+414	96	2484	14	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, K. Fujisawa"	vec	"ENUM,BKZ"	2019-11-11	0.99750
+415	96	2490	19	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, K. Fujisawa"	vec	"ENUM,BKZ"	2019-11-11	0.99760
+416	96	2496	7	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, K. Fujisawa"	vec	"ENUM,BKZ"	2019-11-11	1.00230
+417	96	2504	3	"Nariaki Tateiwa, Akihiro Yoshida, Satoshi Nakamura, Shizuo Kaji, Masaya Yasuda, Katsuki Fujisawa"	vec	"ENUM,BKZ"	2019-11-11	1.00317
+418	96	2506	21	Michael Burger	vec	"ENUM,BKZ"	2018-10-10	1.00916
+419	96	2520	122	Nikolaos Chatzis and Konstadinos A. Draziotis	vec	"ENUM,BKZ"	2018-04-14	1.01334
+420	96	2522	0	"Tsukasa Ishiguro, Shinsaku Kiyomoto, Yutaka Miyake, Tsuyoshi Takagi"	vec	Sieving	2013-01-17	1.00851
+421	96	2558	0	Urs Wagner	vec	Other	2011-01-21	1.02293
+422	96	2568	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-06-8	1.02672
+423	96	2571	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-06-7	1.02780
+424	96	2587	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-06-7	1.03447
+425	96	2609	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-05-12	1.04318
+426	95	2220	4056	Jim Johnson	vec	Sieving	2022-02-12	0.89584
+427	95	2309	521	Jim Johnson	vec	Sieving	2021-12-2	0.93291
+428	95	2310	248	Jim Johnson	vec	Sieving	2021-09-29	0.93170
+429	95	2417	135	Michael Burger	vec	"ENUM,BKZ"	2019-01-9	0.97743
+430	95	2424	122	Michael Burger	vec	"ENUM,BKZ"	2019-01-9	0.98082
+431	95	2473	121	Nikolaos Chatzis and Konstadinos A. Draziotis	vec	"ENUM,BKZ"	2018-04-14	1.00083
+432	95	2521	0	"Junpei Yamaguchi, Masaya Yasuda and Takuya Hayashi"	vec	Other	2017-06-23	1.01405
+433	95	2523	0	"F�bio Correia, Artur Mariano and Alberto Proen�a"	vec	ENUM	2014-11-18	1.01478
+434	95	2542	0	"F�bio Correia, Artur Mariano and Alberto Proen�a"	vec	ENUM	2014-11-18	1.02276
+435	95	2552	0	"F�bio Correia, Artur Mariano and Alberto Proen�a"	vec	ENUM	2014-11-18	1.02655
+436	95	2566	0	"F�bio Correia, Artur Mariano and Alberto Proen�a"	vec	ENUM	2014-11-18	1.03241
+437	95	2574	0	"F�bio Correia, Artur Mariano and Alberto Proen�a"	vec	ENUM	2014-11-18	1.03551
+438	95	2584	0	Alex Li	vec	"BKZ,Other"	2014-06-8	1.03941
+439	94	2276	4719	Jim Johnson	vec	Sieving	2022-02-12	0.92475
+440	94	2283	678	Jim Johnson	vec	Sieving	2021-10-28	0.92343
+441	94	2313	229	Jim Johnson	vec	Sieving	2021-10-16	0.94081
+442	94	2342	147	Michael Burger	vec	"ENUM,BKZ"	2018-10-27	0.94770
+443	94	2446	800	Nikolaos Chatzis and Konstadinos A. Draziotis	vec	"ENUM,BKZ"	2018-04-16	0.99073
+444	94	2473	650	"Malin Haque, Dipta Das & Nafiul Hassan"	vec	Other	2017-02-23	0.99944
+445	94	2526	0	Phong Nguyen	vec	ENUM	2014-03-5	1.02066
+446	94	2528	0	"Michael Schneider, �zg�r Dagdelen, Jan Reichelt"	vec	"BKZ,Other"	2010-11-12	1.02145
+447	94	2543	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-06-8	1.02776
+448	94	2565	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-05-11	1.03656
+449	93	2190	1139	Jim Johnson	vec	Sieving	2021-11-14	0.89074
+450	93	2285	302	Jim Johnson	vec	Sieving	2021-09-30	0.93091
+451	93	2382	283	Jim Johnson	vec	Sieving	2021-09-30	0.96894
+452	93	2388	257	Michael Burger	vec	"ENUM,BKZ"	2018-10-10	0.97091
+453	93	2396	133	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-06-27	0.97645
+454	93	2548	0	Alex Li	vec	"ENUM,BKZ"	2015-03-16	1.03843
+455	93	2559	0	"F�bio Correia, Artur Mariano and Alberto Proen�a"	vec	ENUM	2014-05-17	1.04290
+456	92	2266	1351	Jim Johnson	vec	Sieving	2021-10-30	0.92823
+457	92	2276	904	Jim Johnson	vec	Sieving	2021-10-17	0.93258
+458	92	2295	501	Jim Johnson	vec	Sieving	2021-10-15	0.94242
+459	92	2308	148	Michael Burger	vec	"ENUM,BKZ"	2019-11-14	0.94703
+460	92	2327	60	Michael Burger	vec	"ENUM,BKZ"	2018-10-26	0.95185
+461	92	2440	0	Artur Mariano	vec	Sieving	2014-11-28	0.99680
+462	92	2454	0	"Michael Schneider, �zg�r Dagdelen, Jan Reichelt"	vec	"ENUM,Other"	2010-12-17	1.00236
+463	92	2492	0	Urs Wagner	vec	Other	2010-08-19	1.01782
+464	92	2498	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-05-11	1.02058
+465	91	2239	5621	Jim Johnson	vec	Sieving	2021-11-1	0.92070
+466	91	2251	3924	Jim Johnson	vec	Sieving	2021-10-31	0.92734
+467	91	2256	1303	Jim Johnson	vec	Sieving	2021-10-23	0.92962
+468	91	2288	778	Jim Johnson	vec	Sieving	2021-10-12	0.93830
+469	91	2294	733	Jim Johnson	vec	Sieving	2021-10-3	0.94639
+470	91	2315	161	Jim Johnson	vec	Sieving	2021-09-25	0.95552
+471	91	2323	421	Michael Burger	vec	"ENUM,BKZ"	2019-01-10	0.95705
+472	91	2330	78	Michael Burger	vec	"ENUM,BKZ"	2018-10-26	0.95965
+473	91	2424	1203	"Malin Haque, Dipta Das & Nafiul Hassan"	vec	Other	2017-02-22	0.99622
+474	91	2433	0	Alex Li	vec	"ENUM,BKZ"	2015-03-15	1.00467
+475	91	2468	0	Dan Ding	vec	"BKZ,Other"	2013-03-5	1.01920
+476	90	2202	3568	Jim Johnson	vec	Sieving	2021-11-2	0.90972
+477	90	2226	1705	Jim Johnson	vec	Sieving	2021-09-25	0.92431
+478	90	2241	78	Michael Burger	vec	"ENUM,BKZ"	2018-11-29	0.92844
+479	90	2325	11	Felix Fontein	vec	"BKZ,Other"	2012-11-15	0.95952
+480	90	2358	9	"Michael Schneider, �zg�r Dagdelen, Jan Reichelt"	vec	"ENUM,Other"	2010-12-14	0.97751
+481	90	2419	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-06-7	0.99866
+482	90	2482	0	Yuanmi Chen and Phong Nguyen	vec	Other	2010-05-11	1.02470
+483	89	2209	6281	Jim Johnson	vec	Sieving	2021-10-29	0.91649
+484	89	2220	5193	Jim Johnson	vec	Sieving	2021-10-29	0.92400
+485	89	2231	994	Jim Johnson	vec	Sieving	2021-10-16	0.92787
+486	89	2259	223	Michael Burger	vec	"ENUM,BKZ"	2018-10-26	0.93922
+487	89	2329	218	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-06-27	0.97230
+488	89	2459	0	Alex Li	vec	"BKZ,Other"	2014-12-3	1.02610
+489	89	2468	7	"Yuntao Wang, Tsuyoshi Takagi"	vec	BKZ	2014-07-1	1.02604
+490	89	2475	0	Kenji Kashiwabara and Masaharu Fukase	vec	Other	2014-04-15	1.03281
+491	89	2532	1512	P.G. Demidov Yaroslavl State University team	vec	Other	2013-04-18	1.04958
+492	88	2192	184	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-06-26	0.91666
+493	88	2404	6	Michael Schneider	vec	BKZ	2010-10-27	1.00410
+494	87	2114	9651	Jim Johnson	vec	Sieving	2022-02-12	0.89134
+495	87	2157	2488	Jim Johnson	vec	Sieving	2021-10-15	0.90722
+496	87	2218	629	Jim Johnson	vec	Sieving	2021-10-1	0.93659
+497	87	2231	606	Jim Johnson	vec	Sieving	2021-10-1	0.94128
+498	87	2244	295	Jim Johnson	vec	Sieving	2021-10-1	0.94698
+499	87	2252	15	Jim Johnson	vec	Sieving	2021-09-26	0.95043
+500	87	2328	6	Jim Johnson	vec	Sieving	2021-09-26	0.97569
+501	87	2342	4	Michael Burger	vec	"ENUM,BKZ"	2018-10-11	0.98885
+502	87	2362	0	Alex Li	vec	"BKZ,Other"	2014-12-3	0.99025
+503	87	2408	1112	Malin Haque	vec	BKZ	2013-05-6	1.01150
+504	87	2497	0	Dan Ding	vec	"BKZ,Other"	2013-03-4	1.04664
+505	86	2174	8971	Jim Johnson	vec	Sieving	2021-10-25	0.91779
+506	86	2178	5233	Jim Johnson	vec	Sieving	2021-10-18	0.92315
+507	86	2185	2966	Jim Johnson	vec	Sieving	2021-10-15	0.92765
+508	86	2201	2825	Jim Johnson	vec	Sieving	2021-10-15	0.93344
+509	86	2206	1755	Jim Johnson	vec	Sieving	2021-10-7	0.93499
+510	86	2232	446	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, K. Fujisawa"	vec	"ENUM,BKZ"	2019-10-31	0.94111
+511	86	2276	279	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, K. Fujisawa"	vec	"ENUM,BKZ"	2019-10-31	0.96537
+512	86	2284	456	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, K. Fujisawa"	vec	"ENUM,BKZ"	2019-10-31	0.96386
+513	86	2285	249	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, K. Fujisawa"	vec	"ENUM,BKZ"	2019-10-31	0.96374
+514	86	2291	308	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, K. Fujisawa"	vec	"ENUM,BKZ"	2019-10-31	0.97127
+515	86	2297	203	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, K. Fujisawa"	vec	"ENUM,BKZ"	2019-10-12	0.97380
+516	86	2299	9	Michael Burger	vec	"ENUM,BKZ"	2018-10-11	0.97635
+517	86	2357	0	Artur Mariano	vec	Sieving	2014-11-7	0.99394
+518	86	2387	0	Dan Ding	vec	"BKZ,Other"	2013-03-4	1.00677
+519	86	2456	0	Moon Sung Lee	vec	BKZ	2010-10-25	1.03605
+520	85	2127	785	Jim Johnson	vec	Sieving	2021-10-27	0.90815
+521	85	2161	204	Michael Burger	vec	"ENUM,BKZ"	2018-11-29	0.91809
+522	85	2311	0	Alex Li	vec	"ENUM,BKZ"	2015-03-2	0.98285
+523	85	2347	64	Artur Mariano and Christian Bischof	vec	Sieving	2014-03-28	0.99965
+524	85	2355	0	Kenji Kashiwabara and Masaharu Fukase	vec	Other	2014-03-25	1.00139
+525	85	2412	0	Dan Ding	vec	"BKZ,Other"	2013-02-28	1.02567
+526	85	2463	8	"Michael Schneider, Norman G�ttert"	vec	Other	2011-06-9	1.04634
+527	84	2158	1175	Jim Johnson	vec	Sieving	2021-10-13	0.92217
+528	84	2173	826	Jim Johnson	vec	Sieving	2021-10-2	0.92643
+529	84	2202	673	Michael Burger	vec	"ENUM,BKZ"	2018-11-29	0.94163
+530	84	2255	311	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-06-25	0.96082
+531	84	2288	9	Michael Schneider	vec	BKZ	2010-10-4	0.97762
+532	83	2100	6036	Jim Johnson	vec	Sieving	2021-10-4	0.90497
+533	83	2169	899	Jim Johnson	vec	Sieving	2021-09-29	0.93502
+534	83	2209	316	Jim Johnson	vec	Sieving	2021-09-27	0.95172
+535	83	2222	237	Michael Burger	vec	"ENUM,BKZ"	2018-11-29	0.95941
+536	83	2304	64	Artur Mariano und Christian Bischof	vec	Sieving	2014-03-21	0.99466
+537	83	2384	5123	Malin Haque	vec	BKZ	2013-05-4	1.02578
+538	83	2405	5121	Malin Haque	vec	BKZ	2013-05-4	1.03077
+539	83	2433	0	Dan Ding	vec	"BKZ,Other"	2013-02-27	1.04267
+540	82	2043	8449	Jim Johnson	vec	Sieving	2021-10-17	0.88534
+541	82	2107	6917	Jim Johnson	vec	Sieving	2021-10-16	0.91540
+542	82	2117	5850	Jim Johnson	vec	Sieving	2021-10-15	0.91718
+543	82	2130	5001	Jim Johnson	vec	Sieving	2021-10-15	0.92168
+544	82	2131	2896	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, K. Fujisawa"	vec	"ENUM,BKZ"	2019-10-12	0.92380
+545	82	2133	155	Michael Burger	vec	"ENUM,BKZ"	2018-11-29	0.92282
+546	82	2231	93	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-06-24	0.96919
+547	82	2303	0	Moon Sung Lee	vec	Sieving	2010-10-22	0.99566
+548	81	2073	9152	Jim Johnson	vec	Sieving	2021-10-17	0.90340
+549	81	2090	7137	Jim Johnson	vec	Sieving	2021-10-15	0.91167
+550	81	2103	6473	Jim Johnson	vec	Sieving	2021-10-14	0.91846
+551	81	2112	4174	Jim Johnson	vec	Sieving	2021-10-6	0.92158
+552	81	2133	3273	Jim Johnson	vec	Sieving	2021-10-6	0.92581
+553	81	2134	299	Michael Burger	vec	"ENUM,BKZ"	2018-11-29	0.92813
+554	81	2276	0	Dan Ding	vec	"BKZ,Other"	2013-02-27	0.99192
+555	81	2325	71	Usatyuk Vasiliy	vec	BKZ	2012-08-31	1.01532
+556	80	2040	7951	Jim Johnson	vec	Sieving	2021-10-16	0.89186
+557	80	2077	7856	Jim Johnson	vec	Sieving	2021-10-16	0.90673
+558	80	2085	5904	Jim Johnson	vec	Sieving	2021-10-15	0.91064
+559	80	2088	3865	Jim Johnson	vec	Sieving	2021-10-13	0.91785
+560	80	2105	1728	Jim Johnson	vec	Sieving	2021-10-9	0.91954
+561	80	2111	1472	Jim Johnson	vec	Sieving	2021-10-4	0.92317
+562	80	2117	720	Michael Burger	vec	"ENUM,BKZ"	2018-11-29	0.92625
+563	80	2163	426	Dipta Das & Nafiul Hassan	vec	Other	2017-01-27	0.94517
+564	80	2202	8	Felix Fontein	vec	"BKZ,Other"	2012-08-7	0.96102
+565	80	2217	1	"Michael Schneider, �zg�r Dagdelen, Jan Reichelt"	vec	"ENUM,Other"	2010-11-26	0.96922
+566	80	2272	0	Benjamin Milde	vec	Sieving	2010-05-11	0.99554
+567	79	1966	6348	Jim Johnson	vec	Sieving	2021-10-26	0.86817
+568	79	2051	4211	Jim Johnson	vec	Sieving	2021-10-18	0.90191
+569	79	2055	4154	Jim Johnson	vec	Sieving	2021-10-18	0.90879
+570	79	2058	2707	Jim Johnson	vec	Sieving	2021-10-14	0.90521
+571	79	2077	1639	Jim Johnson	vec	Sieving	2021-10-13	0.91835
+572	79	2080	1013	Jim Johnson	vec	Sieving	2021-10-13	0.91531
+573	79	2087	189	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-06-23	0.91591
+574	79	2240	16	Walter White	vec	Other	2013-09-24	0.98232
+575	79	2346	0	Dan Ding	vec	"BKZ,Other"	2013-02-22	1.03440
+576	78	2030	8978	Jim Johnson	vec	Sieving	2021-10-18	0.89653
+577	78	2032	8916	Jim Johnson	vec	Sieving	2021-10-17	0.90435
+578	78	2050	84	Jim Johnson	vec	Sieving	2021-09-26	0.90419
+579	78	2143	42	Walter White	vec	Other	2013-09-24	0.95306
+580	78	2272	9	"Michael Schneider, �zg�r Dagdelen, Jan Reichelt"	vec	"ENUM,Other"	2010-11-26	1.01051
+581	78	2273	0	Moon Sung Lee	vec	Sieving	2010-10-22	1.00434
+582	78	2336	0	Antonio Campello and Jo�o Strapasson	vec	"BKZ,Other"	2010-10-18	1.03216
+583	77	1988	6871	Jim Johnson	vec	Sieving	2021-10-26	0.88535
+584	77	2005	2955	Jim Johnson	vec	Sieving	2021-10-13	0.89454
+585	77	2030	584	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-06-21	0.90805
+586	77	2229	0	Zhongxiang Zheng	vec	BKZ	2016-06-21	0.99760
+587	77	2235	100	Walter White	vec	Other	2013-09-24	0.99238
+588	77	2271	190	Malin Haque	vec	BKZ	2013-05-4	1.00905
+589	76	1902	4782	Jim Johnson	vec	Sieving	2021-10-7	0.84992
+590	76	2041	866	Jim Johnson	vec	Sieving	2021-10-1	0.91219
+591	76	2044	813	Jim Johnson	vec	Sieving	2021-09-27	0.92081
+592	76	2081	531	Jim Johnson	vec	Sieving	2021-09-27	0.93761
+593	76	2090	436	Jim Johnson	vec	Sieving	2021-09-26	0.93978
+594	76	2125	309	Jim Johnson	vec	Sieving	2021-09-26	0.95462
+595	76	2133	164	Michael Burger	vec	"ENUM,BKZ"	2018-10-16	0.95418
+596	76	2147	57	Walter White	vec	Other	2013-09-24	0.96098
+597	76	2241	0	Moon Sung Lee	vec	Sieving	2010-10-22	1.00060
+598	76	2252	1	Michael Schneider	vec	BKZ	2010-09-13	1.01078
+599	75	1953	3660	Jim Johnson	vec	Sieving	2021-10-9	0.88561
+600	75	1999	2840	Jim Johnson	vec	Sieving	2021-10-2	0.90589
+601	75	2021	1822	Jim Johnson	vec	Sieving	2021-10-2	0.91374
+602	75	2022	1237	Jim Johnson	vec	Sieving	2021-09-30	0.91626
+603	75	2040	1206	Jim Johnson	vec	Sieving	2021-09-30	0.92292
+604	75	2052	776	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-06-21	0.92309
+605	75	2140	38	Walter White	vec	Other	2013-09-24	0.96545
+606	75	2220	1000	Malin Haque	vec	BKZ	2013-05-3	1.00305
+607	75	2255	6	Jan Reichelt	vec	Other	2011-05-30	1.01754
+608	75	2280	0	"Michael Schneider, Norman G�ttert"	vec	Other	2011-05-26	1.03217
+609	74	1925	8100	Jim Johnson	vec	Sieving	2021-10-26	0.87072
+610	74	1938	6608	Jim Johnson	vec	Sieving	2021-10-26	0.88139
+611	74	1945	5466	Jim Johnson	vec	Sieving	2021-09-28	0.88224
+612	74	1966	4190	Jim Johnson	vec	Sieving	2021-09-28	0.89385
+613	74	1993	1575	Jim Johnson	vec	Sieving	2021-09-28	0.90711
+614	74	2033	503	Jim Johnson	vec	Sieving	2021-09-27	0.92480
+615	74	2057	240	Jim Johnson	vec	Sieving	2021-09-27	0.93189
+616	74	2058	144	Jim Johnson	vec	Sieving	2021-09-26	0.93771
+617	74	2096	69	Michael Burger	vec	"ENUM,BKZ"	2018-10-17	0.95587
+618	74	2137	32	Walter White	vec	Other	2013-09-24	0.97190
+619	74	2216	777	Usatyuk Vasiliy	vec	BKZ	2012-08-24	1.00265
+620	74	2246	127	Usatyuk Vasiliy	vec	BKZ	2012-08-24	1.01953
+621	74	2254	0	Benjamin Milde	vec	Sieving	2010-05-11	1.02546
+622	73	1968	179	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-06-20	0.89729
+623	73	2044	74	Walter White	vec	Other	2013-09-24	0.93025
+624	73	2190	0	Dan Ding	vec	"BKZ,Other"	2013-02-21	1.00332
+625	73	2220	0	Dan Ding	vec	"BKZ,Other"	2013-02-21	1.01727
+626	73	2235	0	Dan Ding	vec	"BKZ,Other"	2013-02-20	1.02427
+627	73	2254	0	Dan Ding	vec	"BKZ,Other"	2013-02-20	1.03260
+628	72	1871	7260	Jim Johnson	vec	Sieving	2021-10-7	0.86492
+629	72	1958	6214	Jim Johnson	vec	Sieving	2021-10-6	0.89906
+630	72	1962	5555	Jim Johnson	vec	Sieving	2021-10-1	0.89944
+631	72	1972	5499	Jim Johnson	vec	Sieving	2021-10-1	0.90960
+632	72	1973	5076	Jim Johnson	vec	Sieving	2021-09-27	0.90866
+633	72	2022	4058	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, K. Fujisawa"	vec	"ENUM,BKZ"	2019-09-13	0.93483
+634	72	2033	1077	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, K. Fujisawa"	vec	"ENUM,BKZ"	2019-09-13	0.93631
+635	72	2048	4056	"N. Tateiwa, Y. Shinano, A. Yoshida, S. Nakamura, S. Kaji, M. Yasuda, K. Fujisawa"	vec	"ENUM,BKZ"	2019-09-13	0.93940
+636	72	2049	16	"Dan Ding, Guizhen Zhu and Xiaoyun Wang"	vec	"BKZ,Other"	2014-02-8	0.94219
+637	72	2077	98	Walter White	vec	Other	2013-09-24	0.95702
+638	72	2179	0	Moon Sung Lee	vec	Sieving	2010-10-22	1.00417
+639	72	2234	0	Michael Schneider	vec	BKZ	2010-09-13	1.02931
+640	71	1890	885	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-11-4	0.87536
+641	71	2033	31	Walter White	vec	Other	2013-09-24	0.93922
+642	71	2195	1000	Malin Haque	vec	BKZ	2013-05-3	1.01974
+643	71	2215	53	Usatyuk Vasiliy	vec	BKZ	2012-08-30	1.02110
+644	71	2252	1	Michael Schneider	vec	Other	2011-05-26	1.04648
+645	70	1869	4592	Jim Johnson	vec	Sieving	2021-10-10	0.87228
+646	70	1903	1815	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-06-23	0.88626
+647	70	1986	17	Felix Fontein	vec	Other	2012-07-3	0.92427
+648	70	2143	0	Benjamin Milde	vec	Sieving	2010-05-11	0.99846
+649	69	1896	2675	"Malin Haque, Dipta Das & Nafiul Hassan"	vec	BKZ	2016-10-31	0.88725
+650	69	1972	555	"Malin Haque, Dipta Das & Nafiul Hassan"	vec	BKZ	2016-10-31	0.92397
+651	69	2005	63	Walter White	vec	Other	2013-09-24	0.94184
+652	69	2212	0	Dan Ding	vec	"BKZ,Other"	2013-02-20	1.03643
+653	69	2226	0	Dan Ding	vec	"BKZ,Other"	2013-02-20	1.04258
+654	68	1896	7542	Jim Johnson	vec	Sieving	2021-09-28	0.89260
+655	68	1921	1861	Jim Johnson	vec	Sieving	2021-09-27	0.90743
+656	68	1927	539	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-06-18	0.90977
+657	68	1964	16	Walter White	vec	Other	2013-09-24	0.92681
+658	68	2038	3545421	Usatyuk Vasiliy	vec	BKZ	2012-08-24	0.96813
+659	68	2141	0	Moon Sung Lee	vec	Sieving	2010-10-22	1.01033
+660	67	1838	63098	Qianxue Cao	vec	Sieving	2024-02-25	0.87545
+661	67	1889	8165	Jim Johnson	vec	Sieving	2021-09-28	0.89846
+662	67	1895	72	Walter White	vec	Other	2013-09-24	0.90154
+663	67	2158	100	Malin Haque	vec	BKZ	2013-05-3	1.03035
+664	67	2177	100	Malin Haque	vec	BKZ	2013-05-3	1.03909
+665	67	2187	0	Dan Ding	vec	"BKZ,Other"	2013-02-20	1.03965
+666	66	1846	95480	Qianxue Cao	vec	Sieving	2024-03-5	0.88665
+667	66	1857	6301	Jim Johnson	vec	Sieving	2021-09-27	0.89299
+668	66	1885	5822	Jim Johnson	vec	Sieving	2021-09-27	0.90750
+669	66	1893	241	Jim Johnson	vec	Sieving	2021-09-25	0.90418
+670	66	1960	93	Jim Johnson	vec	Sieving	2021-09-25	0.93533
+671	66	1971	3	"Dan Ding, Guizhen Zhu, Xiaoyun Wang"	vec	"BKZ,Other"	2014-02-8	0.94674
+672	66	2000	15	Walter White	vec	Other	2013-09-24	0.96380
+673	66	2036	3	Dan Ding	vec	"BKZ,Other"	2013-02-18	0.97783
+674	66	2072	4	Moon Sung Lee	vec	Sieving	2010-10-25	0.99649
+675	66	2099	3	Michael Schneider	vec	BKZ	2010-09-13	1.00846
+676	66	2120	2	Michael Schneider	vec	BKZ	2010-09-13	1.01749
+677	65	1841	6242	Jim Johnson	vec	Sieving	2021-09-29	0.88543
+678	65	1852	1471	Jim Johnson	vec	Sieving	2021-09-26	0.89244
+679	65	1890	1264	Jim Johnson	vec	Sieving	2021-09-26	0.91767
+680	65	1905	995	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-06-16	0.92387
+681	65	1947	83	Walter White	vec	Other	2013-09-24	0.94061
+682	65	2077	1427	P.G. Demidov Yaroslavl State University team	vec	Other	2013-04-16	1.00646
+683	64	1797	8154	Jim Johnson	vec	Sieving	2021-09-29	0.87125
+684	64	1810	4209	Jim Johnson	vec	Sieving	2021-09-27	0.88568
+685	64	1842	4020	Jim Johnson	vec	Sieving	2021-09-26	0.89393
+686	64	1880	2793	"Malin Haque, Dipta Das & Nafiul Hassan"	vec	BKZ	2016-10-30	0.91922
+687	64	1886	40	Walter White	vec	Other	2013-09-24	0.91690
+688	64	1938	5	Jan Reichelt	vec	Other	2011-06-29	0.94010
+689	64	2103	0	Moon Sung Lee	vec	Sieving	2010-10-22	1.02505
+690	63	1738	1483	Jim Johnson	vec	Sieving	2021-09-27	0.85489
+691	63	1849	1119	Jim Johnson	vec	Sieving	2021-09-26	0.90251
+692	63	1850	284	Jim Johnson	vec	Sieving	2021-09-26	0.91014
+693	63	1878	77	Walter White	vec	Other	2013-09-24	0.92154
+694	63	2048	100	Malin Haque	vec	BKZ	2013-05-3	1.00945
+695	63	2106	15	Jan Reichelt	vec	Other	2011-05-29	1.02815
+696	62	1738	8366	Jim Johnson	vec	Sieving	2021-10-1	0.85383
+697	62	1766	2289	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-11-22	0.86846
+698	62	1818	776	"Dan Ding, Guizhen Zhu and Xiaoyun Wang"	vec	"BKZ,Other"	2014-02-8	0.90283
+699	62	1887	26	Walter White	vec	Other	2013-09-24	0.93271
+700	62	2048	137	Usatyuk Vasiliy	vec	BKZ	2012-08-24	1.00892
+701	62	2092	0	Moon Sung Lee	vec	Sieving	2010-10-22	1.03335
+702	62	2118	0	"Antonio Campello, Jo�o Strapasson and Cristiano Torezzan"	vec	"BKZ,Other"	2010-10-15	1.04610
+703	61	1670	8436	Jim Johnson	vec	Sieving	2021-10-2	0.83578
+704	61	1726	557	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-06-13	0.85889
+705	61	1869	95	Walter White	vec	Other	2013-09-24	0.93396
+706	61	2112	0	Malin Haque	vec	BKZ	2013-04-24	1.04626
+707	60	1743	2677	Jim Johnson	vec	Sieving	2021-09-27	0.87936
+708	60	1752	526	"Dan Ding, Guizhen Zhu and Xiaoyun Wang"	vec	"BKZ,Other"	2014-02-8	0.87565
+709	60	1776	45	Felix Fontein	vec	BKZ	2012-08-5	0.88997
+710	60	1917	15	Felix Fontein	vec	"BKZ,Other"	2012-07-3	0.96174
+711	60	1943	0	Moon Sung Lee	vec	Sieving	2010-10-22	0.97131
+712	60	1991	0	Michael Schneider	vec	BKZ	2010-09-9	0.99488
+713	59	1676	8157	Jim Johnson	vec	Sieving	2021-09-27	0.84737
+714	59	1761	7082	Jim Johnson	vec	Sieving	2021-09-26	0.88605
+715	59	1779	3172	Jim Johnson	vec	Sieving	2021-09-26	0.89940
+716	59	1788	2360	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-11-20	0.90630
+717	59	1801	2335	"Malin Haque, Dipta Das & Nafiul Hassan"	vec	BKZ	2016-10-30	0.91220
+718	59	1817	1650	"Malin Haque, Dipta Das & Nafiul Hassan"	vec	BKZ	2016-10-30	0.92045
+719	59	1838	853	Malin Haque and Iftekharul Islam	vec	"ENUM,BKZ"	2015-10-10	0.92660
+720	59	1848	6	Walter White	vec	Other	2013-09-24	0.93240
+721	59	2069	0	Malin Haque	vec	BKZ	2013-04-24	1.04190
+722	58	1724	74335	Qianxue Cao	vec	Sieving	2024-02-7	0.87906
+723	58	1730	1167	Jim Johnson	vec	Sieving	2021-09-26	0.88353
+724	58	1743	2245	Jim Johnson	vec	Sieving	2021-09-26	0.88423
+725	58	1745	1772	Jim Johnson	vec	Sieving	2021-09-26	0.89268
+726	58	1747	1436	Jim Johnson	vec	Sieving	2021-09-26	0.89504
+727	58	1748	898	"Dan Ding, Guizhen Zhu and Xiaoyun Wang"	vec	"BKZ,Other"	2014-02-8	0.88683
+728	58	1787	89	Walter White	vec		2013-09-24	0.91212
+729	58	2009	9999	Usatyuk VAsiliy	vec	BKZ	2012-08-24	1.02072
+730	58	2017	0	Moon Sung Lee	vec	Sieving	2010-10-22	1.02688
+731	57	1639	9633	Jim Johnson	vec	Sieving	2021-10-2	0.83966
+732	57	1643	3257	Jim Johnson	vec	Sieving	2021-09-26	0.84202
+733	57	1698	2917	Jim Johnson	vec	Sieving	2021-09-26	0.87102
+734	57	1703	3207	Jim Johnson	vec	Sieving	2021-09-26	0.87288
+735	57	1725	2730	Jim Johnson	vec	Sieving	2021-09-26	0.88295
+736	57	1730	1602	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-11-20	0.89155
+737	57	1763	433	Malin Haque and Iftekharul Islam	vec	"ENUM,BKZ"	2015-10-9	0.91080
+738	57	1772	42	Walter White	vec	Other	2013-09-24	0.91384
+739	57	1953	0	Malin Haque	vec	BKZ	2013-04-24	1.00684
+740	56	1488	9939	Jim Johnson	vec	Sieving	2021-09-26	0.76768
+741	56	1704	2908	Jim Johnson	vec	Sieving	2021-09-26	0.88328
+742	56	1711	539	"Dan Ding, Guizhen Zhu and Xiaoyun Wang"	vec	"BKZ,Other"	2014-02-8	0.88941
+743	56	1751	20	Walter White	vec	Other	2013-09-24	0.90302
+744	56	1776	2	Jan Reichelt	vec	Other	2011-05-23	0.91977
+745	56	1894	1	"Michael Schneider, �zg�r Dagdelen, Jan Reichelt"	vec	"BKZ,Other"	2010-11-23	0.97638
+746	56	1974	0	Moon Sung Lee	vec	Sieving	2010-10-22	1.02255
+747	55	1633	8442	Jim Johnson	vec	Sieving	2021-09-27	0.85757
+748	55	1643	1324	Jim Johnson	vec	Sieving	2021-09-26	0.85450
+749	55	1682	291	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-06-12	0.87944
+750	55	1818	49	Walter White	vec	Other	2013-09-24	0.95446
+751	55	1870	14	Malin Haque	vec	"ENUM,BKZ"	2013-04-29	0.97415
+752	55	1914	13	Malin Haque	vec	"BKZ,Other"	2013-04-29	0.99562
+753	55	1918	13	Malin Haque	vec	"ENUM,BKZ"	2013-04-28	0.99780
+754	55	1965	10	Malin Haque	vec	"ENUM,BKZ"	2013-04-27	1.02136
+755	55	1973	0	Malin Haque	vec	"BKZ,Other"	2013-04-24	1.03197
+756	54	1564	2439	Jim Johnson	vec	Sieving	2021-09-25	0.82335
+757	54	1696	988	"Dan Ding, Guizhen Zhu and Xiaoyun Wang (Tsinghua)"	vec	"BKZ,Other"	2014-02-8	0.88941
+758	54	1768	10	Walter White	vec	Other	2013-09-24	0.92909
+759	54	1877	25	Jan Reichelt	vec	Other	2011-05-23	0.98755
+760	54	1904	2	"Michael Schneider, �zg�r Dagdelen, Jan Reichelt"	vec	"BKZ,Other"	2010-11-23	1.00551
+761	54	1921	0	"Antonio Campello, Jo�o Strapasson and Cristiano Torezzan"	vec	"BKZ,Other"	2010-10-15	1.00899
+762	53	1477	1917	Jim Johnson	vec	Sieving	2021-09-26	0.78337
+763	53	1646	370	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-11-20	0.87915
+764	53	1699	194	Malin Haque and Iftekharul Islam	vec	"ENUM,BKZ"	2015-10-8	0.90118
+765	53	1731	14	Walter White	vec	Other	2013-09-24	0.92038
+766	53	1896	0	Malin Haque	vec	BKZ	2013-04-24	1.00386
+767	52	1557	8949	"Nariaki Tateiwa, Akihiro Yoshida, Satoshi Nakamura, Shizuo Kaji, Masaya Yasuda, Katsuki Fujisawa"	vec	"ENUM,BKZ"	2019-09-4	0.83006
+768	52	1616	796	"Dan Ding, Guizhen Zhu and Xiaoyun Wang (Tsinghua)"	vec	"BKZ,Other"	2014-02-8	0.86719
+769	52	1722	45	Moon Sung Lee	vec	Sieving	2010-11-29	0.92927
+770	52	1839	1	"Michael Schneider, �zg�r Dagdelen, Jan Reichelt"	vec	"BKZ,Other"	2010-11-23	0.98459
+771	52	1906	0	"Antonio Campello, Jo�o Strapasson and Cristiano Torezzan"	vec	"BKZ,Other"	2010-10-11	1.01697
+772	51	1588	1435	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-11-18	0.85577
+773	51	1685	190	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-06-7	0.90914
+774	51	1699	99	Walter White	vec	Other	2013-09-24	0.91511
+775	51	1880	101	Malin Haque	vec	BKZ	2013-04-24	1.01319
+776	51	1885	0	Dan Ding	vec	"BKZ,Other"	2013-02-18	1.01452
+777	50	1472	3203	Felix Fontein	vec	"ENUM,BKZ"	2012-08-8	0.80123
+778	50	1679	38	Moon Sung Lee	vec	Sieving	2010-11-29	0.91602
+779	50	1803	6	"Michael Schneider, �zg�r Dagdelen, Jan Reichelt"	vec	"BKZ,Other"	2010-11-22	0.98541
+780	50	1847	2	Moon Sung Lee	vec	Sieving	2010-10-25	1.01572
+781	50	1864	1	Michael Schneider	vec	ENUM	2010-05-11	1.01312
+782	50	1893	0	Michael Schneider	vec	ENUM	2010-05-11	1.03084
+783	49	1515	9867	Jim Johnson	vec	Sieving	2021-09-25	0.83213
+784	49	1539	6591	Jim Johnson	vec	Sieving	2021-09-25	0.84680
+785	49	1564	7329	Jim Johnson	vec	Sieving	2021-09-25	0.85811
+786	49	1566	8203	Jim Johnson	vec	Sieving	2021-09-25	0.85941
+787	49	1572	4158	Jim Johnson	vec	Sieving	2021-09-25	0.87314
+788	49	1602	3705	Jim Johnson	vec	Sieving	2021-09-25	0.88442
+789	49	1604	921	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-11-18	0.88492
+790	49	1659	126	Malin Haque and Iftekharul Islam	vec	"ENUM,BKZ"	2015-09-16	0.91035
+791	49	1707	72	Walter White	vec	Other	2013-09-24	0.94333
+792	48	1496	8127	Jim Johnson	vec	Sieving	2021-09-26	0.82926
+793	48	1512	1602	Jim Johnson	vec	Sieving	2021-09-25	0.84359
+794	48	1597	358	Hayato Waki and Masaya Yasuda	vec	Other	2016-06-6	0.89041
+795	48	1660	208	Hayato Waki and Masaya Yasuda	vec	Other	2016-06-3	0.92279
+796	48	1703	7	Walter White	vec	Other	2013-09-24	0.94993
+797	47	1517	53718	Qianxue Cao	vec	Sieving	2024-03-5	0.85826
+798	47	1529	676	Hayato Waki and Masaya Yasuda	vec	Other	2016-06-9	0.86000
+799	47	1622	144	Hayato Waki and Masaya Yasuda	vec	Other	2016-06-2	0.91149
+800	47	1679	95	Walter White	vec	BKZ	2013-09-24	0.94361
+801	46	1439	6337	Jim Johnson	vec	Sieving	2021-09-25	0.81691
+802	46	1473	6955	Jim Johnson	vec	Sieving	2021-09-25	0.83812
+803	46	1481	5533	Jim Johnson	vec	Sieving	2021-09-25	0.84258
+804	46	1493	4540	Jim Johnson	vec	Sieving	2021-09-25	0.85089
+805	46	1501	962	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-11-18	0.85563
+806	46	1566	16	Walter White	vec	Other	2013-09-24	0.88572
+807	45	1409	9469	Jim Johnson	vec	Sieving	2021-09-25	0.81105
+808	45	1489	5683	Jim Johnson	vec	Sieving	2021-09-25	0.85397
+809	45	1496	268	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-11-10	0.85988
+810	45	1547	79	Walter White	vec	Sieving	2013-09-24	0.88176
+811	44	1368	4934	Jim Johnson	vec	Sieving	2021-09-25	0.79099
+812	44	1372	5495	Jim Johnson	vec	Sieving	2021-09-25	0.79570
+813	44	1425	8258	Jim Johnson	vec	Sieving	2021-09-25	0.83102
+814	44	1443	648	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-11-18	0.83364
+815	44	1573	8	Walter White	vec	ENUM	2013-09-24	0.90729
+816	43	1418	8414	Jim Johnson	vec	Sieving	2021-09-25	0.83481
+817	43	1429	2530	Jim Johnson	vec	Sieving	2021-09-25	0.84320
+818	43	1454	1441	Jim Johnson	vec	Sieving	2021-09-25	0.85713
+819	43	1460	736	Jim Johnson	vec	Sieving	2021-09-25	0.85256
+820	43	1490	722	Jim Johnson	vec	Sieving	2021-09-25	0.87299
+821	43	1504	542	Jim Johnson	vec	Sieving	2021-09-25	0.87815
+822	43	1505	410	Jim Johnson	vec	Sieving	2021-09-25	0.88574
+823	43	1526	194	Jim Johnson	vec	Sieving	2021-09-25	0.89858
+824	43	1545	2	Walter White	vec	BKZ	2013-09-24	0.89894
+825	42	1423	9760	Jim Johnson	vec	Sieving	2021-09-25	0.84161
+826	42	1428	3212	Jim Johnson	vec	Sieving	2021-09-25	0.84486
+827	42	1450	2705	Jim Johnson	vec	Sieving	2021-09-25	0.85335
+828	42	1465	1188	Jim Johnson	vec	Sieving	2021-09-25	0.86884
+829	42	1480	1984	Jim Johnson	vec	Sieving	2021-09-25	0.87142
+830	42	1496	47	Walter White	vec	Other	2013-09-24	0.89156
+831	41	1352	7741	Jim Johnson	vec	Sieving	2021-09-25	0.80298
+832	41	1381	1088	Jim Johnson	vec	Sieving	2021-09-25	0.82184
+833	41	1398	434	Jim Johnson	vec	Sieving	2021-09-25	0.83618
+834	41	1467	543	Hayato Waki and Masaya Yasuda	vec	Other	2016-06-4	0.87591
+835	41	1480	269	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-06-1	0.88352
+836	41	1481	135	Malin Haque and Iftekharul Islam	vec	"ENUM,BKZ"	2015-09-16	0.88999
+837	41	1562	31	Walter White	vec	Other	2013-09-24	0.93140
+838	40	1338	5778	Jim Johnson	vec	Sieving	2021-09-25	0.81698
+839	40	1348	2302	Jim Johnson	vec	Sieving	2021-09-25	0.81698
+840	40	1355	4734	Jim Johnson	vec	Sieving	2021-09-25	0.81714
+841	40	1365	7327	Jim Johnson	vec	Sieving	2021-09-25	0.82220
+842	40	1377	1030	Jim Johnson	vec	Sieving	2021-09-25	0.82999
+843	40	1405	398	Hayato Waki and Masaya Yasuda	vec	"BKZ,Other"	2016-06-1	0.85333
+844	40	1434	76	Walter White	vec	Other	2013-09-24	0.87107
+845	40	1465	12	Malin Haque	vec	"ENUM,BKZ"	2013-05-2	0.88943
+846	40	1587	11	P.G. Demidov Yaroslavl State University team	vec	Other	2013-04-11	0.95824
+847	40	1702	0	Lc	vec	BKZ	2013-02-15	1.02768

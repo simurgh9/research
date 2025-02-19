@@ -51,7 +51,6 @@ def plot_population(P, title=''):
     colours = list('bgrcmy')
     for i in range(1, P.shape[1]+1):
         plot_vector(P[:, -i], c=colours[i % len(colours)], a=0.7)
-
     plt.axhline(0, alpha=0.4)
     plt.axvline(0, alpha=0.4)
     set_axis_size(P, pad=0.1)
@@ -67,14 +66,15 @@ B = np.array([[95, 47], [460, 215]], dtype=np.int64)
 size = 4
 RNG = np.random.default_rng(5)
 coefs = RNG.normal(scale=size, size=(B.shape[1], size)).astype(np.int64)
-P = (B @ coefs)
+P = -1 * (B @ coefs)  # makes them all positive
 P = P[:, ~np.all(P == 0, axis=0)]  # deleting zero columns
 new = np.empty(shape=(2, 0), dtype=np.int64)
 i = 0
 
 while True:
     P = select(np.hstack((P, new)), P.shape[1])
-    # i += 1
+    i += 1
+    # print(P)
     # plot_lattice(B)
     # plot_population(P, f'Iteration {i}')
     new = np.empty(shape=(2, 0), dtype=np.int64)

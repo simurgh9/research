@@ -1,3 +1,5 @@
+saved/video/*
+.auxs
 *.egg-info
 *.o
 .venv/

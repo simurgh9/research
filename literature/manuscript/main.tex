@@ -9,7 +9,6 @@
 \end{abstract}
 \maketitle
 
-
 \section{Introduction}\label{intro}
 
 A lattice is a discrete additive subgroup of a $d$-dimensional
@@ -39,7 +38,7 @@ number of rows, we call $\L$ a full rank lattice. $\R^d$ is now the
 ambient space for the reduced set of vectors that are in the lattice
 $\L$. The group operation of a lattice is the vector difference,
 \[
-  v_i \in \L \ni v_j,\quad (v_i - v_j) \in \L
+  u \in \L \ni v,\quad (v - u) \in \L
 \]
 
 If we further restrict $\B \in \Z^{d \times d}$, the resulting lattice
@@ -256,7 +255,7 @@ $1 \leq k \leq d$, we reduce $b_k$ as the following,
 \[
   b_k = b_k - \near{\frac{b_j^* \cdot b_k}{b_j^* \cdot b_j^*}}b_j
 \]
-$b_i^*$ is the $i^\text{th}$ basis vector in the Gram-Schmidt
+$b_j^*$ is the $j^\text{th}$ basis vector in the Gram-Schmidt
 orthogonalization of $\B$. The reduction of $b_k$ is carried out using
 the Gram-Schmidt orthogonalizations of all the already reduced $b_j$
 for every $k - 1 > j \geq 1$ where the following \textit{size
@@ -354,15 +353,21 @@ any $\beta < d$ we solve some version of the \appr\SVP{}.
 Apart from the reduction algorithms mentioned in section \ref{rw}, we
 now discuss the approach taken in this paper. The method of sieving
 for the shortest vector first surfaced due to the works of Ajtai,
-Kumar and Sivakumar \cite{ajtai2001sieve}. The idea behind sieving is
-quite simple: if we have two lattice vectors $u \in \L \ni v$ and we
-want a shorter one, we might try $u - v$. More specifically,
-repeatedly checks if there exists $(u, v)$ in a fixed subset $P$ of
-$\L$ such that $\norm{u - v} < \norm{u}$ then $u$ is replaced with
-$\norm{u - v}$. When $\norm{u - v} < \norm{u}$ is not true for any
-pair $(u, v)$ in $P^2$, we hope to solve some version of the
-\appr\SVP{} with the shortest vector in $P$. We give our variation of
-the aforementioned idea as a na\"ive sieving algorithm \ref{naive}.
+Kumar and Sivakumar \cite{ajtai2001sieve}. Today, sieving algorithms
+have become very practical. At the time of this writing, more than
+half ($437/847$) of the solutions posted at the \textit{Shortest
+  Vector Problem Challenges} website \cite{LatticeChallenge2025} are
+done via some sieving technique.
+
+\subsection{Sieving} The idea behind sieving is quite simple: if we
+have two lattice vectors $u \in \L \ni v$ and we want a shorter one,
+we might try $v - u$. More specifically, repeatedly check if there
+exists a pair of vectors $(u, v)$ in a fixed subset $P$ of $\L$ such
+that $\norm{v - u} < \norm{v}$ then $v$ is replaced with $v - u$. When
+$\norm{v - u} < \norm{v}$ is not true for any pair $(u, v)$ in $P^2$,
+we hope to solve some version of the \appr\SVP{} with the shortest
+vector in $P$. We give our variation of the aforementioned idea as a
+na\"ive sieving algorithm \ref{naive}.
 
 \begin{algorithm}
 \begin{flushleft}
@@ -370,16 +375,14 @@ the aforementioned idea as a na\"ive sieving algorithm \ref{naive}.
     \noindent\textbf{Output}: Reduced version of subset: $P.$
   \end{flushleft}
   \begin{enumerate}[label=\arabic*:]
-    \item $R \leftarrow \nil$
     \item $\DO$
-    \item $\quad P \leftarrow \SL(P \cup R)$
     \item $\quad R \leftarrow \nil$
     \item $\quad \FOR \text{each } (u, v) \in P^2$
-    \item $\quad\quad t \leftarrow u - v$
-    \item $\quad\quad \IF (\norm{t} > 0) \wedge
-    (t \not\in P) \wedge
+    \item $\quad\quad t \leftarrow v - u$
+    \item $\quad\quad \IF (\vec{0} \neq t \not\in P) \wedge
     (\norm{t} < \norm{u} \vee \norm{t} < \norm{v})$
     \item $\quad\quad\quad R \leftarrow R \cup \{t\}$
+    \item $\quad P \leftarrow \SL(P \cup R)$
     \item $\WHILE R \neq \nil$
   \end{enumerate}
   \caption{Na\"ive sieving algorithm.}
@@ -389,13 +392,14 @@ the aforementioned idea as a na\"ive sieving algorithm \ref{naive}.
 Algorithm \ref{naive} checks the difference of all the possible
 pairings in $P$ for a shorter non-zero vector not already present in
 $P$. These newer and shorter vectors are collected in $R$. At the
-start of each iteration, we combine $P$ and $R$ \textit{selecting} out
-of the combination at most $|P|$ successive shortest vectors to be
+start of each iteration, we combine $P$ and $R$, \textit{selecting}
+out of the combination at most $|P|$ successive shortest vectors to be
 reassigned as $P$. The sieving terminates when $P^2$ no longer
 contains a pair $(u, v)$ whose difference's length is shorter than any
 of the ones already in $P$.
 
-We show an example by reducing the bad basis given in section \ref{intro},
+We show an example by reducing the bad basis given in section
+\ref{intro},
 \[
   \B_\text{bad} =
   \begin{bmatrix}
@@ -407,21 +411,21 @@ The initial $P$ is randomly picked as follows,
 \[
   P =
   \begin{bmatrix}
-    -46  & -94  & -97  & -475 \\
-    -185 & -430 & -520 & -2300
+    46  & 94  & 97  & 475 \\
+    185 & 430 & 520 & 2300
   \end{bmatrix}
 \]
-and figure \ref{naivedemo} shows the new $P$ at each iteration of
-seven iterations ran.
+and figure \ref{naivedemo} shows the new $P$ at each iteration of a
+total of seven iterations that were ran.
 
-\img<naivedemo>[0.32]{Alg. \ref{naive} reducing
+\img<naivedemo>[0.32]{Algorithm \ref{naive} reducing
 $\B_\text{bad}$ with
 $P =
   \begin{bmatrix}
-    -46  & -94  & -97  & -475 \\
-    -185 & -430 & -520 & -2300
+    46  & 94  & 97  & 475 \\
+    185 & 430 & 520 & 2300
   \end{bmatrix}
-$}{naive1, naive2, naive3, naive4, naive5, naive6, naive7}
+$.}{naive1, naive2, naive3, naive4, naive5, naive6, naive7}
 
 Note that in this case, we find the shortest vector by solving the
 \SBP{} exactly. The seventh iteration in figure \ref{naivedemo}
@@ -429,18 +433,239 @@ contains,
 \[
   \B_\text{good} =
   \begin{bmatrix}
-    1  & -40 \\
-    30 & -5
+    -1  & 40 \\
+    -30 & 5
   \end{bmatrix}
 \]
 
-% the other evolutionary sieving paper by Thijs Laarhoven
-% \cite{DBLP:journals/corr/abs-1907-04629}.
+\subsection{Genetic Algorithms} Genetic algorithms simulate the theory
+of biological evolution and natural selection to solve a range of
+mathematical-optimisation problems. Just like in naturally occurring
+evolution where individuals in a population evolve to gain desirable
+features (or, rather individuals with undesirable features go
+extinct), machine evolution starts with an initial population and
+hopes for individuals to be optimised after a certain number of
+generations of the same population.
 
-% Read Norvig (Norvig 129)
+To solve an optimisation problem with a genetic algorithm, we start by
+designing a \textit{schema} to encode a possible solution. An instance
+of this schema is referred to as an \textit{individual}. A set of such
+individuals is a \textit{population}. Population of individuals evolve
+through \textit{generations} by the means of reproduction. Using a
+\textit{selection} process based on a \textit{fitness-function}, two
+parent individuals are selected for \textit{crossover} to birth a
+child individual in the next generation. The child individual may go
+through a \textit{mutation}. We describe a general genetic
+optimisation in algorithm \ref{ga}.
+
+\begin{algorithm}
+  \begin{flushleft}
+    \noindent\textbf{Input}:
+      Initial population: $P$, fitness-function: $\FIT: P \ra [0, 1]$. \\
+    \noindent\textbf{Output}:
+      Optimal $P$ as the last generation.
+  \end{flushleft}
+  \begin{enumerate}[label=\arabic*:]
+    \item $i \leftarrow 1$
+    \item $\DO$
+    \item $\quad R \leftarrow \nil$
+    \item $\quad \FOR (u, v) \leftarrow \SL(P, \FIT)$
+    \item $\quad\quad t \leftarrow \CROSS(u, v)$
+    \item $\quad\quad \IF (\text{small random probability})$
+    \item $\quad\quad\quad t \leftarrow \MUTATE(t)$
+    \item $\quad\quad R \leftarrow R \cup \{t\}$
+    \item $\quad P \leftarrow R$
+    \item $\quad i \leftarrow i + 1$
+    \item $\WHILE (\forall v \in P, \FIT(v) \geq \ep_1) \vee (i < \ep_2)$
+  \end{enumerate}
+  \caption{Generic genetic algorithm from Norvig (pg. 129)
+    \cite{russell2016artificial}.}
+  \label{ga}
+\end{algorithm}
+
+Algorithm \ref{ga} has a potential pitfall: it may lose the best
+individuals from one generation to another during crossover or
+mutation due to the probabilistic selection. This can cause divergence
+instead of convergence to a local optimum. To mitigate this and
+similar issues, we will employ \textit{elitism}
+\cite{de1975analysis}. Elitism ensures that the $|P|$ fittest
+individuals are carried over to the next generation from the pool
+$P \cup R$. As a result, the next generation will consist of the best
+individuals outside of the parents and offsprings set.
+
+
+\subsection{Genetic Algorithm for Sieving} As also observed by
+Laarhoven \cite{DBLP:journals/corr/abs-1907-04629} sieving for the
+shortest vector can be naturally expressed as a genetic
+algorithm. Following is a specification for each of the components of
+the genetic algorithm used in this paper to solve the \appr\SVP. The
+whole algorithm is given in algorithm \ref{gas}.
+
+\subsubsection{Schema} We represent vectors $v \in \L$ as is,
+\[
+  v = \arr{v_1, v_2, v_3, \dots, v_d}
+\]
+Note that here $\L \subset \Z^{d\times d}$ or $\L \subset \G^{d\times d}$.
+
+\subsubsection{Initial Population} Before we proceed with the
+generation of the initial population using $\B$, we may
+\textit{optionally} compute the \textit{Hermite normal form} of $\B$
+as well as reduce it using the \LLL{} algorithm for some $\delta$. The
+Hermite normal form is to integral matrices what the reduced echelon
+form is for the matrices over the reals.
+
+Let $n = |P|$, we generate the initial population via a constant $d$
+by $n$ matrix like so,
+\[
+  P = \B C
+\]
+If $\L(\B) \subset \Z^{d\times d}$ or $\B \in \Z^{d\times d}$,
+\[
+  C \in \{0, 1\}^{d\times n}\quad\text{where}\quad
+  \text{Pr}(C_{i,j} = 1) = \rho
+\]
+However, if $\L(\B) \subset \G^{d\times d}$ or $\B \in \G^{d\times d}$
+then for $a \in \{0, 1\} \ni b$,
+\[
+  C_{i,j} = a + bi\quad\text{where}\quad
+  \text{Pr}(a = 1) = \text{Pr}(b = 1) = \rho
+\]
+
+
+\subsubsection{Selection Strategy} Let $P$ be the previous generation
+and $R$ be the current generation, or the generation produced as a
+result of the reproduction among $P$. The next generation is then
+produced by picking the $|P|$ successive shortest vectors from the
+pool $P \cup R$ and then assigning them back to $P$. Observe how this
+implies that $P$ will now be sorted by vector length in ascending
+order.
+\[
+  P \leftarrow \Elite(P \cup R)
+\]
+We will use this $P$ to select the individuals for crossover. Let
+$u_i, v_j$ be the $i^\text{th}$ and $j^\text{th}$ vectors in $P$ then
+algorithm \ref{sl} states how we can generate pairings of vectors in
+$P$. Note that at most algorithm \ref{sl} generates $^{|P|}C_2$ pairs.
+
+\begin{algorithm}
+  \begin{flushleft}
+    \noindent\textbf{Input}: Population: $P$. \\
+    \noindent\textbf{Output}: Generated pairs for reproduction.
+  \end{flushleft}
+  \begin{enumerate}[label=\arabic*:]
+    \item $\FOR i \in \{1, 2, 3, \dots |P| - 1\}$
+    \item $\quad \FOR j \in \{i + 1, \dots |P|\}$
+    \item $\quad\quad \YIELD (u_i, v_j)$
+  \end{enumerate}
+  \caption{Pair $(u_i, v_j)$ generator of $P$ for crossover.}
+  \label{sl}
+\end{algorithm}
+
+\subsubsection{Fitness Function} We evaluate the fitness of a vector
+by the inverse of its $\ell^2$ norm.
+\[
+  \FIT(v) = \frac{1}{\norm{v}_2} = \frac{1}{\sqrt{v^Tv}}
+\]
+
+If $v \in \G^d$ then,
+\[
+  \norm{v}_2^2 = v^Hv = |v_1|^2 + |v_2|^2 +  |v_2|^2 + \cdots + |v_d|^2
+\]
+where $|v_j|^2 = a^2 + b^2$ for $v_j = a + bi$. The $v^H$ is known as
+the conjugate transpose of $v$.
+
+\subsubsection{Crossover} For $u \in P \ni v$,
+\[
+  t = v - \near{\mu} u
+\]
+Note that for $z = a + bi$ where $(a, b) \in \R^2$, we define:
+$\near{z} = \near{a} + \near{b}i$.
+
+If $u \in \Z^d \ni v$,
+\[
+  \mu = \frac{u\cdot v}{u\cdot u}
+\]
+Or if $u \in \G^d \ni v$,
+\[
+  \mu = \frac{\Re(u\cdot v)}{u\cdot u} + \frac{\Im(u\cdot v)}{u\cdot u}i
+\]
+
+\subsubsection{Mutation} The $j^\text{th}$ column of the initial
+population (and the subsequent generations) is given as,
+\[
+  P_j =
+  \begin{bmatrix}
+    b_{1,1}c_{1,j} + b_{1,2}c_{2,j} + \cdots  b_{1,d}c_{d,j} \\
+    b_{2,1}c_{1,j} + b_{2,2}c_{2,j} + \cdots  b_{2,d}c_{d,j} \\
+    \vdots \\
+    b_{d,1}c_{1,j} + b_{d,2}c_{2,j} + \cdots  b_{d,d}c_{d,j}
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    b_{1,1} & b_{1,2} & \cdots  b_{1,d} \\
+    b_{2,1} & b_{2,2} & \cdots  b_{2,d} \\
+            & \vdots  &                 \\
+    b_{d,1} & b_{d,2} & \cdots  b_{d,d}
+  \end{bmatrix}
+  \begin{bmatrix}
+    c_{1,j} \\
+    c_{2,j} \\
+    \vdots \\
+    c_{d,j}
+  \end{bmatrix}
+  =
+  \B c_j.
+\]
+Laarhoven \cite{DBLP:journals/corr/abs-1907-04629} represent each
+individual in the population as $c_j$ instead of $\B c_j$. This
+enabled them to mutate $\B c_j$ by adding a small integral
+perturbation to $c_{i,j}$. E. g.,
+\[
+  c_{i,j} = c_{i,j}+1 \mod 2
+\]
+Another possible approach is,
+\[
+  \ep \sim \mathcal{N}(\vec{0}, \mathbb{I}_d), \quad P_j = \B\near{c_j + \ep}
+\]
+
+However, mutations generally decrease the fitness; if at all useful
+\cite{DBLP:journals/corr/abs-1907-04629}. While mutating is an
+interesting question for future work, we do not mutate individual
+vectors in this paper.
+
+\begin{algorithm}
+  \begin{flushleft}
+    \noindent\textbf{Input}:
+    \begin{enumerate}
+      \item Basis: $\B$
+      \item Population size: $n$
+      \item Sampling density: $\rho$
+      \item Reproduction cut-off: $\eta$
+    \end{enumerate}
+    \noindent\textbf{Output}: Approximation of the shortest vector.
+  \end{flushleft}
+  \begin{enumerate}[label=\arabic*:]
+    \item $C_{d,n} \leftarrow (c_{i,j} \sim \text{Bernoulli}(\rho))$
+    \item $P \leftarrow \B C$
+    \item $R \leftarrow \nil$
+    \item $\DO$
+    \item $\quad P \leftarrow \Elite(P \cup R)$
+    \item $\quad R \leftarrow \nil$
+    \item $\quad \DO$
+    \item $\quad\quad u, v \leftarrow \SL(P)$
+    \item $\quad\quad t \leftarrow \CROSS(u, v)$
+    \item $\quad\quad \IF (\vec{0} \neq t \not\in P) \wedge
+    (\norm{t} < \norm{u} \vee \norm{t} < \norm{v})$
+    \item $\quad\quad\quad R \leftarrow R \cup \{t\}$
+    \item $\quad \WHILE |R| < \eta \binom{n}{2}$
+    \item $\WHILE \forall v \in P, \FIT(v) \geq \ep$
+  \end{enumerate}
+  \caption{Genetic sieving algorithm.}
+  \label{gas}
+\end{algorithm}
 
 % \section{Results}
-% \section{Discussion}
+% \section{Conclusion}
 % \section{Acknowledgement}
 
 % ---
@@ -449,4 +674,5 @@ contains,
 \bibliography{citation}
 \end{document}
 
-% LocalWords:  Merkle Lagarias Odlyzko Hoffstein
+% LocalWords:  Merkle Lagarias Odlyzko Hoffstein offsprings hermite
+% LocalWords:  LLL Ajtai Sivakumar

@@ -1,4 +1,4 @@
-# pytest -v --durations=0
+# pytest -v --durations=0 test_lib.py
 import lib as lb
 import lib.lattice as ll
 import numpy as np
