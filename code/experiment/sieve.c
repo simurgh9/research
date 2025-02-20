@@ -80,6 +80,13 @@ void basis_t(char path[], num (*B)[DIM], norm bnorms[DIM]) {
 }
 
 norm initial(num (*B)[DIM], norm bnorms[DIM], double p1) {
+  SCALES[2] = 25;
+  SCALES[6] = 25;
+  SCALES[40] = 25;
+  SCALES[60] = 165;
+  SCALES[70] = 714;
+  SCALES[100] = 10000;
+
   int m = SIZE - DIM, k = DIM, n = DIM;
   num(*C)[k] = (num(*)[k])malloc(sizeof(num[m][k]));
   P1 = (num(*)[DIM])malloc(sizeof(num[SIZE][DIM]));
