@@ -3,11 +3,11 @@
 int main(int argc, char *argv[]) {
   double beg = period();
   srand(SEED);
-  printf("Size: %d\nInflated Size: %d\n", SIZE, INFLATED);
 
   num B[DIM][DIM];
   norm bnorms[DIM] = {0};
   basis_t(PATH, B, bnorms);
+
   norm best = initial(B, bnorms, DENSITY);
   double last_mean = mean();
   
@@ -86,6 +86,7 @@ norm initial(num (*B)[DIM], norm bnorms[DIM], double p1) {
   SCALES[60] = 165;
   SCALES[70] = 714;
   SCALES[100] = 10000;
+  printf("Size: %d\nInflated Size: %d\n", SIZE, INFLATED);
 
   int m = SIZE - DIM, k = DIM, n = DIM;
   num(*C)[k] = (num(*)[k])malloc(sizeof(num[m][k]));
