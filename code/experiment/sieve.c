@@ -151,12 +151,14 @@ void *sieve(void *arg) {
 }
 
 void cross(int i, int j) {
-  num t[DIM] = {0};
   norm v1n = norms1[i], v2n = norms1[j];
   num numerator = cblas_ddot(DIM, P1[i], 1, P1[j], 1);
   num m = (num)round(numerator / v1n);
-  cblas_dcopy(DIM, P1[j], 1, t, 1);
-  cblas_daxpy(DIM, -1 * m, P1[i], 1, t, 1);
+
+  num t[DIM] = {0};
+  cblas_dcopy(DIM, P1[j], 1, t, 1); // t = P1[j]
+  cblas_daxpy(DIM, -1 * m, P1[i], 1, t, 1); // t = (-1 * m)P1[i] + t
+
   norm tn = cblas_ddot(DIM, t, 1, t, 1);
   if (tn != 0 && (tn < v1n || tn < v2n)) {
     pthread_mutex_lock(&mutie);
