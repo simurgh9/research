@@ -120,7 +120,8 @@ norm initial(num (*B)[DIM], norm bnorms[DIM], double p1) {
   free(C);
 
   for (i = 0; i < m; i++)
-    norms1[i] = cblas_ddot(n, P1[i], 1, P1[i], 1);
+    if ((norms1[i] = cblas_ddot(n, P1[i], 1, P1[i], 1)) == ULLONG_MAX)
+      printf("There's overfloww in them eyints!\n");
 
   qsort(order1, SIZE, sizeof(int), compare1);
 
