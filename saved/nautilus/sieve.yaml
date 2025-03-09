@@ -20,7 +20,7 @@ spec:
           ./a.out;
         resources:
           limits:
-            memory: 120i
+            memory: 120Gi
             cpu: 120
           requests:
             memory: 100Gi
