@@ -35,8 +35,8 @@ int main(int argc, char *argv[]) {
     last_mean = mean();
   } while (unchanged < 10);
 
+  printf("\nTotal time: %fs\n\n", seconds() - beg);
   print_vector(P1[order1[0]], DIM, NULL);
-  printf("Total time: %fs\n", seconds() - beg);
 
   free(P1);
   free(P2);
@@ -79,15 +79,31 @@ void basis_t(char path[], num (*B)[DIM], norm bnorms[DIM]) {
   fclose(fp);
 }
 
-norm initial(num (*B)[DIM], norm bnorms[DIM], double p1) {
+void set_scales(void) {
+  for (int index = 0; index < 200; index++)
+      SCALES[index] = 100;
+  // Testing Lattices
   SCALES[2] = 25;
   SCALES[6] = 25;
-  SCALES[40] = 25;
-  SCALES[60] = 165;
-  SCALES[70] = 714;
-  SCALES[100] = 10000;
-  printf("Size: %d\nInflated Size: %d\n", SIZE, INFLATED);
 
+  // Challenge Lattices
+  // SCALES[40] = 25;
+  // SCALES[60] = 165;
+  // SCALES[70] = 714;
+  // SCALES[100] = 10000;
+
+  // Paper Lattices
+  SCALES[40] = 20;
+  SCALES[50] = 20;
+  SCALES[60] = 40;
+  SCALES[70] = 300; // 10 1639760.777
+  SCALES[80] = 2000;
+
+  printf("Size: %d\nInflated Size: %d\n\n", SIZE, INFLATED);
+}
+
+norm initial(num (*B)[DIM], norm bnorms[DIM], double p1) {
+  set_scales();
   int m = SIZE - DIM, k = DIM, n = DIM;
   num(*C)[k] = (num(*)[k])malloc(sizeof(num[m][k]));
   P1 = (num(*)[DIM])malloc(sizeof(num[SIZE][DIM]));

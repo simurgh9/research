@@ -16,6 +16,7 @@
 #include <time.h>
 #include <limits.h>
 #include <pthread.h>
+#include "problems.h"
 
 #define SEED 0
 #define THREADS 100
@@ -26,33 +27,8 @@
 #define SIZE SCALES[DIM] * DIM
 #define INFLATED MAX(SIZE, (int)(ETA * (SIZE - 1) * SIZE / 2))
 
-// #define DIM 2
-// #define PATH "../../saved/personal/col2_30.csv"
-
-// #define DIM 6
-// #define PATH "../../saved/personal/col6_3.csv"
-
-#define DIM 40
-#define PATH "../../saved/challenge/col40_1740.csv"
-// #define PATH "../../saved/personal/col40_237413_212828.csv"
-// #define PATH "../../saved/personal/col40_237413_212828.hermite.csv"
-// #define PATH "../../saved/personal/exp40_4196653682643_3762083877372.hermite.csv"
-
-// #define DIM 60
-// #define PATH "../../saved/challenge/col60_2101.csv"
-// #define PATH "../../saved/personal/col60_1233755_1124757.csv"
-// #define PATH "../../saved/personal/col60_1233755_1124757.hermite.csv"
-
-// #define DIM 70
-// #define PATH "../../saved/challenge/col70_2254.csv"
-// #define PATH "../../saved/personal/col70_2160237_1979552.csv"
-// #define PATH "../../saved/personal/col70_2160237_1979552.hermite.csv"
-
-// #define DIM 100
-// #define PATH "../../saved/challenge/col100_2667.csv"
-
 int count = 0;
-int SCALES[101] = {0};
+int SCALES[200] = {0};
 num (*P1)[DIM], (*P2)[DIM], (*P3)[DIM];
 norm *norms1, *norms2, *norms3;
 int *order1, *order2;
@@ -62,6 +38,7 @@ pthread_mutex_t mutie = PTHREAD_MUTEX_INITIALIZER;
 
 void basis_t(char [], num (*)[], norm *); // reads columns into rows 
 
+void set_scales(void);
 norm initial(num (*)[], norm *, double);
 void *sieve(void *arg);
 void cross(int, int);

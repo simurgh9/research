@@ -1,7 +1,7 @@
 import numpy as np
 
 data = np.genfromtxt(
-    'algo_stats.tsv',
+    '../data/algo_stats.tsv',
     delimiter='\t',
     dtype=str)
 data = data[:, [1, 2, 3, 6]]
