@@ -99,7 +99,7 @@ void set_scales(void) {
   SCALES[70] = 300;
   SCALES[80] = 2000;
   SCALES[90] = 5000;
-  SCALES[100] = 7000;
+  SCALES[100] = 6000;
 
   printf("Size: %d\nInflated Size: %d\n\n", SIZE, INFLATED);
 }
