@@ -96,9 +96,10 @@ void set_scales(void) {
   SCALES[40] = 20;
   SCALES[50] = 20;
   SCALES[60] = 40;
-  SCALES[70] = 300; // 10 1639760.777
+  SCALES[70] = 300;
   SCALES[80] = 2000;
   SCALES[90] = 5000;
+  SCALES[100] = 7000;
 
   printf("Size: %d\nInflated Size: %d\n\n", SIZE, INFLATED);
 }

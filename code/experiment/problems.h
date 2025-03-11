@@ -35,10 +35,10 @@
 // #define PATH "../../saved/paper/paper70_2260926_2071820.csv"
 // #define DIM 80
 // #define PATH "../../saved/paper/paper80_3643144_3351770.csv"
-#define DIM 90
-#define PATH "../../saved/paper/paper90_6028468_5564035.csv"
-// #define DIM 100
-// #define PATH "../../saved/paper/paper100_9012027_8339504.csv"
+// #define DIM 90
+// #define PATH "../../saved/paper/paper90_6028468_5564035.csv"
+#define DIM 100
+#define PATH "../../saved/paper/paper100_9012027_8339504.csv"
 // #define DIM 110
 // #define PATH "../../saved/paper/paper110_13217658_12258022.csv"
 // #define DIM 120

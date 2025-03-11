@@ -20,9 +20,9 @@ spec:
           ./a.out;
         resources:
           limits:
-            memory: 480Gi
+            memory: 840Gi
             cpu: 220
           requests:
-            memory: 400Gi
+            memory: 700Gi
             cpu: 200
       restartPolicy: Never
