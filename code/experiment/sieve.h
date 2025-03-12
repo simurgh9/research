@@ -19,7 +19,7 @@
 #include "problems.h"
 
 #define SEED 0
-#define THREADS 16
+#define THREADS 70
 #define DENSITY 0.01
 #define ETA 0.01 // inflation factor
 #define num double
