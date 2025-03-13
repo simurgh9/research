@@ -10,16 +10,16 @@
 
 // #define DIM 40
 // #define PATH "../../saved/challenge/col40_1740.csv"
-// #define PATH "../../saved/personal/col40_237413_212828.csv"
-// #define PATH "../../saved/personal/col40_237413_212828.hermite.csv"
-// #define PATH "../../saved/personal/exp40_4196653682643_3762083877372.hermite.csv"
-
+// #define DIM 50
+// #define PATH "../../saved/challenge/col50_1929.csv"
 // #define DIM 60
 // #define PATH "../../saved/challenge/col60_2101.csv"
-
 // #define DIM 70
 // #define PATH "../../saved/challenge/col70_2254.csv"
-
+#define DIM 80
+#define PATH "../../saved/challenge/col80_2397.csv"
+// #define DIM 90
+// #define PATH "../../saved/challenge/col90_2544.csv"
 // #define DIM 100
 // #define PATH "../../saved/challenge/col100_2667.csv"
 
@@ -37,8 +37,8 @@
 // #define PATH "../../saved/paper/paper80_3643144_3351770.csv"
 // #define DIM 90
 // #define PATH "../../saved/paper/paper90_6028468_5564035.csv"
-#define DIM 100
-#define PATH "../../saved/paper/paper100_9012027_8339504.csv"
+// #define DIM 100
+// #define PATH "../../saved/paper/paper100_9012027_8339504.csv"
 // #define DIM 110
 // #define PATH "../../saved/paper/paper110_13217658_12258022.csv"
 // #define DIM 120

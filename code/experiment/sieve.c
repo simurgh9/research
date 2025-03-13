@@ -33,7 +33,7 @@ int main(int argc, char *argv[]) {
 
     best = norms1[order1[0]];
     last_mean = mean();
-  } while (unchanged < 10);
+  } while (unchanged < 5);
 
   printf("\nTotal time: %fs\n\n", seconds() - beg);
   print_vector(P1[order1[0]], DIM, NULL);
@@ -87,19 +87,22 @@ void set_scales(void) {
   SCALES[6] = 25;
 
   // Challenge Lattices
-  // SCALES[40] = 25;
-  // SCALES[60] = 165;
-  // SCALES[70] = 714;
-  // SCALES[100] = 10000;
-
-  // Paper Lattices
-  SCALES[40] = 20;
-  SCALES[50] = 20;
-  SCALES[60] = 40;
-  SCALES[70] = 300;
-  SCALES[80] = 2000;
+  SCALES[40] = 25;
+  SCALES[50] = 25;
+  SCALES[60] = 165;
+  SCALES[70] = 714;
+  SCALES[80] = 3000;
   SCALES[90] = 5000;
   SCALES[100] = 6000;
+
+  // Paper Lattices
+  // SCALES[40] = 20;
+  // SCALES[50] = 20;
+  // SCALES[60] = 40;
+  // SCALES[70] = 300;
+  // SCALES[80] = 2000;
+  // SCALES[90] = 5000;
+  // SCALES[100] = 6000;
 
   printf("Size: %d\nInflated Size: %d\n\n", SIZE, INFLATED);
 }

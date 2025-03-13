@@ -7,7 +7,8 @@ from matplotlib import pyplot as plt
 #     "paper60_1221209_1113319.txt",
 #     "paper70_2260926_2071820.txt",
 #     "paper80_3643144_3351770.txt",
-#     "paper90_6028468_5564035.txt"
+#     "paper90_6028468_5564035.txt",
+#     "paper100_9012027_8339504.txt"
 # ]
 
 files = [
@@ -20,7 +21,7 @@ files = [
     # "col100_2667.txt"
 ]
 
-# lim = {40: 9, 50: 13, 60: 13, 70: 18, 80: 17, 90: 18, 100: -1}  # paper
+# lim = {40: 9, 50: 13, 60: 13, 70: 18, 80: 17, 90: 18, 100: 12}  # paper
 lim = {40: 8, 50: 9, 60: 17, 70: 17, 80: 18, 90: -1, 100: -1}  # challenge
 prefix = "../data/"
 
@@ -51,10 +52,10 @@ for name in files:
     plt.title(title)
     plt.xlabel('Generation Index')
     plt.ylabel('Euclidean Norm')
-    plt.plot(bests, 'rx-', label='Shortest Vector Length')
-    plt.plot(means, 'go-', alpha=0.5, label='Mean Vector Length')
+    plt.plot(bests, 'kD-', mfc='red', mec='k', alpha=0.5, label='Shortest Vector Length')
+    plt.plot(means, 'ko-', mfc='green', mec='k', alpha=0.5, label='Mean Vector Length')
     plt.ticklabel_format(axis='both', style='plain')
     plt.tight_layout()
     plt.legend()
-    # plt.savefig(f'../media/paper{d}.png')
+    # plt.savefig(f'../media/col{d}.png')  # change this when you change problem sets
     plt.show()
