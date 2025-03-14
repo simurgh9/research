@@ -16,10 +16,10 @@
 // #define PATH "../../saved/challenge/col60_2101.csv"
 // #define DIM 70
 // #define PATH "../../saved/challenge/col70_2254.csv"
-#define DIM 80
-#define PATH "../../saved/challenge/col80_2397.csv"
-// #define DIM 90
-// #define PATH "../../saved/challenge/col90_2544.csv"
+// #define DIM 80
+// #define PATH "../../saved/challenge/col80_2397.csv"
+#define DIM 90
+#define PATH "../../saved/challenge/col90_2544.csv"
 // #define DIM 100
 // #define PATH "../../saved/challenge/col100_2667.csv"
 

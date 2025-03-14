@@ -13,7 +13,7 @@
 
 A lattice is a discrete additive subgroup of a $d$-dimensional
 Euclidean space. Intuitively, lattice points are to euclidean spaces
-what residues modulo $d$ are to the real number line. Consider a basis
+what multiples of $d$ are to the real number line. Consider a basis
 matrix $\B \in \R^{d \times d}$ with $d$ linearly independent column
 vectors $\{1 \leq i \leq d : b_i \in \R^d\}$ such that $b_i$ is the
 $i^\text{th}$ column of $\B$. We recall $\R^d$ as,
@@ -136,11 +136,12 @@ relay on the inability of lattice reduction algorithms to solve the
 
 \subsection{Gaussian Heuristic} It is difficult to verify a solution
 for the \appr\SVP{} and \SVP{} since the length of the shortest vector
-is unknown in the general case. As the dimension of a lattice
+is unknown in the general case. As the dimension $d$ of a lattice
 increases, we may relay on the Gaussian expected shortest length, also
 known as the Gaussian heuristic (see \cite{hoffstein2008introduction},
-\cite{siegel1945mean} for more justification). If $\ep > 0$, then for
-a sufficiently large dimension $d$,
+\cite{siegel1945mean} for more justification). For a small $\ep > 0$
+and a sufficiently large $d$, the shortest vector in a random lattice
+satisfies,
 \[
   (1-\ep)\sigma(\L) \leq
   \norm{v_\text{shortest}}
@@ -215,12 +216,11 @@ $\L(\B_\text{bad})$. The shortest vector in the lattice spanned by
 $\B_\text{bad}$ will reveal the solution $x$ to the knapsack problem.
 
 \subsection{Lattice Reduction Algorithms} If a lattice is expressed in
-terms of it's good basis then solving the \SVP{} and the \CVP{}
-becomes fairly easy. This means that if we first solve the \SBP{} then
-both the \SVP{} and \CVP{} are easy. For example, assume for a certain
-$\B_\text{good}$ that all column vectors $b_i$ are pairwise orthogonal
-\ie for $i \neq j$ we know that $b_i\cdot b_j = 0$. Then for any
-$x \in \Z^d$,
+terms of it's good basis then solving the \SVP{} becomes fairly
+easy. This means that if we first solve the \SBP{} then the \SVP{} is
+easy. For example, assume for a certain $\B_\text{good}$ that all
+column vectors $b_i$ are pairwise orthogonal \ie for $i \neq j$ we
+know that $b_i\cdot b_j = 0$. Then for any $x \in \Z^d$,
 \[
   \norm{x_1b_1 + x_2b_2 + x_3b_3 + \cdots x_db_d}^2 =
   x_1^2\norm{b_1}^2 + x_2^2\norm{b_2}^2 + x_3^2\norm{b_3}^2 + \cdots
@@ -231,8 +231,8 @@ and the shortest non-zero vector(s) can be found in,
   \curl{\pm b_1, \pm b_2, \pm b_3, \cdots \pm b_d}
 \]
 
-Similarly for the solution of an instance of the \CVP{} using a good
-basis, see the Babai's nearest hyperplane algorithm
+Similarly for an approximate solution of an instance of the \CVP{}
+using a good basis, see the Babai's nearest hyperplane algorithm
 \cite{babai1986lovasz} or Theorem 7.34 (pg. 405) of Hoffstein
 \cite{hoffstein2008introduction}.
 
@@ -327,13 +327,13 @@ and that it solves the \appr\SVP{} with an approximation factor of
 $\alpha = 2^{(d-1)/2}$. It is also an open problem whether \LLL{}
 terminates in polynomial time for $\delta = 1.$
 
-\subsubsection{\LLL{} Variations} While \LLL{} is the only polynomial
-time algorithm for lattice reduction, many of it's generalisations
-tend to perform just as fast during empirical analysis and yield a
-further reduced basis. Gamma et alia argue by their extensive
-empirical analysis \cite{gama2008predicting} that there is a gap
-between what theory is able to prove and what the true power of the
-reduction algorithms maybe.
+\subsubsection{\LLL{} Variations} While \LLL{} is a polynomial time
+algorithm for lattice reduction, many of it's generalisations tend to
+perform just as fast during empirical analysis and yield a further
+reduced basis. Gamma et alia argue by their extensive empirical
+analysis \cite{gama2008predicting} that there is a gap between what
+theory is able to prove and what the true power of the reduction
+algorithms maybe.
 
 The two possible exponential time variations of \LLL{} are due to
 Schnorr \cite{schnorr1987hierarchy} and Euchner
@@ -530,7 +530,6 @@ then for $a \in \{0, 1\} \ni b$,
   C_{i,j} = a + bi\quad\text{where}\quad
   \text{Pr}(a = 1) = \text{Pr}(b = 1) = \rho
 \]
-
 
 \subsubsection{Selection Strategy} Let $P$ be the previous generation
 and $R$ be the current generation, or the generation produced as a
