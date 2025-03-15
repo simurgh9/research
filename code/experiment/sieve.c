@@ -93,7 +93,7 @@ void set_scales(void) {
   SCALES[70] = 714;
   SCALES[80] = 3000;
   SCALES[90] = 6000;
-  SCALES[100] = 6300;
+  SCALES[100] = 6000;
 
   // Paper Lattices
   // SCALES[40] = 20;
